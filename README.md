@@ -19,6 +19,8 @@ make -j 16
 make quicktest
 
 Copy a Molpro token to /home/trushin/.molpro/ before making quicktest
+
+
 ## Molpro on Xubuntu with gcc/gfortran
 With Xubuntu eigen was installed/copied manually and configuration was different:  
 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/ --disable-xml2
