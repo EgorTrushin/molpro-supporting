@@ -1,0 +1,45 @@
+gdirect
+
+symmetry,nosym
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514 
+O        0.000000    0.000000    0.484886
+}
+
+basis={
+default,aug-cc-pwCVTZ
+set,oep
+default,aug-cc-pVDZ/mp2fit
+}
+
+df-ks,pbe,maxit=0,df_basis=aug-cc-pwCVQZ/mp2fit ! KS PBE
+{cfit,basis_coul=aug-cc-pwCVQZ/mp2fit,basis_exch=aug-cc-pwCVQZ/mp2fit}
+
+acfd;scexx,thr_fai_oep=5d-2 ! charge
+e(1)=energy
+prog(1)='CO charge'
+
+acfd;scexx,homo=1,thr_fai_oep=5d-2 ! SCEXX charge+homo
+e(2)=energy
+prog(2)='CO charge+HOMO'
+
+acfd;scexx,charge=0,homo=0,thr_fai_oep=5d-2 ! SCEXX no constraints
+e(3)=energy
+prog(3)='CO no constraints'
+
+eold = [-112.774772072698, -112.774365063125, -112.770005967630]
+
+de=e-eold(1:ii)
+
+text,Results for job co_acfd_scexx.test
+if(max(abs(de)).lt.1.d-6) then
+  table,prog,e,eold,de
+  save,test.log
+  title,No errors in co_acfd_scexx.test
+else
+  table,prog,e,eold,de
+  save,test.log
+  title,ERRORS DETECTED in co_acfd_scexx.test, de=$de
+endif
