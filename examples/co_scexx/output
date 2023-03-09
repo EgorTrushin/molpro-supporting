@@ -1,0 +1,318 @@
+
+ Working directory              : /tmp/trushin/molpro.QWMEFSr7yw/
+ Global scratch directory       : /tmp/trushin/molpro.QWMEFSr7yw/
+ Wavefunction directory         : /home/trushin/wfu/
+ Main file repository           : /tmp/trushin/molpro.QWMEFSr7yw/
+
+ id        : chemieegortrushi
+
+ Nodes     nprocs
+ trushin      1
+ GA implementation: MPI file
+ GA implementation (serial work in mppx): MPI file
+
+ Using customized tuning parameters: mindgm=1; mindgv=20; mindgc=4; mindgr=1; noblas=0; minvec=7
+ default implementation of scratch files=df  
+
+
+ Variables initialized (1026), CPU time= 0.00 sec
+ memory,2000,m                                                                   ! memory specification
+ gdirect                                                                         ! integral-direct mode
+ 
+ basis={
+ default,aug-cc-pwCVQZ                                                           ! orbital basis
+ set,oep;default,aug-cc-pVDZ/mp2fit                                              ! OEP basis
+ }
+ 
+ symmetry,nosym                                                                  ! SCEXX does not use symmetry
+ 
+ angstrom
+ geometry={
+ 2
+ C        0.000000    0.000000   -0.646514
+ O        0.000000    0.000000    0.484886
+ }
+ 
+ df-hf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit                                     ! HF calculation with 0 iteration
+ {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
+ 
+ acfd;scexx,thr_fai_oep=1.7d-2                                                   ! SCEXX calculation
+ Commands initialized (841), CPU time= 0.01 sec, 689 directives.
+ Default parameters read. Elapsed time= 0.06 sec
+
+ Checking input...
+ Passed
+1
+
+
+                                         ***  PROGRAM SYSTEM MOLPRO  ***
+                                       Copyright, TTI GmbH Stuttgart, 2015
+                                    Version 2023.1 linked Wed Mar  8 23:11:14 2023
+
+
+ **********************************************************************************************************************************
+ LABEL *                                                                                                                                                                 
+  (16 PROC) 64 bit serial version                                                        DATE: 09-Mar-23          TIME: 01:00:42  
+ **********************************************************************************************************************************
+
+ SHA1:             b7bb3cdb0610a79b8ab697f5dc98a812777c31de
+ **********************************************************************************************************************************
+
+ Memory per process:      2000 MW
+ Total memory per node:   2000 MW
+
+ GA preallocation disabled
+ GA check disabled
+
+ Variable memory set to 2000.0 MW
+
+ SETTING BASIS          =    AUG-CC-PWCVQZ
+ ZSYMEL=NOSYM
+ ZUNIT=ANG
+
+
+ Geometry recognized as XYZ
+
+
+
+ Recomputing integrals since basis changed
+
+
+ Using spherical harmonics
+
+ Library entry C      S aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry C      P aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry C      D aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry C      F aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry C      G aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry O      S aug-cc-pwCVQZ        selected for orbital group  2
+ Library entry O      P aug-cc-pwCVQZ        selected for orbital group  2
+ Library entry O      D aug-cc-pwCVQZ        selected for orbital group  2
+ Library entry O      F aug-cc-pwCVQZ        selected for orbital group  2
+ Library entry O      G aug-cc-pwCVQZ        selected for orbital group  2
+
+
+ PROGRAM * SEWARD (Integral evaluation for generally contracted gaussian basis sets)     Author: Roland Lindh, 1990
+
+ Geometry written to block  1 of record 700
+
+
+ Point group  C1  
+
+
+
+ ATOMIC COORDINATES
+
+ NR  ATOM    CHARGE       X              Y              Z
+
+   1  C       6.00    0.000000000    0.000000000   -1.221734396
+   2  O       8.00    0.000000000    0.000000000    0.916301742
+
+ Bond lengths in Bohr (Angstrom)
+
+ 1-2  2.138036137
+     ( 1.131400000)
+
+ NUCLEAR CHARGE:                   14
+ NUMBER OF PRIMITIVE AOS:         304
+ NUMBER OF SYMMETRY AOS:          244
+ NUMBER OF CONTRACTIONS:          218   (  218A   )
+ NUMBER OF INNER CORE ORBITALS:     0   (    0A   )
+ NUMBER OF OUTER CORE ORBITALS:     2   (    2A   )
+ NUMBER OF VALENCE ORBITALS:        8   (    8A   )
+
+
+ NUCLEAR REPULSION ENERGY   22.45050921
+
+
+ Basis set:    OEP
+ Basis size:   144
+ Sphericals:   T
+
+ **********************************************************************************************************************************
+
+ EXTRA SYMMETRY OF AOS IN SYMMETRY 1:   1 1 1 1 1 1 1 1 1 2   3 1 2 3 1 2 3 1 2 3   1 2 3 1 2 3 1 2 3 1   2 3 1 1 4 2 5 3 1 4
+                                        2 5 3 1 4 2 5 3 1 4   2 5 3 1 4 2 5 3 1 4   2 5 3 2 3 1 6 4 7 5   2 3 1 6 4 7 5 2 3 1
+                                        6 4 7 5 2 3 1 6 4 7   5 1 4 2 8 3 5 9 6 7   1 4 2 8 3 5 9 6 7 1   1 1 1 1 1 1 1 1 2 3
+                                        1 2 3 1 2 3 1 2 3 1   2 3 1 2 3 1 2 3 1 2   3 1 1 4 2 5 3 1 4 2   5 3 1 4 2 5 3 1 4 2
+                                        5 3 1 4 2 5 3 1 4 2   5 3 2 3 1 6 4 7 5 2   3 1 6 4 7 5 2 3 1 6   4 7 5 2 3 1 6 4 7 5
+                                        1 4 2 8 3 5 9 6 7 1   4 2 8 3 5 9 6 7
+
+ Eigenvalues of metric
+
+         1 0.247E-04 0.291E-04 0.918E-04 0.392E-03 0.504E-03 0.504E-03 0.560E-03 0.833E-03
+
+
+ OPERATOR DM      FOR CENTER  0  COORDINATES:    0.000000    0.000000    0.000000
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      18       30.28       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1700   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
+
+ PROGRAMS   *        TOTAL       INT
+ CPU TIMES  *         0.31      0.21
+ REAL TIME  *         1.16 SEC
+ DISK USED  *        30.62 MB
+ **********************************************************************************************************************************
+
+
+ Program * Restricted Hartree-Fock
+
+ Basis set AWCV5Z/MP2FIT generated.      Number of basis functions:   656 
+ Coulomb and exchange fitting
+ Thresholds for fitting:       THRAO_COUL= 1.0D-15    THRAO_EXCH= 1.0D-13    THRMO= 1.0D-12    THRPROD= 1.0D-12    THRASM= 1.0D-12
+                               THR2HLF=    1.0D-12
+
+ Basis set AWCV5Z-MP2FIT loaded. Number of basis functions: 656
+
+ Orbital guess generated from atomic densities. Full valence occupancy:   10
+ Using density fitting in orbital guess
+
+
+ Initial occupancy:   7
+
+ NELEC=   14   SYM=1   MS2= 0   THRE=1.0D-08   THRD=3.2D-06   THRG=3.2D-06  HFMA2=F  DIIS_START=2   DIIS_MAX=10   DIIS_INCORE=F
+
+ Level shifts:    0.00 (CLOSED)    0.00 (OPEN)    0.30 (GAP_MIN)
+
+ ITER           ETOT              DE          GRAD        DDIFF     DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
+   1     -112.76795678    -112.76795678     0.00D+00     0.32D-01     0     0       0.62      1.30    start
+
+ Orbitals not optimized (maxit=1)
+
+ Final occupancy:   7
+
+ !RHF STATE 1.1 Energy               -112.767956781488
+  RHF One-electron energy            -197.912736539768
+  RHF Two-electron energy              62.694270545495
+  RHF Kinetic energy                  112.532393846326
+  RHF Nuclear energy                   22.450509212784
+  RHF Virial quotient                  -1.002093290004
+
+ !RHF STATE 1.1 Dipole moment           0.00000000    -0.00000000    -0.24622231
+ Dipole moment /Debye                   0.00000000    -0.00000000    -0.62583470
+
+ Orbital energies:
+
+           1.1          2.1          3.1          4.1          5.1          6.1          7.1          8.1          9.1
+    -20.585018   -11.498374    -1.526439    -0.783066    -0.639630    -0.639630    -0.589941     0.098928     0.098928
+
+
+ HOMO      7.1    -0.589941 =     -16.0531eV
+ LUMO      8.1     0.098928 =       2.6920eV
+ LUMO-HOMO         0.688869 =      18.7451eV
+
+ Orbitals saved in record  2100.2
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      18       30.28       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1700   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
+
+              2       4        1.12       700     1000      520     2100   
+                                         GEOM     BASIS   MCVARS     RHF  
+
+ PROGRAMS   *        TOTAL     DF-HF       INT
+ CPU TIMES  *         1.62      1.31      0.21
+ REAL TIME  *         2.42 SEC
+ DISK USED  *        41.56 MB
+ **********************************************************************************************************************************
+
+ Basis set:    OEP
+ Basis size:   144
+ Sphericals:   T
+
+ PROGRAM * SCEXX      (restricted self-consistent exact-exchange)
+
+ Authors:
+ A. Hesselmann, P. Bleiziffer, D. Schmidtel, J. Erhard, A. Thierbach, E. Trushin
+
+ Read Orbital Records from 2100.2
+ Write Orbital Records to 2101.2
+ Use density fitting to evaluate the Coulomb and exchange integrals: T
+ Maximum number of iterations:  30
+ Minimum number of iterations:   3
+ DIIS is used:
+ Maximum size of DIIS matrix:  10
+ Threshold for energy convergence:   1.000E-08
+ Threshold for density convergence:   0.000E+00
+ Thresholds for processing of OEP basis set:
+ thr_symmetry:   0.000E+00
+ thr_overlap_oep:     1.000E-99
+ thr_fai_oep:     1.700E-02
+ Threshold for eigenvalue difference in calculation of Lambda:    1.000E-06
+ Threshold for eigenproblem solver of OEP equation:    1.000E-99
+ Solver for eigenproblems: GTSVD
+ Constucting Hartree potential in OEP basis: F
+ Fermi-Amaldi as reference potential: T
+ Use CHARGE constraint
+
+ Molecular orbitals read from record     2100.2  Type=RHF/CANONICAL  
+ Orbital energies read from record       2100.2  Type=RHF/CANONICAL  
+ Density matrix read from record         2100.2  Type=RHF/CHARGE  
+ Occupation numbers read from record     2100.2  Type=RHF/RHF  
+
+   ITER        ENERGY            EDIFF       DDIFF       DIIS         TIME
+     0     -112.7679567815                                            1.05
+     1     -112.7124912477     0.555E-01   0.879E-02      1           2.14
+     2     -112.7442370576    -0.317E-01   0.562E-02      2           3.23
+     3     -112.7822975965    -0.381E-01   0.253E-02      3           4.32
+     4     -112.7828528316    -0.555E-03   0.420E-03      4           5.41
+     5     -112.7828564417    -0.361E-05   0.911E-04      5           6.50
+     6     -112.7828582644    -0.182E-05   0.155E-04      6           7.58
+     7     -112.7828582955    -0.311E-07   0.222E-05      7           8.67
+     8     -112.7828583181    -0.226E-07   0.433E-06      5           9.76
+     9     -112.7828583171     0.994E-09   0.381E-07      5          10.85
+
+ SCF converged in     9 iterations
+
+ SCEXX orbitals written to record    2101.2
+ 
+ !SCEXX Total energy                 -112.782858317135
+  SCEXX One-electron energy          -198.101396711242
+  SCEXX Two-electron energy            62.868029181323
+  SCEXX Nuclear energy                 22.450509212784
+  SCEXX Coulomb energy                 76.183222100095
+  SCEXX Exchange energy               -13.315192918772
+ 
+ !SCEXX Dipole moment                  -0.00000000    -0.00000000    -0.10706964
+ Dipole moment /Debye                  -0.00000000    -0.00000000    -0.27214388
+
+ SCEXX eigenvalues
+   1-  10  -0.18989E+02 -0.10172E+02 -0.12561E+01 -0.68472E+00 -0.58813E+00 -0.58813E+00 -0.48059E+00 -0.19844E+00 -0.19844E+00 -0.11538E+00
+  11-  17  -0.81038E-01 -0.78547E-01 -0.78547E-01 -0.22035E-01 -0.73696E-02 -0.73696E-02  0.24429E-01
+
+ LUMO-HOMO:  0.28215E+00
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      18       30.28       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1700   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
+
+              2       5        2.49       700     1000      520     2100     2101   
+                                         GEOM     BASIS   MCVARS     RHF     SCEXX   
+
+              4       4        4.76      1120     1130     2901     3000   
+
+ PROGRAMS   *        TOTAL      ACFD     DF-HF       INT
+ CPU TIMES  *        19.99     18.37      1.31      0.21
+ REAL TIME  *        13.28 SEC
+ DISK USED  *        47.30 MB
+ **********************************************************************************************************************************
+
+ ACFD/aug-cc-pWCVQZ energy=   -112.782858317135
+
+            ACFD           DF-HF
+   -112.78285832   -112.76795678
+ **********************************************************************************************************************************
+ Molpro calculation terminated
