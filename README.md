@@ -58,3 +58,9 @@ With Xubuntu everything worked as with Ubuntu, except that eigen was manually in
 ```
 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/ --disable-xml2
 ```
+
+## Automatic formatting for Fortran code
+[fprettify](https://github.com/pseewald/fprettify) is a great tool. My choice for formatting:
+```
+fprettify -i 2 -l 80 -w 1 -s
+```
