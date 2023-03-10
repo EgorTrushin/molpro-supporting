@@ -29,6 +29,7 @@ export LD_LIBRARY_PATH=/home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64:$
 
 ### Molpro on Ubuntu with gcc/gfortran
 gcc, mpich, make, cmake, git, etc. are required.
+
 **Install Global Arrays:**
 ```
 ./configure --prefix=/home/trushin/libs/ga-5.8.2  
