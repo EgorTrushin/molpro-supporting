@@ -1,26 +1,59 @@
-## Molpro on Ubuntu with gcc/gfortran
-gcc, mpich, make, cmake, git, etc. are required.
+## Molpro on various Linux systems
 
-**Install Global Arrays:**  
-./configure --prefix=/home/trushin/libs/ga-5.8.2  
-make  
-make check  
+### Molpro on OpenSUSE with Intel oneAPI (tcsv020)
+**Install Global Arrays:**
+```
+I_MPI_CXX=icpc MPICC=mpiicc MPIF77=mpiifort ./configure --prefix=/home/trushin/libs/ga-5.8.2
+make
+make check
 make install
+```
 
-**Install BLAS, lapack, lapacke:**  
-sudo apt-get install liblapack-dev liblapack-doc liblapack-pic liblapack3 liblapack-test liblapacke liblapacke-dev
+**Install eigen3**  
+eigen3 does not need to be compiled, but needs to be downloaded and unpacked into a directory.
 
-**Install eigen3**:  
-sudo apt-get install libeigen3-dev
-
-**Install Molpro**  
-PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2 --disable-xml2  
-make -j 16  
+**Install Molpro**
+```
+I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure --prefix=/home/trushin/Molpro/molpro-ksinv --bindir=/home/trushin/Molpro/molpro-ksinv --disable-gfortran-check
+make -j 28 symtrans_FLAGS=-O0
 make quicktest
+```
+The following two files should be replaced to compile (see directory 'files' in repo):  
+src/util/molpro_main.cpp  
+src/mrci/kext.F90
 
-Copy a Molpro token to /home/trushin/.molpro/ before making quicktest
+It is necessary to have /home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64 in LD_LIBRARY_PATH to use compiled molpro.exe. Add this, e.g., to .bashrc:
+```
+export LD_LIBRARY_PATH=/home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64:$LD_LIBRARY_PATH
+```
 
+### Molpro on Ubuntu with gcc/gfortran
+gcc, mpich, make, cmake, git, etc. are required.
+**Install Global Arrays:**
+```
+./configure --prefix=/home/trushin/libs/ga-5.8.2  
+make
+make check
+make install
+```
+**Install BLAS, lapack, lapacke:**
+```
+sudo apt-get install liblapack-dev liblapack-doc liblapack-pic liblapack3 liblapack-test liblapacke liblapacke-dev
+```
+**Install eigen3**:
+```
+sudo apt-get install libeigen3-dev
+```
+**Install Molpro**
+```
+PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2 --disable-xml2
+make -j 16
+make quicktest
+```
+Copy a Molpro token to /home/trushin/.molpro/ before making quicktest.
 
-## Molpro on Xubuntu with gcc/gfortran
-With Xubuntu eigen was installed/copied manually and configuration was different:  
+### Molpro on Xubuntu with gcc/gfortran
+With Xubuntu everything worked as with Ubuntu, except that eigen was manually installed/copied and the configuration was as follows:
+```
 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/ --disable-xml2
+```
