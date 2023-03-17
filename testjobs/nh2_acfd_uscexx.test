@@ -37,7 +37,7 @@ acfd;uscexx,oepsav=1,thr_fai_oep=5d-2 ! USCEXX charge oepsav
 e(4)=energy
 prog(4)='NH2 charge oepsav'
 
-eold = [-55.584246450945, -55.584773389032, -55.576926434938, -55.579821885614]
+eold = [-55.584246450945, -55.584773389032, -55.576926434938, -55.578073575307]
 
 de=e-eold(1:ii)
 
