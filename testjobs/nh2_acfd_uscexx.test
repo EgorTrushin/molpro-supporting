@@ -1,5 +1,3 @@
-gdirect
-
 symmetry,nosym
 geometry={
 3
@@ -21,23 +19,27 @@ default,aug-cc-pVDZ/mp2fit
 df-uks,pbe,maxit=0,df_basis=aug-cc-pwCVQZ/mp2fit ! KS PBE
 {cfit,basis_coul=aug-cc-pwCVQZ/mp2fit,basis_exch=aug-cc-pwCVQZ/mp2fit}
 
-acfd;uscexx,thr_fai_oep=5d-2 ! USCEXX charge
+acfd;uscexx,thr_fai_oep=5d-2
 e(1)=energy
-prog(1)='NH2 charge'
+prog(1)='NH2 with dfit FA-vref'
 
-acfd;uscexx,homo=3,thr_fai_oep=5d-2 ! USCEXX charge+HOMO
+acfd;uscexx,thr_fai_oep=5d-2,dfit=0
 e(2)=energy
-prog(2)='NH2 charge+HOMO'
+prog(2)='NH2 w/o dfit FA-vref'
 
-acfd;uscexx,charge=0,homoe=0,thr_fai_oep=5d-2 ! USCEXX no constraints
+acfd;uscexx,oepsav=1,thr_fai_oep=5d-2
 e(3)=energy
-prog(3)='NH2 no constraints'
+prog(3)='NH2 with dfit FA-vref spin-averaging'
 
-acfd;uscexx,oepsav=1,thr_fai_oep=5d-2 ! USCEXX charge oepsav
+acfd;uscexx,oepsav=1,thr_fai_oep=5d-2,dfit=0
 e(4)=energy
-prog(4)='NH2 charge oepsav'
+prog(4)='NH2 with dfit FA-vref spin-averaging'
 
-eold = [-55.584246450945, -55.584773389032, -55.576926434938, -55.578073575307]
+acfd;uscexx,thr_fai_oep=5d-2,vref_fa=0
+e(5)=energy
+prog(5)='NH2 with dfit constant-vref'
+
+eold = [-55.584246450945, -55.584245488538, -55.578073575307, -55.578072626753, -55.577014536967]
 
 de=e-eold(1:ii)
 
