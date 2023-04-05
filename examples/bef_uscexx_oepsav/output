@@ -1,13 +1,29 @@
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+[0] MPI startup(): Intel(R) MPI Library, Version 2021.8  Build 20221129 (id: 339ec755a1)
+[0] MPI startup(): Copyright (C) 2003-2022 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: mlx
+[0] MPI startup(): File "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi_mlx.dat" not found
+[0] MPI startup(): Load tuning file: "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi.dat"
+[0] MPI startup(): Rank    Pid      Node name  Pin cpu
+[0] MPI startup(): 0       10899    node031    {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+[0] MPI startup(): I_MPI_ROOT=/opt/intel/oneapi/intelpython/latest
+[0] MPI startup(): I_MPI_HYDRA_TOPOLIB=hwloc
+[0] MPI startup(): I_MPI_PIN_DOMAIN=16
+[0] MPI startup(): I_MPI_INTERNAL_MEM_POLICY=default
+[0] MPI startup(): I_MPI_DEBUG=5
+[0] MPI startup(): I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so.0
 
- Working directory              : /tmp/trushin/molpro.M4oJkHNCTa/
- Global scratch directory       : /tmp/trushin/molpro.M4oJkHNCTa/
+ Working directory              : /scratch/trushin/133407/molpro.n1nvrmQdlu/
+ Global scratch directory       : /scratch/trushin/133407/molpro.n1nvrmQdlu/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /tmp/trushin/molpro.M4oJkHNCTa/
+ Main file repository           : /scratch/trushin/133407/molpro.n1nvrmQdlu/
 
  id        : chemieegortrushi
 
  Nodes     nprocs
- trushin      1
+ node031      1
  GA implementation: MPI file
  GA implementation (serial work in mppx): MPI file
 
@@ -15,7 +31,7 @@
  default implementation of scratch files=df  
 
 
- Variables initialized (1026), CPU time= 0.00 sec
+ Variables initialized (1026), CPU time= 0.01 sec
  memory,2000,m                                                                   ! memory specification
  gdirect                                                                         ! integral-direct mode
  
@@ -40,8 +56,8 @@
  {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
  
  acfd;uscexx,oepsav=1,thr_fai_oep=1.7d-2                                         ! USCEXX calculation
- Commands initialized (841), CPU time= 0.00 sec, 689 directives.
- Default parameters read. Elapsed time= 0.05 sec
+ Commands initialized (841), CPU time= 0.02 sec, 690 directives.
+ Default parameters read. Elapsed time= 0.18 sec
 
  Checking input...
  Passed
@@ -50,15 +66,15 @@
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked Wed Mar  8 23:11:14 2023
+                                    Version 2023.1 linked                         
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 09-Mar-23          TIME: 01:04:45  
+  (16 PROC) 64 bit serial version                                                        DATE: 05-Apr-23          TIME: 15:24:15  
  **********************************************************************************************************************************
 
- SHA1:             b7bb3cdb0610a79b8ab697f5dc98a812777c31de
+ SHA1:             10e461b5fc6a3e1d26f7e720b8f24d588eb91f2f
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -72,7 +88,7 @@
  SETTING BASIS          =    AUG-CC-PWCVQZ
  ZSYMEL=NOSYM
  ZUNIT=ANG
-
+ 
 
  Geometry recognized as XYZ
 
@@ -129,7 +145,7 @@
 
  NUCLEAR REPULSION ENERGY   13.95913433
 
-
+ 
  Basis set:    OEP
  Basis size:   144
  Sphericals:   T
@@ -153,15 +169,15 @@
 
  **********************************************************************************************************************************
  DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      18       30.28       500      610      700      900      950      970     1000      129      960     1100   
+              1      18       30.32       500      610      700      900      950      970     1000      129      960     1100   
                                           VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
                                          1400     1410     1200     1210     1080     1600     1650     1700   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         0.30      0.21
- REAL TIME  *         1.17 SEC
- DISK USED  *        30.62 MB
+ CPU TIMES  *         3.85      3.63
+ REAL TIME  *         1.39 SEC
+ DISK USED  *        30.71 MB
  **********************************************************************************************************************************
 
 
@@ -173,37 +189,37 @@
                                THR2HLF=    1.0D-12
 
  Basis set AWCV5Z-MP2FIT loaded. Number of basis functions: 656
-
+ 
  Orbital guess generated from atomic densities. Full valence occupancy:    7
  Using density fitting in orbital guess
-
+ 
 
  Initial alpha occupancy:   7
  Initial beta  occupancy:   6
 
- Elapsed time for starting guess:      0.58 sec
+ Elapsed time for starting guess:     12.11 sec
 
  NELEC=   13   SYM=1   MS2=1   THRE=1.0D-08   THRD=3.2D-06   THRG=3.2D-06  HFMA2=F  DIIS_START=2   DIIS_MAX=10   DIIS_INCORE=F
 
  Initial level shifts:    0.20 (ALPHA)    0.20 (BETA)
 
  ITER         ETOT            DE          GRAD         DDIFF    DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1   -114.10217467  -114.10217467     0.00D+00     0.00D+00     0     0       0.85      1.43    start
+   1   -114.10217467  -114.10217467     0.00D+00     0.00D+00     0     0      11.74     23.85    start
 
  Orbitals not optimized (maxit=1)
 
  Final alpha occupancy:   7
  Final beta  occupancy:   6
-
+ 
  !UHF STATE 1.1 Energy               -114.102174666515
   UHF One-electron energy            -188.389485622255
   UHF Two-electron energy              60.328176630137
-  UHF Kinetic energy                  115.599378648691
+  UHF Kinetic energy                  115.599378648701
   UHF Nuclear energy                   13.959134325603
   UHF Virial quotient                  -0.987048338843
-
- !UHF STATE 1.1 Dipole moment          -0.00000000     0.00000000    -1.32243269
- Dipole moment /Debye                  -0.00000000     0.00000000    -3.36128862
+ 
+ !UHF STATE 1.1 Dipole moment           0.00000000     0.00000000    -1.32243269
+ Dipole moment /Debye                   0.00000000     0.00000000    -3.36128862
 
  EXPECTATION VALUE OF S**2:             0.75000000
 
@@ -239,29 +255,29 @@
 
  **********************************************************************************************************************************
  DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      18       30.28       500      610      700      900      950      970     1000      129      960     1100   
+              1      18       30.32       500      610      700      900      950      970     1000      129      960     1100   
                                           VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
                                          1400     1410     1200     1210     1080     1600     1650     1700   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
-              2       4        2.22       700     1000      520     2200   
+              2       4        2.26       700     1000      520     2200   
                                          GEOM     BASIS   MCVARS     UHF  
 
  PROGRAMS   *        TOTAL    DF-UHF       INT
- CPU TIMES  *         1.93      1.63      0.21
- REAL TIME  *         2.60 SEC
- DISK USED  *        44.83 MB
+ CPU TIMES  *        27.98     24.12      3.63
+ REAL TIME  *         2.98 SEC
+ DISK USED  *        44.96 MB
  **********************************************************************************************************************************
 
  Basis set:    OEP
  Basis size:   144
  Sphericals:   T
-
+ 
  PROGRAM * USCEXX      (unrestricted self-consistent exact-exchange)
-
+ 
  Authors:
  A. Hesselmann, P. Bleiziffer, D. Schmidtel, J. Erhard, A. Thierbach, E. Trushin
-
+ 
  Read Orbital Records from 2200.2
  Write Orbital Records to 2201.2
  Use density fitting to evaluate the Coulomb and exchange integrals: T
@@ -282,8 +298,6 @@
  Constucting Hartree potential in OEP basis: F
  Fermi-Amaldi as reference potential: T
  The same reference potential for alpha and beta: F
- Use CHARGE constraint for alpha spin
- Use CHARGE constraint for beta spin
 
  Molecular orbitals read from record     2200.2  Type=UHF/ALPHA  
  Orbital energies read from record       2200.2  Type=UHF/ALPHA  
@@ -295,64 +309,68 @@
  Occupation numbers read from record     2200.2  Type=UHF/UHF  
 
    ITER        ENERGY            EDIFF       DDIFF       DIIS         TIME
-     0     -114.1021746665                                            2.53
-     1     -113.9661248708     0.136E+00   0.107E-01      1           5.12
-     2     -114.1602191607    -0.194E+00   0.679E-02      2           7.70
-     3     -114.1662754150    -0.606E-02   0.249E-02      3          10.28
-     4     -114.1663911984    -0.116E-03   0.413E-03      4          12.87
-     5     -114.1664023972    -0.112E-04   0.133E-03      5          15.46
-     6     -114.1664025304    -0.133E-06   0.216E-04      6          18.04
-     7     -114.1664025339    -0.349E-08   0.279E-05      5          20.63
+     0     -114.1021746665                                            1.89
+     1     -113.9551622419     0.147E+00   0.102E-01      1           3.68
+     2     -114.1590017573    -0.204E+00   0.736E-02      2           5.46
+     3     -114.1653787349    -0.638E-02   0.153E-02      3           7.24
+     4     -114.1654383979    -0.597E-04   0.674E-03      4           9.03
+     5     -114.1654168127     0.216E-04   0.159E-03      5          10.81
+     6     -114.1654294015    -0.126E-04   0.476E-04      6          12.59
+     7     -114.1654293201     0.813E-07   0.290E-05      5          14.42
+     8     -114.1654292864     0.337E-07   0.469E-06      5          16.20
+     9     -114.1654292792     0.724E-08   0.813E-07      5          17.99
 
- SCF converged in     7 iterations
+ SCF converged in     9 iterations
 
  USCEXX orbitals written to record    2201.2
  
- !USCEXX Total energy                -114.166402533938
-  USCEXX One-electron energy         -186.940101078765
-  USCEXX Two-electron energy           58.814564219224
+ !USCEXX Total energy                -114.165429279151
+  USCEXX One-electron energy         -186.943737105609
+  USCEXX Two-electron energy           58.819173500855
   USCEXX Nuclear energy                13.959134325603
-  USCEXX Coulomb energy                71.719688399565
-  USCEXX Exchange energy              -12.905124180341
+  USCEXX Coulomb energy                71.723243527407
+  USCEXX Exchange energy              -12.904070026551
  
- !USCEXX Dipole moment                  0.00000000     0.00000000    -0.50470539
- Dipole moment /Debye                   0.00000000     0.00000000    -1.28283315
+ !USCEXX Dipole moment                  0.00000000    -0.00000000    -0.52849864
+ Dipole moment /Debye                   0.00000000    -0.00000000    -1.34330957
 
+ EXPECTATION VALUE OF S**2:             0.75000000
+ 
  USCEXX eigenvalues (alpha)
-   1-  10  -0.24481E+02 -0.41699E+01 -0.13593E+01 -0.68488E+00 -0.64070E+00 -0.64070E+00 -0.39244E+00 -0.23717E+00 -0.23717E+00 -0.16289E+00
-  11-  17  -0.13505E+00 -0.86892E-01 -0.86892E-01 -0.74661E-01 -0.74661E-01 -0.72031E-01 -0.58930E-01
-
- LUMO-HOMO (alpha):  0.15527E+00
-
+   1-  10  -0.24380E+02 -0.40680E+01 -0.12668E+01 -0.59108E+00 -0.54808E+00 -0.54808E+00 -0.30414E+00 -0.15174E+00 -0.15174E+00 -0.11083E+00
+  11-  17  -0.84675E-01 -0.66109E-01 -0.66109E-01 -0.47921E-01 -0.14961E-01 -0.84889E-02 -0.84889E-02
+ 
+ LUMO-HOMO (alpha):  0.15240E+00
+ 
  USCEXX eigenvalues (beta)
-   1-  10  -0.24481E+02 -0.41699E+01 -0.13593E+01 -0.68488E+00 -0.64070E+00 -0.64070E+00 -0.39244E+00 -0.23717E+00 -0.23717E+00 -0.16289E+00
-  11-  17  -0.13505E+00 -0.86892E-01 -0.86892E-01 -0.74661E-01 -0.74661E-01 -0.72031E-01 -0.58930E-01
-
- LUMO-HOMO (beta):  0.24826E+00
+   1-  10  -0.24380E+02 -0.40680E+01 -0.12668E+01 -0.59108E+00 -0.54808E+00 -0.54808E+00 -0.30414E+00 -0.15174E+00 -0.15174E+00 -0.11083E+00
+  11-  17  -0.84675E-01 -0.66109E-01 -0.66109E-01 -0.47921E-01 -0.14961E-01 -0.84889E-02 -0.84889E-02
+ 
+ LUMO-HOMO (beta):  0.24393E+00
 
 
  **********************************************************************************************************************************
  DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      18       30.28       500      610      700      900      950      970     1000      129      960     1100   
+              1      18       30.32       500      610      700      900      950      970     1000      129      960     1100   
                                           VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
                                          1400     1410     1200     1210     1080     1600     1650     1700   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
-              2       5        4.32       700     1000      520     2200     2201   
+              2       5        4.35       700     1000      520     2200     2201   
                                          GEOM     BASIS   MCVARS     UHF    USCEXX    
 
-              4       5       15.33      4000     2900     3000     3100     3200   
+              4       5       15.37      4000     2900     3000     3100     3200   
                                          JMAT   
 
  PROGRAMS   *        TOTAL      ACFD    DF-UHF       INT
- CPU TIMES  *        29.35     27.42      1.63      0.21
- REAL TIME  *        23.25 SEC
- DISK USED  *        61.84 MB
+ CPU TIMES  *       296.79    268.71     24.12      3.63
+ REAL TIME  *        21.00 SEC
+ DISK USED  *        62.00 MB
  **********************************************************************************************************************************
 
- ACFD/aug-cc-pWCVQZ energy=   -114.166402533938
+ ACFD/aug-cc-pWCVQZ energy=   -114.165429279151
 
             ACFD          DF-UHF
-   -114.16640253   -114.10217467
+   -114.16542928   -114.10217467
  **********************************************************************************************************************************
  Molpro calculation terminated

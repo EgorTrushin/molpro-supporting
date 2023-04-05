@@ -1,13 +1,29 @@
+MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
+[0] MPI startup(): Intel(R) MPI Library, Version 2021.8  Build 20221129 (id: 339ec755a1)
+[0] MPI startup(): Copyright (C) 2003-2022 Intel Corporation.  All rights reserved.
+[0] MPI startup(): library kind: release
+[0] MPI startup(): libfabric version: 1.11.0-impi
+[0] MPI startup(): libfabric provider: mlx
+[0] MPI startup(): File "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi_mlx.dat" not found
+[0] MPI startup(): Load tuning file: "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi.dat"
+[0] MPI startup(): Rank    Pid      Node name  Pin cpu
+[0] MPI startup(): 0       6656     node040    {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+[0] MPI startup(): I_MPI_ROOT=/opt/intel/oneapi/intelpython/latest
+[0] MPI startup(): I_MPI_HYDRA_TOPOLIB=hwloc
+[0] MPI startup(): I_MPI_PIN_DOMAIN=16
+[0] MPI startup(): I_MPI_INTERNAL_MEM_POLICY=default
+[0] MPI startup(): I_MPI_DEBUG=5
+[0] MPI startup(): I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so.0
 
- Working directory              : /tmp/trushin/molpro.24L7TlDYZU/
- Global scratch directory       : /tmp/trushin/molpro.24L7TlDYZU/
+ Working directory              : /scratch/trushin/133411/molpro.rzk3ljAR4E/
+ Global scratch directory       : /scratch/trushin/133411/molpro.rzk3ljAR4E/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /tmp/trushin/molpro.24L7TlDYZU/
+ Main file repository           : /scratch/trushin/133411/molpro.rzk3ljAR4E/
 
  id        : chemieegortrushi
 
  Nodes     nprocs
- trushin      1
+ node040      1
  GA implementation: MPI file
  GA implementation (serial work in mppx): MPI file
 
@@ -40,8 +56,8 @@
  {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
  
  acfd;urirpa                                               ! RPA/σ-functional calculation; one can use alternatively: ksrpa;urirpa
- Commands initialized (841), CPU time= 0.00 sec, 689 directives.
- Default parameters read. Elapsed time= 0.06 sec
+ Commands initialized (841), CPU time= 0.02 sec, 690 directives.
+ Default parameters read. Elapsed time= 0.20 sec
 
  Checking input...
  Passed
@@ -50,15 +66,15 @@
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked Wed Mar  8 23:11:14 2023
+                                    Version 2023.1 linked                         
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 09-Mar-23          TIME: 01:01:44  
+  (16 PROC) 64 bit serial version                                                        DATE: 05-Apr-23          TIME: 15:24:16  
  **********************************************************************************************************************************
 
- SHA1:             b7bb3cdb0610a79b8ab697f5dc98a812777c31de
+ SHA1:             10e461b5fc6a3e1d26f7e720b8f24d588eb91f2f
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -87,7 +103,7 @@
  SETTING BASIS          =    AUG-CC-PWCVQZ
  ZSYMEL=NOSYM
  ZUNIT=ANG
-
+ 
 
  Geometry recognized as XYZ
 
@@ -138,7 +154,7 @@
 
  NUCLEAR REPULSION ENERGY   28.04052119
 
-
+ 
  Library entry O      S aug-cc-pwCVQZ-MP     selected for RI group  1
  Library entry O      P aug-cc-pwCVQZ-MP     selected for RI group  1
  Library entry O      D aug-cc-pwCVQZ-MP     selected for RI group  1
@@ -168,15 +184,15 @@
 
  **********************************************************************************************************************************
  DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      18       30.28       500      610      700      900      950      970     1000      129      960     1100   
+              1      18       30.31       500      610      700      900      950      970     1000      129      960     1100   
                                           VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
                                          1400     1410     1200     1210     1080     1600     1650     1700   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         0.30      0.21
- REAL TIME  *         1.15 SEC
- DISK USED  *        30.61 MB
+ CPU TIMES  *         4.07      3.86
+ REAL TIME  *         1.59 SEC
+ DISK USED  *        30.71 MB
  **********************************************************************************************************************************
 
 
@@ -185,10 +201,10 @@
  Density functional group PBE=PBEX+PBEC
  Functional: PBEX(Automatically generated (new) PBEX)                          Gradient terms: 1
  Functional: PBEC(Automatically generated (new) PBEC)                          Gradient terms: 1
-
+ 
  Functional: PBEX                   Factor:  1.0000
  Functional: PBEC                   Factor:  1.0000
-
+ 
 
  Setting radial_scaling=1d0
  Radial grid threshold:                     5.0D-07
@@ -201,60 +217,60 @@
  Pruning method:                                  4
  Pruning function:                                0
 
- Generated new metagrid on record  1800.2 with target accuracy 1.0D-06 and 10240 points in CPU time    0.1
- Computed new grid on record 1800.1 in CPU time    0.1
+ Generated new metagrid on record  1800.2 with target accuracy 1.0D-06 and 10240 points in CPU time    2.3
+ Computed new grid on record 1800.1 in CPU time    2.4
  Grid points discarded due to weight cutoff:      28
 
  DFT orbital screening threshold (tolorb):   1.0D-11
 
  Basis set AUG-CC-PWCV5Z/MP2FIT generated. Number of basis functions:   656 
- Reserved 17 MW to cache 100.0% of significant integrals. CPU: 0.2 sec
+ Reserved 17 MW to cache 100.0% of significant integrals. CPU: 2.9 sec
 
  Coulomb and exchange fitting
  Thresholds for fitting:       THRAO_COUL= 1.0D-17    THRAO_EXCH= 1.0D-15    THRMO= 1.0D-14    THRPROD= 1.0D-14    THRASM= 1.0D-14
                                THR2HLF=    1.0D-14
-
+ 
  Orbital guess generated from atomic densities. Full valence occupancy:   10
  Using density fitting in orbital guess
-
+ 
 
  Initial alpha occupancy:   9
  Initial beta  occupancy:   7
 
- Elapsed time for starting guess:      0.69 sec
+ Elapsed time for starting guess:      6.37 sec
 
  NELEC=   16   SYM=1   MS2=2   THRE=1.0D-11   THRD=1.0D-08   THRG=1.0D-08  HFMA2=F  DIIS_START=2   DIIS_MAX=10   DIIS_INCORE=F
 
  Initial level shifts:    0.20 (ALPHA)    0.20 (BETA)
 
  ITER         ETOT            DE          GRAD         DDIFF    DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1   -150.24867650  -150.24867650     0.00D+00     0.00D+00     0     0       0.69      1.38    start
-   2   -150.25573012    -0.00705362     0.32D-02     0.35D-01     1     0       0.67      2.05    diag
-   3   -150.25687501    -0.00114489     0.12D-02     0.91D-03     2     0       0.68      2.73    diag
-   4   -150.25691752    -0.00004251     0.18D-03     0.23D-03     3     0       0.68      3.41    diag
-   5   -150.25692731    -0.00000979     0.11D-03     0.12D-03     4     0       0.76      4.17    diag
-   6   -150.25692778    -0.00000047     0.15D-04     0.45D-04     5     0       0.80      4.97    diag
-   7   -150.25692781    -0.00000003     0.30D-05     0.74D-05     6     0       0.81      5.78    diag
-   8   -150.25692782    -0.00000000     0.10D-05     0.27D-05     5     0       0.82      6.60    diag
-   9   -150.25692782    -0.00000000     0.25D-06     0.93D-06     6     0       0.81      7.41    diag
-  10   -150.25692782    -0.00000000     0.75D-07     0.35D-06     5     0       0.84      8.25    diag/ort
-  11   -150.25692782    -0.00000000     0.25D-07     0.13D-06     5     0       0.81      9.06    diag
-  12   -150.25692782    -0.00000000     0.89D-08     0.47D-07     6     0       0.82      9.88    diag
-  13   -150.25692782     0.00000000     0.30D-08     0.17D-07     6     0       0.81     10.69    diag
+   1   -150.24867650  -150.24867650     0.00D+00     0.00D+00     0     0       3.58      9.95    start
+   2   -150.25573012    -0.00705362     0.32D-02     0.35D-01     1     0       3.41     13.36    diag
+   3   -150.25687501    -0.00114489     0.12D-02     0.91D-03     2     0       3.40     16.76    diag
+   4   -150.25691752    -0.00004251     0.18D-03     0.23D-03     3     0       3.46     20.22    diag
+   5   -150.25692731    -0.00000979     0.11D-03     0.12D-03     4     0       3.45     23.67    diag
+   6   -150.25692778    -0.00000047     0.15D-04     0.45D-04     5     0       3.42     27.09    diag
+   7   -150.25692781    -0.00000003     0.30D-05     0.74D-05     6     0       3.43     30.52    diag
+   8   -150.25692782    -0.00000000     0.10D-05     0.27D-05     5     0       3.40     33.92    diag
+   9   -150.25692782    -0.00000000     0.25D-06     0.93D-06     6     0       3.43     37.35    diag
+  10   -150.25692782    -0.00000000     0.75D-07     0.35D-06     5     0       3.42     40.77    diag/ort
+  11   -150.25692782    -0.00000000     0.25D-07     0.13D-06     5     0       3.41     44.18    diag
+  12   -150.25692782    -0.00000000     0.89D-08     0.47D-07     6     0       3.43     47.61    diag
+  13   -150.25692782    -0.00000000     0.30D-08     0.17D-07     6     0       3.37     50.98    diag
 
  Final alpha occupancy:   9
  Final beta  occupancy:   7
-
- !UKS STATE 1.1 Energy               -150.256927816281
-  UKS One-electron energy            -261.825719189852
-  UKS Two-electron energy             100.412891917935
-  UKS Kinetic energy                  149.837490512097
+ 
+ !UKS STATE 1.1 Energy               -150.256927816279
+  UKS One-electron energy            -261.825719189850
+  UKS Two-electron energy             100.412891917936
+  UKS Kinetic energy                  149.837490512094
   UKS Nuclear energy                   28.040521193734
   UKS Virial quotient                  -1.002799281427
  Density functional                   -16.88462174     PBEX=-16.35605961 PBEC= -0.52856213
-
- !UKS STATE 1.1 Dipole moment          -0.00000000     0.00000000     0.00000001
- Dipole moment /Debye                  -0.00000000     0.00000000     0.00000002
+ 
+ !UKS STATE 1.1 Dipole moment           0.00000000    -0.00000000     0.00000000
+ Dipole moment /Debye                   0.00000000    -0.00000000     0.00000001
 
  EXPECTATION VALUE OF S**2:             2.00464740
 
@@ -293,21 +309,21 @@
 
  **********************************************************************************************************************************
  DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      19       30.59       500      610      700      900      950      970     1000      129      960     1100   
+              1      19       30.63       500      610      700      900      950      970     1000      129      960     1100   
                                           VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
                                          1400     1410     1200     1210     1080     1600     1650     1700     1800   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER     GRID   
 
-              2       5        2.23       700     1000      520     1800     2200   
+              2       5        2.26       700     1000      520     1800     2200   
                                          GEOM     BASIS   MCVARS    GRID      UKS  
 
-              4       4        9.69      4001     2900     3000     3100   
+              4       4        9.72      4001     2900     3000     3100   
                                         JINV/CD    
 
  PROGRAMS   *        TOTAL    DF-UKS       INT
- CPU TIMES  *        11.42     11.12      0.21
- REAL TIME  *         9.46 SEC
- DISK USED  *        42.59 MB
+ CPU TIMES  *        58.39     54.30      3.86
+ REAL TIME  *         5.31 SEC
+ DISK USED  *        42.71 MB
  **********************************************************************************************************************************
 
  Library entry O      S aug-cc-pwCVQZ-MP     selected for RI group  1
@@ -322,10 +338,10 @@
  
  PROGRAM * URIRPA
  (unrestricted resolution of identity random-phase approximation)
-
+ 
  Authors:
  A. Hesselmann, P. Bleiziffer, D. Schmidtel, J. Erhard, A. Thierbach, E. Trushin
-
+ 
  Read Orbital Records from 2200.2
  Threshold for eigenvalue difference in construction of X0:     1.000E-06
  Threshold for processing RI basis thr_overlap_ri:     1.000E-99
@@ -347,34 +363,34 @@
  Occupation numbers read from record     2200.2  Type=UKS/UKS  
  Occupation numbers read from record     2200.2  Type=UKS/UKS  
  Basis set AWCV5Z/MP2FIT generated.      Number of basis functions:   656 
-
-  Reference Energy                   -149.660057956164
+ 
+  Reference Energy                   -149.660057956163
   RPA Correlation Energy               -0.950227397206
-  RPA Total Energy                   -150.610285353370
+  RPA Total Energy                   -150.610285353369
   SIGMA Correlation Energy             -0.725629813773
- !SIGMA Total Energy                 -150.385687769937
+ !SIGMA Total Energy                 -150.385687769936
 
 
  **********************************************************************************************************************************
  DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
-              1      19       30.59       500      610      700      900      950      970     1000      129      960     1100   
+              1      19       30.63       500      610      700      900      950      970     1000      129      960     1100   
                                           VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
                                          1400     1410     1200     1210     1080     1600     1650     1700     1800   
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER     GRID   
 
-              2       5        2.42       700     1000      520     1800     2200   
+              2       5        2.45       700     1000      520     1800     2200   
                                          GEOM     BASIS   MCVARS    GRID      UKS  
 
-              4       1        3.31      4000   
+              4       1        3.35      4000   
                                          JMAT   
 
  PROGRAMS   *        TOTAL      ACFD    DF-UKS       INT
- CPU TIMES  *        36.91     25.49     11.12      0.21
- REAL TIME  *        35.00 SEC
- DISK USED  *        54.01 MB
+ CPU TIMES  *       121.92     63.39     54.30      3.86
+ REAL TIME  *         9.70 SEC
+ DISK USED  *        54.13 MB
  **********************************************************************************************************************************
 
- ACFD/aug-cc-pWCVQZ energy=   -150.385687769937
+ ACFD/aug-cc-pWCVQZ energy=   -150.385687769936
 
             ACFD          DF-UKS
    -150.38568777   -150.25692782
