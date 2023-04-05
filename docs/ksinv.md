@@ -1,0 +1,31 @@
+- **refden** record from which the reference density is read
+- **orb** record from which the occupation numbers are read (default: ‘2100.2’)
+- **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2')
+- **e_ref** total energy of calculations from which reference density is provided
+- **thr_inversion**
+- **maxit** maximum number of iterations (default '30')
+- **minit** minimum number of iterations (default '3')
+- **mixing_a**
+- **mix_switch_iter**
+- **backfilter**
+- **thr_sym** threshold for symmetrization of the OEP basis set to enforce OEP basis exhibits full symmetry of molecule. Set the threshold to 1d-10 to enable symmetrization. (default: ‘0d0’)
+- **thr_fai_oep** threshold for processing OEP basis according to Section IIB5 in Ref. [2] (default: ‘1.7d-2’)
+- **thr_overlap_oep** threshold for processing OEP basis according to Section IIB2 in Ref. [2] (default: ‘1d-99’)
+- **vref_fa** if set to $\neq$ 0, enable the use of the Fermi-Amaldi potential as reference potential when applying the charge condition. Otherwise, the reference potential is constructed according to Eq. (45) of Ref. [2] (default: '1')
+- **thr_oep** threshold for throwing out contributions corresponding to small eigenvalue differences appearing in the denominator when constructing the so-called lambda term $1/(\varepsilon_a - \varepsilon_i)$ of the static Kohn-Sham response function (default: ‘1d-6’)
+- **solve** matrix inversion methods to solve the OEP equation. The different options are: GESV, TSVD, GTSVD. GESV corresponds to a direct solution without any regularization technique. TSVD and GTSVD correspond to two solutions with regularization according to Eqs. (55) and (56) of Ref. [3], respectively. (default: 'GTSVD')
+- **thr_solve** threshold used during matrix inversion to solve the OEP equation with TSVD and TGSVD methods. Note that the default threshold of 1d-99 results in the absence of regularization (default: ‘1d-99’)
+- **plot_always**
+- **plot_vc**
+- **plot_vx**
+- **plot_vxc**
+- **plot_vref**
+- **plot_rho_ks**
+- **plot_rho_ref**
+- **plot_rho_diff**
+- **plot_x**
+- **plot_y**
+- **plot_z**
+- **gridsize**
+- **plotrange**
+- **verb**
