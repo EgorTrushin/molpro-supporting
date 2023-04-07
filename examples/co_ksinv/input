@@ -1,0 +1,26 @@
+memory,2000,m ! memory specification
+
+basis={
+default,aug-cc-pwCVQZ ! orbital basis
+set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+}
+
+symmetry,nosym ! KSINV does not use symmetry
+
+angstrom
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
+}
+
+hf,maxit=30 ! HF calculations
+
+{CCSD;core;dm,1325.1} ! reference CCSD calculation
+e_ref_ccsd=energy ! save energy to provide as a reference to KSINV
+
+! Save relaxed density to the first record - required by KSINV
+{matrop;load,den,den,1325.1;save,den,1325.1}
+
+acfd;ksinv,refden=1325.1,e_ref=e_ref_ccsd,thr_fai_oep=1.7d-2 ! KSINV calculation

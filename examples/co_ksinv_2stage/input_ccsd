@@ -1,0 +1,20 @@
+memory,2000,m ! memory specification
+
+basis={
+default,aug-cc-pwCVQZ ! orbital basis
+}
+
+symmetry,nosym ! KSINV does not use symmetry
+
+angstrom
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
+}
+
+hf,maxit=30 ! HF calculations
+
+{CCSD;core;dm,1325.1} ! reference CCSD calculation
+{matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
