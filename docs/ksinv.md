@@ -19,10 +19,13 @@ C        0.000000    0.000000   -0.646514
 O        0.000000    0.000000    0.484886
 }
 
-hf,maxit=30 ! HF calculation
+hf,maxit=30 ! HF calculations
 
 {CCSD;core;dm,1325.1} ! reference CCSD calculation
 e_ref_ccsd=energy ! save energy to provide as a reference to KSINV
+
+! Save relaxed density to the first record - required by KSINV
+{matrop;load,den,den,1325.1;save,den,1325.1}
 
 acfd;ksinv,refden=1325.1,e_ref=e_ref_ccsd,thr_fai_oep=1.7d-2 ! KSINV calculation
 ```
@@ -47,7 +50,7 @@ O        0.000000    0.000000    0.484886
 hf,maxit=30 ! HF calculations
 
 {CCSD;core;dm,1325.1} ! reference CCSD calculation
-{matrop;export,1325.1,dm.dat,status=rewind,prec=sci}
+{matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
 ```
 ... bla-bla ...
 ```
@@ -70,9 +73,9 @@ O        0.000000    0.000000    0.484886
 
 hf,maxit=0 ! HF calculation with 0 iterations, KSINV uses this for initialization
 
-{matrop;import,1325.1,file=dm.dat} ! read stored density matrix
+{matrop;read,den,type=density,file=dm.dat;save,den,1325.1} ! read stored density matrix
 
-acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calculations
+acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calculation
 ```
 
 - **refden** record from which the reference density is read
@@ -109,6 +112,42 @@ acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calc
 
 plotting example
 
+```
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+
+def load_potential(filename):
+    """Read data from file."""
+    coord = list()
+    pot = list()
+    for line in open(filename):
+        aux = line.split()
+        coord.append(float(aux[2]))
+        pot.append(float(aux[3]))
+    coord = np.array(coord)
+    pot = np.array(pot)
+    return coord, pot
+
+coord, vref = load_potential('vref-final.z')
+coord, vx = load_potential('vx-final.z')
+coord, vc = load_potential('vc-final.z')
+coord, vxc = load_potential('vxc-final.z')
+
+plt.plot(coord, vref+vx, color='orangered', label='$v_x$')
+plt.plot(coord, vc, color='dodgerblue', label='$v_c$')
+plt.plot(coord, vref+vxc, color='lawngreen', label='$v_{xc}$')
+
+plt.ylabel('Potential (Hartree)', fontsize=16)
+plt.xlabel('r (Bohr)', fontsize=16)
+plt.ylim(-2, 0.35)
+plt.xlim(-5, 5)
+plt.legend(frameon=False, fontsize=14)
+plt.show()
+```
+![](ksinv_co.png)
+
+**Bibilography:**  
 [1] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
 [2] E. Trushin, A. Görling, [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0056431) 155, 054109 (2021)  
 [3] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)

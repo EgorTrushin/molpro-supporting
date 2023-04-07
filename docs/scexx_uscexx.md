@@ -99,6 +99,7 @@ Pitfalls:
 - One might encounter convergence problem using DIIS for systems exhibiting small HOMO-LUMO gaps. In this case switching to linear mixing scheme often might resolve the problem.
  - One might sometimes encounter energy oscillations between two solutions with different numbers of OEP basis functions remaining after OEP basis set preprocessing.  A small change in **thr_fai_oep** may solve the problem.
 
+**Bibilography:**  
 [1] A. Heßelmann, A.W. Götz, F. Della Sala, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.2751159) 127, 054102 (2007)  
 [2] E. Trushin, A. Görling, [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0056431) 155, 054109 (2021)  
 [3] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)
