@@ -1,0 +1,47 @@
+basis={
+default,aug-cc-pwCVTZ
+set,oep;default,aug-cc-pVDZ/mp2fit
+}
+
+symmetry,nosym
+
+angstrom
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
+}
+
+hf,maxit=30
+
+{CCSD;core;dm,1325.1}
+e_ref_ccsd=energy
+
+{matrop;load,den,den,1325.1;save,den,1325.1}
+
+acfd;ksinv,refden=1325.1,e_ref=e_ref_ccsd,thr_fai_oep=5d-2
+e(1)=energy
+prog(1)='Inversion of CCSD'
+
+acfd;scexx,dfit=0,thr_fai_oep=1.7d-2
+e_ref_scexx=energy
+
+acfd;ksinv,orb=2100.2,refden=2101.2,e_ref=e_ref_scexx,thr_fai_oep=1.7d-2
+e(2)=energy
+prog(2)='Inversion of SCEXX'
+
+eold = [-113.260789239326, -112.776634621702]
+
+de=e-eold(1:ii)
+
+text,Results for job co_ksinv.test
+if(max(abs(de)).lt.1.d-6) then
+  table,prog,e,eold,de
+  save,test.log
+  title,No errors in co_ksinv.test
+else
+  table,prog,e,eold,de
+  save,test.log
+  title,ERRORS DETECTED in co_ksinv.test, de=$de
+endif
