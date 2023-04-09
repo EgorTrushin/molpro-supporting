@@ -1,6 +1,9 @@
 ## KSINV program
-The KSINV program allows ... spin-restricted
+The program KSINV solves the inverse Kohn-Sham (KS) problem, i.e. it finds the KS quantities (potentials, KS orbitals and eigenvalues) corresponding to a given density. The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Full Configuration Interaction (FCI). The program is currently limited to non-spin polarized systems. The implementation was described and tested in Ref. [1].
 
+RESPONSE AG REF
+
+Example input file for KS inversion of the reference density provided by the CCSD method for the CO molecule:
 ```
 memory,2000,m ! memory specification
 
@@ -24,12 +27,12 @@ hf,maxit=30 ! HF calculations
 {CCSD;core;dm,1325.1} ! reference CCSD calculation
 e_ref_ccsd=energy ! save energy to provide as a reference to KSINV
 
-! Save relaxed density to the first record - required by KSINV
+! save relaxed density to the first record - required by KSINV
 {matrop;load,den,den,1325.1;save,den,1325.1}
 
 acfd;ksinv,refden=1325.1,e_ref=e_ref_ccsd,thr_fai_oep=1.7d-2 ! KSINV calculation
 ```
-... bla-bla ...
+It may be useful to split the reference density and KS inversion calculations into two separate calculations. In this case, the reference density can be saved:
 ```
 memory,2000,m ! memory specification
 
@@ -52,7 +55,7 @@ hf,maxit=30 ! HF calculations
 {CCSD;core;dm,1325.1} ! reference CCSD calculation
 {matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
 ```
-... bla-bla ...
+and then the KS inversion performed:
 ```
 memory,2000,m ! memory specification
 
@@ -77,7 +80,7 @@ hf,maxit=0 ! HF calculation with 0 iterations, KSINV uses this for initializatio
 
 acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calculation
 ```
-
+The following options are available for the KSINV program:
 - **refden** record from which the reference density is read
 - **orb** record from which the occupation numbers are read (default: ‘2100.2’)
 - **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2')
@@ -110,8 +113,12 @@ acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calc
 - **plotrange**
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)
 
-plotting example
-
+Because the KS correlation and exchange potentials are important in KS inversion, we provide an illustration of how to plot these quantities. Let us assume that we have performed calculations for CO with the following options:
+```
+acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2,\ ! KSINV calculation
+plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
+```
+In the end one has the files vref-final.z, vx-final.z, vc-final.z and vxc-final.z with reference, exchange, correlation and exchange-correlation potentials respectively. Potentials can be plotted using python and matplotlib as follows:
 ```
 import sys
 import numpy as np
@@ -146,6 +153,10 @@ plt.legend(frameon=False, fontsize=14)
 plt.show()
 ```
 ![](ksinv_co.png)
+
+CCSD(T)
+
+FCI
 
 **Bibilography:**  
 [1] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
