@@ -71,3 +71,10 @@ PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2 CPPFLAGS=-I/home
 ```
 fprettify -i 2 -l 80 -w 1 -s
 ```
+
+## Molpro with SLURM running
+One can replace LAUNCHER in bin/molpro (bin/molpro.sh)
+```
+LAUNCHER="/usr/bin/srun %x”
+```
+This helped to run properly hybrid MPI+OpenMP calculations on multiple nodes using cluster machines.
