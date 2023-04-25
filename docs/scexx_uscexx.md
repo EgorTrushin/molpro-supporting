@@ -15,7 +15,6 @@ These thresholds are expected to work also for orbital basis sets without augmen
 
 Below is an example input file for spin-restricted calculations for the CO molecule. Note that the input record from a preceding calculation is mandatory for initialization of orbitals and eigenvalues as starting point for EXX calculation, whereas it can come from HF or DFT calculations with maxit=0.
 ```
-memory,8000,m ! memory specification
 gdirect ! integral-direct mode
 
 basis={
@@ -40,7 +39,6 @@ acfd;scexx,thr_fai_oep=1.7d-2 ! SCEXX calculation
 ```
 As well as an example of a spin-unrestricted calculation for the BeF molecule:
 ```
-memory,8000,m ! memory specification
 gdirect ! integral-direct mode
 
 basis={
@@ -85,8 +83,9 @@ The following options are available for the SCEXX and USCEXX programs:
 - **thr_solve** threshold used during matrix inversion to solve the OEP equation with TSVD and GTSVD methods. Note that the default threshold of 1d-99 results in the absence of regularization (default: ‘1d-99’)  
 - **vref_fa** if set to $\neq$ 0, enable the use of the Fermi-Amaldi potential as reference potential. Otherwise, the reference potential is constructed according to Eq. (45) of Ref. [2] (default: '1')  
 - **vhoep** if set to $\neq$ 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)  
-- **plot** if set to $\neq$ 0, enable writing of file with reference and exchange potentials for every iterations. Note that in this case the input orbitals should come from the preceding Hartree-Fock calculations. (default: ‘0’)  
-- **plotpath** Absolute path where the files with the potentials will be written. Example of use: plotpath='/home/.../'  
+- **plot_x** if set to $\neq$ 0, enable writing of file with plotting data for exchange potential along x-axis (default: '0')
+- **plot_y** if set to $\neq$ 0, enable writing of file with plotting data for exchange potential along y-axis (default: '0')
+- **plot_z** if set to $\neq$ 0, enable writing of file with plotting data for exchange potential along z-axis (default: '0')
 - **test_pot** if set to $\neq$ 0, enable a numerical test to determine if the potential is the derivative of the energy expression (default ’0’)  
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)  
 

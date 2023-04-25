@@ -1,29 +1,13 @@
-MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
-[0] MPI startup(): Intel(R) MPI Library, Version 2021.8  Build 20221129 (id: 339ec755a1)
-[0] MPI startup(): Copyright (C) 2003-2022 Intel Corporation.  All rights reserved.
-[0] MPI startup(): library kind: release
-[0] MPI startup(): libfabric version: 1.11.0-impi
-[0] MPI startup(): libfabric provider: mlx
-[0] MPI startup(): File "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi_mlx.dat" not found
-[0] MPI startup(): Load tuning file: "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi.dat"
-[0] MPI startup(): Rank    Pid      Node name  Pin cpu
-[0] MPI startup(): 0       18367    node030    {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
-[0] MPI startup(): I_MPI_ROOT=/opt/intel/oneapi/intelpython/latest
-[0] MPI startup(): I_MPI_HYDRA_TOPOLIB=hwloc
-[0] MPI startup(): I_MPI_PIN_DOMAIN=16
-[0] MPI startup(): I_MPI_INTERNAL_MEM_POLICY=default
-[0] MPI startup(): I_MPI_DEBUG=5
-[0] MPI startup(): I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so.0
 
- Working directory              : /scratch/trushin/133406/molpro.g5gDWNX29a/
- Global scratch directory       : /scratch/trushin/133406/molpro.g5gDWNX29a/
+ Working directory              : /tmp/trushin/molpro.x2P7gZswue/
+ Global scratch directory       : /tmp/trushin/molpro.x2P7gZswue/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /scratch/trushin/133406/molpro.g5gDWNX29a/
+ Main file repository           : /tmp/trushin/molpro.x2P7gZswue/
 
  id        : chemieegortrushi
 
- Nodes     nprocs
- node030      1
+ Nodes         nprocs
+ trushin-laptop    1
  GA implementation: MPI file
  GA implementation (serial work in mppx): MPI file
 
@@ -31,8 +15,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  default implementation of scratch files=df  
 
 
- Variables initialized (1026), CPU time= 0.01 sec
- memory,2000,m                                                                   ! memory specification
+ Variables initialized (1031), CPU time= 0.00 sec
  gdirect                                                                         ! integral-direct mode
  
  basis={
@@ -56,8 +39,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
  
  acfd;uscexx,thr_fai_oep=1.7d-2                                                  ! USCEXX calculation
- Commands initialized (841), CPU time= 0.02 sec, 690 directives.
- Default parameters read. Elapsed time= 0.18 sec
+ Commands initialized (842), CPU time= 0.01 sec, 704 directives.
+ Default parameters read. Elapsed time= 0.05 sec
 
  Checking input...
  Passed
@@ -66,15 +49,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked                         
+                                    Version 2023.1 linked Tue Apr 25 21:57:51 2023
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 05-Apr-23          TIME: 15:24:15  
+  (16 PROC) 64 bit serial version                                                        DATE: 25-Apr-23          TIME: 22:06:31  
  **********************************************************************************************************************************
 
- SHA1:             10e461b5fc6a3e1d26f7e720b8f24d588eb91f2f
+ SHA1:             c9539e2a6fe7c8460ba43ab18f35e13774d4ae12
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -88,7 +71,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  SETTING BASIS          =    AUG-CC-PWCVQZ
  ZSYMEL=NOSYM
  ZUNIT=ANG
- 
+
 
  Geometry recognized as XYZ
 
@@ -145,7 +128,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
  NUCLEAR REPULSION ENERGY   13.95913433
 
- 
+
  Basis set:    OEP
  Basis size:   144
  Sphericals:   T
@@ -175,8 +158,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         3.97      3.76
- REAL TIME  *         1.62 SEC
+ CPU TIMES  *         0.75      0.65
+ REAL TIME  *         1.05 SEC
  DISK USED  *        30.71 MB
  **********************************************************************************************************************************
 
@@ -189,37 +172,37 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                THR2HLF=    1.0D-12
 
  Basis set AWCV5Z-MP2FIT loaded. Number of basis functions: 656
- 
+
  Orbital guess generated from atomic densities. Full valence occupancy:    7
  Using density fitting in orbital guess
- 
+
 
  Initial alpha occupancy:   7
  Initial beta  occupancy:   6
 
- Elapsed time for starting guess:     12.45 sec
+ Elapsed time for starting guess:      2.56 sec
 
  NELEC=   13   SYM=1   MS2=1   THRE=1.0D-08   THRD=3.2D-06   THRG=3.2D-06  HFMA2=F  DIIS_START=2   DIIS_MAX=10   DIIS_INCORE=F
 
  Initial level shifts:    0.20 (ALPHA)    0.20 (BETA)
 
  ITER         ETOT            DE          GRAD         DDIFF    DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1   -114.10217467  -114.10217467     0.00D+00     0.00D+00     0     0      12.29     24.74    start
+   1   -114.10217467  -114.10217467     0.00D+00     0.00D+00     0     0       3.60      6.16    start
 
  Orbitals not optimized (maxit=1)
 
  Final alpha occupancy:   7
  Final beta  occupancy:   6
- 
+
  !UHF STATE 1.1 Energy               -114.102174666515
   UHF One-electron energy            -188.389485622255
-  UHF Two-electron energy              60.328176630137
-  UHF Kinetic energy                  115.599378648701
+  UHF Two-electron energy              60.328176630138
+  UHF Kinetic energy                  115.599378648698
   UHF Nuclear energy                   13.959134325603
   UHF Virial quotient                  -0.987048338843
- 
- !UHF STATE 1.1 Dipole moment           0.00000000     0.00000000    -1.32243269
- Dipole moment /Debye                   0.00000000     0.00000000    -3.36128862
+
+ !UHF STATE 1.1 Dipole moment           0.00000000    -0.00000000    -1.32243269
+ Dipole moment /Debye                   0.00000000    -0.00000000    -3.36128862
 
  EXPECTATION VALUE OF S**2:             0.75000000
 
@@ -264,20 +247,20 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                          GEOM     BASIS   MCVARS     UHF  
 
  PROGRAMS   *        TOTAL    DF-UHF       INT
- CPU TIMES  *        29.06     25.08      3.76
- REAL TIME  *         3.28 SEC
+ CPU TIMES  *         8.18      7.44      0.65
+ REAL TIME  *         2.52 SEC
  DISK USED  *        44.96 MB
  **********************************************************************************************************************************
 
  Basis set:    OEP
  Basis size:   144
  Sphericals:   T
- 
+
  PROGRAM * USCEXX      (unrestricted self-consistent exact-exchange)
- 
+
  Authors:
  A. Hesselmann, P. Bleiziffer, D. Schmidtel, J. Erhard, A. Thierbach, E. Trushin
- 
+
  Read Orbital Records from 2200.2
  Write Orbital Records to 2201.2
  Use density fitting to evaluate the Coulomb and exchange integrals: T
@@ -309,44 +292,48 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Occupation numbers read from record     2200.2  Type=UHF/UHF  
 
    ITER        ENERGY            EDIFF       DDIFF       DIIS         TIME
-     0     -114.1021746665                                            2.12
-     1     -113.9755888848     0.127E+00   0.102E-01      1           4.00
-     2     -114.1613125224    -0.186E+00   0.703E-02      2           5.90
-     3     -114.1664803074    -0.517E-02   0.118E-02      3           7.78
-     4     -114.1666274495    -0.147E-03   0.420E-03      4           9.67
-     5     -114.1666233141     0.414E-05   0.101E-03      5          11.56
-     6     -114.1666270093    -0.370E-05   0.141E-04      6          13.45
-     7     -114.1666276673    -0.658E-06   0.494E-05      5          15.34
-     8     -114.1666275800     0.873E-07   0.918E-06      6          17.23
-     9     -114.1666275986    -0.187E-07   0.257E-06      6          19.12
-    10     -114.1666275931     0.548E-08   0.460E-07      6          21.01
+     0     -114.1021746665                                            2.46
+     1     -113.9755888848     0.127E+00   0.102E-01      1           5.43
+     2     -114.1613125224    -0.186E+00   0.703E-02      2           8.75
+     3     -114.1664803074    -0.517E-02   0.118E-02      3          12.18
+     4     -114.1666274495    -0.147E-03   0.420E-03      4          15.46
+     5     -114.1666233141     0.414E-05   0.101E-03      5          18.77
+     6     -114.1666270093    -0.370E-05   0.141E-04      6          22.39
+     7     -114.1666276673    -0.658E-06   0.494E-05      5          25.85
+     8     -114.1666275800     0.873E-07   0.918E-06      6          28.84
+     9     -114.1666275986    -0.187E-07   0.257E-06      6          32.39
+    10     -114.1666275931     0.548E-08   0.460E-07      6          35.72
 
  SCF converged in    10 iterations
 
  USCEXX orbitals written to record    2201.2
  
  !USCEXX Total energy                -114.166627593145
-  USCEXX One-electron energy         -186.938130766257
-  USCEXX Two-electron energy           58.812368847509
+  USCEXX One-electron energy         -186.938130766593
+  USCEXX Two-electron energy           58.812368847846
   USCEXX Nuclear energy                13.959134325603
-  USCEXX Coulomb energy                71.717367344732
-  USCEXX Exchange energy              -12.904998497223
+  USCEXX Coulomb energy                71.717367345117
+  USCEXX Exchange energy              -12.904998497271
  
  !USCEXX Dipole moment                  0.00000000    -0.00000000    -0.52896072
  Dipole moment /Debye                   0.00000000    -0.00000000    -1.34448404
 
  EXPECTATION VALUE OF S**2:             0.75122459
- 
+
  USCEXX eigenvalues (alpha)
    1-  10  -0.24372E+02 -0.40418E+01 -0.12519E+01 -0.57886E+00 -0.53308E+00 -0.53308E+00 -0.30832E+00 -0.15334E+00 -0.15334E+00 -0.10759E+00
   11-  17  -0.84392E-01 -0.66098E-01 -0.66098E-01 -0.46193E-01 -0.12706E-01 -0.61668E-02 -0.61668E-02
- 
+
+ HOMO (alpha): -0.30832E+00
+ LUMO (alpha): -0.15334E+00
  LUMO-HOMO (alpha):  0.15499E+00
- 
+
  USCEXX eigenvalues (beta)
    1-  10  -0.24436E+02 -0.41178E+01 -0.13164E+01 -0.63973E+00 -0.59840E+00 -0.59840E+00 -0.22451E+00 -0.13388E+00 -0.13388E+00 -0.11642E+00
   11-  17  -0.70012E-01 -0.64669E-01 -0.64669E-01 -0.46345E-01 -0.16881E-01 -0.16881E-01 -0.16294E-01
- 
+
+ HOMO (beta): -0.59840E+00
+ LUMO (beta): -0.22451E+00
  LUMO-HOMO (beta):  0.37389E+00
 
 
@@ -364,8 +351,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                          JMAT   
 
  PROGRAMS   *        TOTAL      ACFD    DF-UHF       INT
- CPU TIMES  *       342.06    312.91     25.08      3.76
- REAL TIME  *        24.32 SEC
+ CPU TIMES  *       173.28    165.06      7.44      0.65
+ REAL TIME  *        38.28 SEC
  DISK USED  *        62.00 MB
  **********************************************************************************************************************************
 

@@ -1,4 +1,3 @@
-memory,2000,m ! memory specification
 gdirect ! integral-direct mode
 
 basis={
@@ -12,8 +11,8 @@ angstrom
 geometry={
 2
 
-C        0.000000    0.000000   -0.646514 
-O        0.000000    0.000000    0.484886 
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
 }
 
 df-hf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit ! HF calculation with 0 iteration

@@ -1,5 +1,3 @@
-memory,2000,m ! memory specification
-
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
 }

@@ -17,7 +17,6 @@ We kindly ask you to cite the original publications of the corresponding methods
 
 Example input file for spin-restricted calculations for the CO molecule:
 ```
-memory,8000,m ! memory specification
 gthresh,twoint=1d-20,energy=1d-10,orbital=1d-8 ! tighter thresholds are recommended
 gdirect ! integral-direct mode
 
@@ -43,7 +42,6 @@ acfd;rirpa ! RPA/σ-functional calculation
 ```
 As well as an example of spin-unrestricted calculation for the NH<sub>2</sub> molecule:
 ```
-memory,8000,m ! memory specification
 gthresh,twoint=1d-20,energy=1d-10,orbital=1d-8 ! tighter thresholds are recommended
 gdirect ! integral-direct mode
 

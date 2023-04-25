@@ -1,8 +1,8 @@
 
- Working directory              : /tmp/trushin/molpro.SCiTY4CrrO/
- Global scratch directory       : /tmp/trushin/molpro.SCiTY4CrrO/
+ Working directory              : /tmp/trushin/molpro.kcapVTaqJH/
+ Global scratch directory       : /tmp/trushin/molpro.kcapVTaqJH/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /tmp/trushin/molpro.SCiTY4CrrO/
+ Main file repository           : /tmp/trushin/molpro.kcapVTaqJH/
 
  id        : chemieegortrushi
 
@@ -15,9 +15,7 @@
  default implementation of scratch files=df  
 
 
- Variables initialized (1028), CPU time= 0.00 sec
- memory,2000,m                                                                   ! memory specification
- 
+ Variables initialized (1031), CPU time= 0.00 sec
  basis={
  default,aug-cc-pwCVQZ                                                           ! orbital basis
  set,oep;default,aug-cc-pVDZ/mp2fit                                              ! OEP basis
@@ -38,7 +36,7 @@
  
  acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2,\           ! KSINV calculation
  plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
- Commands initialized (841), CPU time= 0.00 sec, 692 directives.
+ Commands initialized (842), CPU time= 0.00 sec, 704 directives.
  Default parameters read. Elapsed time= 0.05 sec
 
  Checking input...
@@ -48,15 +46,15 @@
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked Fri Apr  7 21:53:30 2023
+                                    Version 2023.1 linked Tue Apr 25 21:57:51 2023
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 07-Apr-23          TIME: 22:58:01  
+  (16 PROC) 64 bit serial version                                                        DATE: 25-Apr-23          TIME: 22:31:16  
  **********************************************************************************************************************************
 
- SHA1:             6d59e52f6e9ecb459feb34330aba5e0f3971c0af
+ SHA1:             c9539e2a6fe7c8460ba43ab18f35e13774d4ae12
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -155,8 +153,8 @@
 
  Memory used in sort:      16.56 MW
 
- SORT1 READ   366115963. AND WROTE    49490720. INTEGRALS IN    150 RECORDS. CPU TIME:     0.67 SEC, REAL TIME:     0.96 SEC
- SORT2 READ    49490720. AND WROTE   284924256. INTEGRALS IN   1497 RECORDS. CPU TIME:     1.36 SEC, REAL TIME:     1.56 SEC
+ SORT1 READ   366115963. AND WROTE    49490720. INTEGRALS IN    150 RECORDS. CPU TIME:     0.80 SEC, REAL TIME:     1.05 SEC
+ SORT2 READ    49490720. AND WROTE   284924256. INTEGRALS IN   1497 RECORDS. CPU TIME:     1.42 SEC, REAL TIME:     1.60 SEC
 
  FILE SIZES:   FILE 1:   424.2 MBYTE,  FILE 4:   629.2 MBYTE,   TOTAL:   1053.4 MBYTE
 
@@ -171,8 +169,8 @@
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *        26.73     26.65
- REAL TIME  *        11.07 SEC
+ CPU TIMES  *        27.98     27.90
+ REAL TIME  *        11.50 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
@@ -188,7 +186,7 @@
  Level shifts:    0.00 (CLOSED)    0.00 (OPEN)    0.30 (GAP_MIN)
 
  ITER           ETOT              DE          GRAD        DDIFF     DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1     -112.76795675    -112.76795675     0.00D+00     0.32D-01     0     0      12.29     20.67    start
+   1     -112.76795675    -112.76795675     0.00D+00     0.32D-01     0     0      10.32     19.44    start
 
  Orbitals not optimized (maxit=1)
 
@@ -228,8 +226,8 @@
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL    HF-SCF       INT
- CPU TIMES  *        47.42     20.69     26.65
- REAL TIME  *        15.32 SEC
+ CPU TIMES  *        47.42     19.44     27.90
+ REAL TIME  *        15.28 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
@@ -253,8 +251,8 @@
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL    MATROP    HF-SCF       INT
- CPU TIMES  *        48.07      0.64     20.69     26.65
- REAL TIME  *        15.66 SEC
+ CPU TIMES  *        48.08      0.65     19.44     27.90
+ REAL TIME  *        15.61 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
@@ -302,30 +300,30 @@
  Occupation numbers read from record     2100.2  Type=RHF/RHF  
 
    ITER        ENERGY             |t|          TIME
-     0                                          2.19
-     1      -94.6629142924     0.863E+00        4.22
-     2      -96.5267629662     0.776E+00        6.30
-     3      -98.2315717547     0.697E+00        8.33
-     4      -99.7347789618     0.627E+00       10.34
-     5     -101.5155915700     0.545E+00       12.35
-     6     -103.6398227593     0.446E+00       14.36
-     7     -106.1420437876     0.330E+00       16.36
-     8     -108.9034465846     0.203E+00       18.38
-     9     -111.4172813817     0.867E-01       20.44
-    10     -112.8753759219     0.186E-01       22.54
-    11     -113.2213133855     0.412E-02       24.74
-    12     -113.2487775029     0.239E-03       27.02
-    13     -113.2514723594     0.154E-03       29.06
-    14     -113.2517643235     0.958E-05       31.10
-    15     -113.2518212775     0.623E-05       33.13
-    16     -113.2518237719     0.670E-06       35.15
-    17     -113.2518256108     0.271E-06       37.35
-    18     -113.2518254539     0.405E-07       39.55
-    19     -113.2518255345     0.125E-07       42.88
-    20     -113.2518255197     0.223E-08       45.55
-    21     -113.2518255239     0.592E-09       48.26
-    22     -113.2518255229     0.117E-09       50.64
-    23     -113.2518255231     0.285E-10       53.58
+     0                                          2.18
+     1      -94.6629142924     0.863E+00        4.25
+     2      -96.5267629662     0.776E+00        6.35
+     3      -98.2315717547     0.697E+00        8.49
+     4      -99.7347789618     0.627E+00       10.73
+     5     -101.5155915700     0.545E+00       14.31
+     6     -103.6398227593     0.446E+00       17.72
+     7     -106.1420437876     0.330E+00       21.33
+     8     -108.9034465846     0.203E+00       23.84
+     9     -111.4172813817     0.867E-01       26.06
+    10     -112.8753759219     0.186E-01       28.23
+    11     -113.2213133855     0.412E-02       30.39
+    12     -113.2487775029     0.239E-03       32.53
+    13     -113.2514723594     0.154E-03       34.66
+    14     -113.2517643235     0.958E-05       36.78
+    15     -113.2518212775     0.623E-05       40.33
+    16     -113.2518237719     0.670E-06       44.49
+    17     -113.2518256108     0.271E-06       47.41
+    18     -113.2518254539     0.405E-07       50.20
+    19     -113.2518255345     0.125E-07       52.61
+    20     -113.2518255197     0.223E-08       55.70
+    21     -113.2518255239     0.592E-09       58.04
+    22     -113.2518255229     0.117E-09       60.36
+    23     -113.2518255231     0.285E-10       64.84
 
  Diff E_x:       0.115223663697
  Diff E_H:       0.008326884340
@@ -351,6 +349,8 @@
    1-  10  -0.19035E+02 -0.10194E+02 -0.12317E+01 -0.66886E+00 -0.57931E+00 -0.57931E+00 -0.47436E+00 -0.20798E+00 -0.20798E+00 -0.11438E+00
   11-  17  -0.80532E-01 -0.79584E-01 -0.79584E-01 -0.21508E-01 -0.71276E-02 -0.71276E-02  0.23920E-01
 
+ HOMO: -0.47436E+00
+ LUMO: -0.20798E+00
  LUMO-HOMO:  0.26638E+00
 
 
@@ -365,8 +365,8 @@
                                          GEOM     BASIS   MCVARS     RHF     KSINV   
 
  PROGRAMS   *        TOTAL      ACFD    MATROP    HF-SCF       INT
- CPU TIMES  *       323.17    275.09      0.64     20.69     26.65
- REAL TIME  *        69.26 SEC
+ CPU TIMES  *       361.90    313.81      0.65     19.44     27.90
+ REAL TIME  *        80.46 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 

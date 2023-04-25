@@ -3,8 +3,6 @@ The program KSINV solves the inverse Kohn-Sham (KS) problem, i.e., it finds the 
 
 Example input file for KS inversion of the reference density provided by the CCSD method for the CO molecule:
 ```
-memory,2000,m ! memory specification
-
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
 set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
@@ -32,8 +30,6 @@ acfd;ksinv,refden=1325.1,e_ref=e_ref_ccsd,thr_fai_oep=1.7d-2 ! KSINV calculation
 ```
 It may be useful to split the reference density and KS inversion calculations into two separate calculations. In this case, the reference density can be saved as:
 ```
-memory,2000,m ! memory specification
-
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
 }
@@ -55,8 +51,6 @@ hf,maxit=30 ! HF calculations
 ```
 And then the KS inversion can be performed:
 ```
-memory,2000,m ! memory specification
-
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
 set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis

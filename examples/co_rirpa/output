@@ -1,29 +1,13 @@
-MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra process manager was found
-[0] MPI startup(): Intel(R) MPI Library, Version 2021.8  Build 20221129 (id: 339ec755a1)
-[0] MPI startup(): Copyright (C) 2003-2022 Intel Corporation.  All rights reserved.
-[0] MPI startup(): library kind: release
-[0] MPI startup(): libfabric version: 1.11.0-impi
-[0] MPI startup(): libfabric provider: mlx
-[0] MPI startup(): File "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi_mlx.dat" not found
-[0] MPI startup(): Load tuning file: "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi.dat"
-[0] MPI startup(): Rank    Pid      Node name  Pin cpu
-[0] MPI startup(): 0       30552    node032    {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
-[0] MPI startup(): I_MPI_ROOT=/opt/intel/oneapi/intelpython/latest
-[0] MPI startup(): I_MPI_HYDRA_TOPOLIB=hwloc
-[0] MPI startup(): I_MPI_PIN_DOMAIN=16
-[0] MPI startup(): I_MPI_INTERNAL_MEM_POLICY=default
-[0] MPI startup(): I_MPI_DEBUG=5
-[0] MPI startup(): I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so.0
 
- Working directory              : /scratch/trushin/133408/molpro.NPd4Htlx1R/
- Global scratch directory       : /scratch/trushin/133408/molpro.NPd4Htlx1R/
+ Working directory              : /tmp/trushin/molpro.iYkzycJX2G/
+ Global scratch directory       : /tmp/trushin/molpro.iYkzycJX2G/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /scratch/trushin/133408/molpro.NPd4Htlx1R/
+ Main file repository           : /tmp/trushin/molpro.iYkzycJX2G/
 
  id        : chemieegortrushi
 
- Nodes     nprocs
- node032      1
+ Nodes         nprocs
+ trushin-laptop    1
  GA implementation: MPI file
  GA implementation (serial work in mppx): MPI file
 
@@ -31,8 +15,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  default implementation of scratch files=df  
 
 
- Variables initialized (1026), CPU time= 0.01 sec
- memory,2000,m                                                                   ! memory specification
+ Variables initialized (1031), CPU time= 0.00 sec
  gthresh,twoint=1d-20,energy=1d-10,orbital=1d-8                                  ! tighter thresholds are recommended
  gdirect                                                                         ! integral-direct mode
  
@@ -54,8 +37,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
  
  acfd;rirpa                                                 ! RPA/σ-functional calculation; one can use alternatively: ksrpa;rirpa
- Commands initialized (841), CPU time= 0.02 sec, 690 directives.
- Default parameters read. Elapsed time= 0.20 sec
+ Commands initialized (842), CPU time= 0.01 sec, 704 directives.
+ Default parameters read. Elapsed time= 0.04 sec
 
  Checking input...
  Passed
@@ -64,15 +47,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked                         
+                                    Version 2023.1 linked Tue Apr 25 21:57:51 2023
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 05-Apr-23          TIME: 15:24:16  
+  (16 PROC) 64 bit serial version                                                        DATE: 25-Apr-23          TIME: 22:35:29  
  **********************************************************************************************************************************
 
- SHA1:             10e461b5fc6a3e1d26f7e720b8f24d588eb91f2f
+ SHA1:             c9539e2a6fe7c8460ba43ab18f35e13774d4ae12
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -101,7 +84,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  SETTING BASIS          =    AUG-CC-PWCVQZ
  ZSYMEL=NOSYM
  ZUNIT=ANG
- 
+
 
  Geometry recognized as XYZ
 
@@ -156,7 +139,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
  NUCLEAR REPULSION ENERGY   22.45050921
 
- 
+
  Basis set:    RI
  Basis size:   444
  Sphericals:   T
@@ -186,8 +169,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         4.06      3.86
- REAL TIME  *         1.53 SEC
+ CPU TIMES  *         0.67      0.57
+ REAL TIME  *         0.97 SEC
  DISK USED  *        30.71 MB
  **********************************************************************************************************************************
 
@@ -197,10 +180,10 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Density functional group PBE=PBEX+PBEC
  Functional: PBEX(Automatically generated (new) PBEX)                          Gradient terms: 1
  Functional: PBEC(Automatically generated (new) PBEC)                          Gradient terms: 1
- 
+
  Functional: PBEX                   Factor:  1.0000
  Functional: PBEC                   Factor:  1.0000
- 
+
 
  Setting radial_scaling=1d0
  Radial grid threshold:                     5.0D-07
@@ -213,22 +196,22 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Pruning method:                                  4
  Pruning function:                                0
 
- Generated new metagrid on record  1800.2 with target accuracy 1.0D-06 and 10372 points in CPU time    2.3
- Computed new grid on record 1800.1 in CPU time    2.4
+ Generated new metagrid on record  1800.2 with target accuracy 1.0D-06 and 10372 points in CPU time    0.4
+ Computed new grid on record 1800.1 in CPU time    0.4
  Grid points discarded due to weight cutoff:      28
 
  DFT orbital screening threshold (tolorb):   1.0D-11
 
  Basis set AUG-CC-PWCV5Z/MP2FIT generated. Number of basis functions:   656 
- Reserved 17 MW to cache 100.0% of significant integrals. CPU: 2.9 sec
+ Reserved 17 MW to cache 100.0% of significant integrals. CPU: 0.5 sec
 
  Coulomb and exchange fitting
  Thresholds for fitting:       THRAO_COUL= 1.0D-17    THRAO_EXCH= 1.0D-15    THRMO= 1.0D-14    THRPROD= 1.0D-14    THRASM= 1.0D-14
                                THR2HLF=    1.0D-14
- 
+
  Orbital guess generated from atomic densities. Full valence occupancy:   10
  Using density fitting in orbital guess
- 
+
 
  Initial occupancy:   7
 
@@ -237,28 +220,28 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Level shifts:    0.00 (CLOSED)    0.00 (OPEN)    0.30 (GAP_MIN)
 
  ITER           ETOT              DE          GRAD        DDIFF     DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1     -113.22038411    -113.22038411     0.00D+00     0.36D-01     0     0       3.04      9.51    start
-   2     -113.15174936       0.06863475     0.46D-02     0.55D-02     1     0       2.79     12.30    diag
-   3     -113.23499027      -0.08324091     0.94D-02     0.43D-02     2     0       2.79     15.09    diag
-   4     -113.24091585      -0.00592558     0.22D-02     0.12D-02     3     0       2.75     17.84    diag
-   5     -113.24098166      -0.00006581     0.23D-03     0.11D-03     4     0       2.79     20.63    diag
-   6     -113.24098198      -0.00000032     0.16D-04     0.10D-04     5     0       2.77     23.40    diag
-   7     -113.24098200      -0.00000002     0.41D-05     0.18D-05     6     0       2.75     26.15    diag
-   8     -113.24098200      -0.00000000     0.64D-06     0.28D-06     7     0       2.80     28.95    fixocc
-   9     -113.24098200      -0.00000000     0.34D-07     0.24D-07     8     0       2.80     31.75    diag
-  10     -113.24098200       0.00000000     0.42D-08     0.23D-08     9     0       2.83     34.58    diag/orth
-  11     -113.24098200      -0.00000000     0.56D-09     0.91D-09     0     0       2.71     37.29    diag
+   1     -113.22038411    -113.22038411     0.00D+00     0.36D-01     0     0       1.28      2.53    start
+   2     -113.15174936       0.06863475     0.46D-02     0.55D-02     1     0       0.58      3.11    diag
+   3     -113.23499027      -0.08324091     0.94D-02     0.43D-02     2     0       0.51      3.62    diag
+   4     -113.24091585      -0.00592558     0.22D-02     0.12D-02     3     0       0.59      4.21    diag
+   5     -113.24098166      -0.00006581     0.23D-03     0.11D-03     4     0       0.59      4.80    diag
+   6     -113.24098198      -0.00000032     0.16D-04     0.10D-04     5     0       0.63      5.43    diag
+   7     -113.24098200      -0.00000002     0.41D-05     0.18D-05     6     0       0.68      6.11    diag
+   8     -113.24098200      -0.00000000     0.64D-06     0.28D-06     7     0       0.48      6.59    fixocc
+   9     -113.24098200      -0.00000000     0.34D-07     0.24D-07     8     0       0.62      7.21    diag
+  10     -113.24098200       0.00000000     0.42D-08     0.23D-08     9     0       0.69      7.90    diag/orth
+  11     -113.24098200       0.00000000     0.56D-09     0.91D-09     0     0       0.52      8.42    diag
 
  Final occupancy:   7
- 
- !RKS STATE 1.1 Energy               -113.240981997973
-  RKS One-electron energy            -198.226790309505
-  RKS Two-electron energy              76.293485966714
-  RKS Kinetic energy                  112.880217271826
+
+ !RKS STATE 1.1 Energy               -113.240981997974
+  RKS One-electron energy            -198.226790309511
+  RKS Two-electron energy              76.293485966720
+  RKS Kinetic energy                  112.880217271837
   RKS Nuclear energy                   22.450509212784
   RKS Virial quotient                  -1.003195996029
  Density functional                   -13.75818687     PBEX=-13.31009960 PBEC= -0.44808726
- 
+
  !RKS STATE 1.1 Dipole moment          -0.00000000     0.00000000     0.08382308
  Dipole moment /Debye                  -0.00000000     0.00000000     0.21305702
 
@@ -289,8 +272,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                         JINV/CD    
 
  PROGRAMS   *        TOTAL     DF-KS       INT
- CPU TIMES  *        44.43     40.35      3.86
- REAL TIME  *         4.33 SEC
+ CPU TIMES  *         9.50      8.82      0.57
+ REAL TIME  *         2.56 SEC
  DISK USED  *        36.88 MB
  **********************************************************************************************************************************
 
@@ -299,10 +282,10 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Sphericals:   T
  
  PROGRAM * RIRPA  (restricted resolution of identity random-phase approximation)
- 
+
  Authors:
  A. Hesselmann, P. Bleiziffer, D. Schmidtel, J. Erhard, A. Thierbach, E. Trushin
- 
+
  Read Orbital Records from 2100.2
  Threshold for eigenvalue difference in construction of X0:     1.000E-06
  Threshold for processing RI basis thr_overlap_ri:     1.000E-99
@@ -319,12 +302,12 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Orbital energies read from record       2100.2  Type=RKS/CANONICAL  
  Density matrix read from record         2100.2  Type=RKS/CHARGE  
  Basis set AWCV5Z/MP2FIT generated.      Number of basis functions:   656 
- 
-  Reference Energy                   -112.767255091501
-  RPA Correlation Energy               -0.802657497165
-  RPA Total Energy                   -113.569912588666
-  SIGMA Correlation Energy             -0.626462967816
- !SIGMA Total Energy                 -113.393718059317
+
+  Reference Energy                   -112.767255091502
+  RPA Correlation Energy               -0.802657497166
+  RPA Total Energy                   -113.569912588668
+  SIGMA Correlation Energy             -0.626462967817
+ !SIGMA Total Energy                 -113.393718059319
 
 
  **********************************************************************************************************************************
@@ -341,12 +324,12 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                          JMAT   
 
  PROGRAMS   *        TOTAL      ACFD     DF-KS       INT
- CPU TIMES  *        94.48     49.91     40.35      3.86
- REAL TIME  *         7.73 SEC
+ CPU TIMES  *        38.91     29.40      8.82      0.57
+ REAL TIME  *         8.36 SEC
  DISK USED  *        43.13 MB
  **********************************************************************************************************************************
 
- ACFD/aug-cc-pWCVQZ energy=   -113.393718059317
+ ACFD/aug-cc-pWCVQZ energy=   -113.393718059319
 
             ACFD           DF-KS
    -113.39371806   -113.24098200

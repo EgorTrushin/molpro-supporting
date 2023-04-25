@@ -1,8 +1,8 @@
 
- Working directory              : /tmp/trushin/molpro.6W4H180vEp/
- Global scratch directory       : /tmp/trushin/molpro.6W4H180vEp/
+ Working directory              : /tmp/trushin/molpro.JeeGiMOLMM/
+ Global scratch directory       : /tmp/trushin/molpro.JeeGiMOLMM/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /tmp/trushin/molpro.6W4H180vEp/
+ Main file repository           : /tmp/trushin/molpro.JeeGiMOLMM/
 
  id        : chemieegortrushi
 
@@ -15,9 +15,7 @@
  default implementation of scratch files=df  
 
 
- Variables initialized (1028), CPU time= 0.00 sec
- memory,2000,m                                                                   ! memory specification
- 
+ Variables initialized (1031), CPU time= 0.00 sec
  basis={
  default,aug-cc-pwCVQZ                                                           ! orbital basis
  }
@@ -35,7 +33,7 @@
  
  {CCSD;core;dm,1325.1}                                                           ! reference CCSD calculation
  {matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
- Commands initialized (841), CPU time= 0.00 sec, 692 directives.
+ Commands initialized (842), CPU time= 0.01 sec, 704 directives.
  Default parameters read. Elapsed time= 0.05 sec
 
  Checking input...
@@ -45,15 +43,15 @@
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked Fri Apr  7 21:53:30 2023
+                                    Version 2023.1 linked Tue Apr 25 21:57:51 2023
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 07-Apr-23          TIME: 22:31:59  
+  (16 PROC) 64 bit serial version                                                        DATE: 25-Apr-23          TIME: 22:19:59  
  **********************************************************************************************************************************
 
- SHA1:             6d59e52f6e9ecb459feb34330aba5e0f3971c0af
+ SHA1:             c9539e2a6fe7c8460ba43ab18f35e13774d4ae12
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -145,8 +143,8 @@
 
  Memory used in sort:      16.56 MW
 
- SORT1 READ   366115963. AND WROTE    49490720. INTEGRALS IN    150 RECORDS. CPU TIME:     0.67 SEC, REAL TIME:     0.94 SEC
- SORT2 READ    49490720. AND WROTE   284924256. INTEGRALS IN   1497 RECORDS. CPU TIME:     1.34 SEC, REAL TIME:     1.53 SEC
+ SORT1 READ   366115963. AND WROTE    49490720. INTEGRALS IN    150 RECORDS. CPU TIME:     0.81 SEC, REAL TIME:     1.13 SEC
+ SORT2 READ    49490720. AND WROTE   284924256. INTEGRALS IN   1497 RECORDS. CPU TIME:     1.75 SEC, REAL TIME:     1.97 SEC
 
  FILE SIZES:   FILE 1:   424.2 MBYTE,  FILE 4:   629.2 MBYTE,   TOTAL:   1053.4 MBYTE
 
@@ -161,8 +159,8 @@
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *        26.89     26.80
- REAL TIME  *        10.77 SEC
+ CPU TIMES  *        28.05     27.97
+ REAL TIME  *        12.52 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
@@ -178,15 +176,15 @@
  Level shifts:    0.00 (CLOSED)    0.00 (OPEN)    0.30 (GAP_MIN)
 
  ITER           ETOT              DE          GRAD        DDIFF     DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1     -112.76795675    -112.76795675     0.00D+00     0.32D-01     0     0       9.19     17.37    start
-   2     -112.78055019      -0.01259344     0.41D-02     0.32D-02     1     0       9.07     26.44    diag
-   3     -112.78847570      -0.00792551     0.28D-02     0.14D-02     2     0       9.02     35.46    diag
-   4     -112.78878588      -0.00031018     0.55D-03     0.26D-03     3     0       9.05     44.51    diag
-   5     -112.78880415      -0.00001827     0.84D-04     0.75D-04     4     0       8.97     53.48    diag
-   6     -112.78880533      -0.00000118     0.18D-04     0.22D-04     5     0       9.39     62.87    diag
-   7     -112.78880535      -0.00000002     0.31D-05     0.30D-05     6     0       9.65     72.52    diag
-   8     -112.78880535      -0.00000000     0.65D-06     0.71D-06     7     0       9.65     82.17    fixocc
-   9     -112.78880535      -0.00000000     0.15D-06     0.11D-06     0     0       9.42     91.59    diag
+   1     -112.76795675    -112.76795675     0.00D+00     0.32D-01     0     0      10.92     20.77    start
+   2     -112.78055019      -0.01259344     0.41D-02     0.32D-02     1     0      12.94     33.71    diag
+   3     -112.78847570      -0.00792551     0.28D-02     0.14D-02     2     0      13.28     46.99    diag
+   4     -112.78878588      -0.00031018     0.55D-03     0.26D-03     3     0      10.20     57.19    diag
+   5     -112.78880415      -0.00001827     0.84D-04     0.75D-04     4     0      10.24     67.43    diag
+   6     -112.78880533      -0.00000118     0.18D-04     0.22D-04     5     0      12.42     79.85    diag
+   7     -112.78880535      -0.00000002     0.31D-05     0.30D-05     6     0       9.49     89.34    diag
+   8     -112.78880535      -0.00000000     0.65D-06     0.71D-06     7     0      10.08     99.42    fixocc
+   9     -112.78880535      -0.00000000     0.15D-06     0.11D-06     0     0       9.99    109.41    diag
 
  Final occupancy:   7
 
@@ -224,8 +222,8 @@
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL    HF-SCF       INT
- CPU TIMES  *       118.49     91.60     26.80
- REAL TIME  *        28.21 SEC
+ CPU TIMES  *       137.50    109.44     27.97
+ REAL TIME  *        34.74 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
@@ -242,25 +240,25 @@
 
  Molecular orbitals read from record     2100.2  Type=RHF/CANONICAL  
 
- Integral transformation finished. Total CPU: 753.47 sec, npass=  1  Memory used:  44.90 MW
+ Integral transformation finished. Total CPU: 786.90 sec, npass=  1  Memory used:  44.90 MW
   Reference energy                   -112.788805354319
 
   MP2 correlation energy               -0.496102295169
   MP2 total energy                   -113.284907649488
 
  ITER.      SQ.NORM     CORR.ENERGY   TOTAL ENERGY   ENERGY CHANGE        DEN1      VAR(S)    VAR(P)  DIIS     TIME
-   1      1.10311951    -0.49783861  -113.28664397    -0.00173632     0.01425802  4.43e-03  3.01e-03  1  1    61.14
-   2      1.11401274    -0.49688105  -113.28568641     0.00095756    -0.01357806  7.70e-05  5.69e-04  2  2   122.63
-   3      1.11658752    -0.49683493  -113.28564028     0.00004613     0.00037116  2.37e-05  6.26e-05  3  3   183.73
-   4      1.11856797    -0.49677655  -113.28558191     0.00005837    -0.00112548  8.53e-07  1.52e-05  4  4   246.40
-   5      1.11961135    -0.49670634  -113.28551169     0.00007022    -0.00039175  1.14e-08  1.56e-06  5  5   309.00
-   6      1.11994028    -0.49668873  -113.28549408     0.00001761    -0.00010904  2.84e-09  5.07e-08  6  0   371.32
-   7      1.11996137    -0.49668783  -113.28549318     0.00000090    -0.00000928  4.02e-10  1.92e-09         435.48
+   1      1.10311951    -0.49783861  -113.28664397    -0.00173632     0.01425802  4.43e-03  3.01e-03  1  1    67.76
+   2      1.11401274    -0.49688105  -113.28568641     0.00095756    -0.01357806  7.70e-05  5.69e-04  2  2   138.29
+   3      1.11658752    -0.49683493  -113.28564028     0.00004613     0.00037116  2.37e-05  6.26e-05  3  3   207.06
+   4      1.11856797    -0.49677655  -113.28558191     0.00005837    -0.00112548  8.53e-07  1.52e-05  4  4   272.92
+   5      1.11961135    -0.49670634  -113.28551169     0.00007022    -0.00039175  1.14e-08  1.56e-06  5  5   344.29
+   6      1.11994028    -0.49668873  -113.28549408     0.00001761    -0.00010904  2.84e-09  5.07e-08  6  0   416.03
+   7      1.11996137    -0.49668783  -113.28549318     0.00000090    -0.00000928  4.02e-10  1.92e-09         484.48
  WARNING: Named clock 3265 does not exist. Cannot pop it.
 
  Norm of t1 vector:      0.08182994     S-energy:      0.00000080   T1 diagnostic:  0.01546440
 
- Time per iteration:                     62.22 sec
+ Time per iteration:                     69.22 sec
 
  RESULTS
  =======
@@ -272,30 +270,30 @@
  Starting CP-CCSD iterations.   Author: W. Gyorffy (2012)
 
  ITER.      NRM1           NRM2      VAR(S)+VAR(P)   DIIS    TIME
-   1     0.00352043     0.32838495     1.56e-03      1  1   72.13
-   2     0.00320637     0.32087346     2.04e-04      2  2  141.39
-   3     0.00289719     0.32115182     2.88e-05      3  3  204.76
-   4     0.00272512     0.32019924     5.99e-06      4  4  269.24
-   5     0.00261303     0.32007136     5.47e-07      5  5  336.60
-   6     0.00256887     0.31999655     4.15e-08      6  0  400.40
-   7     0.00255538     0.31999345     3.38e-09            464.65
+   1     0.00352043     0.32838495     1.56e-03      1  1   75.67
+   2     0.00320637     0.32087346     2.04e-04      2  2  150.84
+   3     0.00289719     0.32115182     2.88e-05      3  3  222.44
+   4     0.00272512     0.32019924     5.99e-06      4  4  297.63
+   5     0.00261303     0.32007136     5.47e-07      5  5  370.60
+   6     0.00256887     0.31999655     4.15e-08      6  0  441.56
+   7     0.00255538     0.31999345     3.38e-09            517.35
 
  WARNING: Named clock 3265 does not exist. Cannot pop it.
 
- Time per iteration:                     66.38 sec
+ Time per iteration:                     73.91 sec
 
 
  Starting Coupled-perturbed Hartree-Fock, convergence threshold= 1.0D-06
 
  ITER  FOCK  DIIS      VAR         VARC       CPU
    1     0     1    0.25D-01    0.00D+00     0.00
-   2     1     1    0.99D-02    0.00D+00     9.68
-   3     1     2    0.27D-02    0.00D+00    19.75
-   4     1     3    0.81D-03    0.00D+00    29.30
-   5     1     4    0.13D-03    0.00D+00    38.80
-   6     1     5    0.29D-04    0.00D+00    48.64
-   7     1     6    0.58D-05    0.00D+00    58.48
-   8     1     6    0.10D-05    0.00D+00    68.14
+   2     1     1    0.99D-02    0.00D+00    10.19
+   3     1     2    0.27D-02    0.00D+00    20.58
+   4     1     3    0.81D-03    0.00D+00    31.12
+   5     1     4    0.13D-03    0.00D+00    41.14
+   6     1     5    0.29D-04    0.00D+00    51.35
+   7     1     6    0.58D-05    0.00D+00    61.68
+   8     1     6    0.10D-05    0.00D+00    71.90
 
  CPHF convergence reached in  7 macroiterations and    0 microiterations.   Accuracy: 9.9554D-07
 
@@ -306,7 +304,7 @@
  !CCSD STATE 1.1 Dipole moment          0.00000000     0.00000000     0.01922006
  Dipole moment /Debye                   0.00000000     0.00000000     0.04885253
 
- CPU-time for coupled-perturbed hartree-fock:         69.77 sec
+ CPU-time for coupled-perturbed hartree-fock:         73.80 sec
 
  CCSD density matrix saved on record      1325.1 (density set 2, unrelaxed)
 
@@ -328,8 +326,8 @@
                                          GEOM     BASIS   MCVARS     RHF     CPHF   
 
  PROGRAMS   *        TOTAL      CCSD    HF-SCF       INT
- CPU TIMES  *      2467.39   2348.89     91.60     26.80
- REAL TIME  *       452.92 SEC
+ CPU TIMES  *      2684.49   2546.98    109.44     27.97
+ REAL TIME  *       501.32 SEC
  DISK USED  *         1.44 GB
  **********************************************************************************************************************************
 
@@ -355,8 +353,8 @@
                                          GEOM     BASIS   MCVARS     RHF     CPHF   
 
  PROGRAMS   *        TOTAL    MATROP      CCSD    HF-SCF       INT
- CPU TIMES  *      2467.42      0.03   2348.89     91.60     26.80
- REAL TIME  *       452.95 SEC
+ CPU TIMES  *      2684.52      0.03   2546.98    109.44     27.97
+ REAL TIME  *       501.35 SEC
  DISK USED  *         1.44 GB
  **********************************************************************************************************************************
 
