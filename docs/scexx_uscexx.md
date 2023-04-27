@@ -83,6 +83,7 @@ The following options are available for the SCEXX and USCEXX programs:
 - **thr_solve** threshold used during matrix inversion to solve the OEP equation with TSVD and GTSVD methods. Note that the default threshold of 1d-99 results in the absence of regularization (default: ‘1d-99’)  
 - **vref_fa** if set to $\neq$ 0, enable the use of the Fermi-Amaldi potential as reference potential. Otherwise, the reference potential is constructed according to Eq. (45) of Ref. [2] (default: '1')  
 - **vhoep** if set to $\neq$ 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)  
+- - **plot_always** if set to $\neq$ 0, enable writing of data-files for plotting for every iteration. Otherwise, only final results are written. (default: '0')  
 - **plot_x** if set to $\neq$ 0, enable writing of file with plotting data for exchange potential along x-axis (default: '0')
 - **plot_y** if set to $\neq$ 0, enable writing of file with plotting data for exchange potential along y-axis (default: '0')
 - **plot_z** if set to $\neq$ 0, enable writing of file with plotting data for exchange potential along z-axis (default: '0')
