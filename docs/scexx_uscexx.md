@@ -98,6 +98,69 @@ Pitfalls:
 - One might encounter convergence problem using DIIS for systems exhibiting small HOMO-LUMO gaps. In this case switching to linear mixing scheme often might resolve the problem.
  - One might sometimes encounter energy oscillations between two solutions with different numbers of OEP basis functions remaining after OEP basis set preprocessing.  A small change in **thr_fai_oep** may solve the problem.
 
+Since the local exchange potential is important in KS inversion, we provide an illustration of how to plot it, including separate contributions. Let us assume that we have performed calculations for CO with the following options:
+```
+acfd;scexx,thr_fai_oep=1.7d-2,plot_z=1
+```
+At the end one has the files vx-final.z with reference, rest and full exchange potentials. The potentials can be plotted using Python and matplotlib as follows:
+```
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+
+def load_potential(filename):
+    """Read data from file."""
+    coord, vxref, vxrest, vx = list(), list(), list(), list()
+    for line in open(filename):
+        aux = line.split()
+        coord.append(float(aux[4]))
+        vxref.append(float(aux[6]))
+        vxrest.append(float(aux[7]))
+        vx.append(float(aux[8]))
+    coord = np.array(coord)
+    vxref, vxrest, vx = np.array(vxref), np.array(vxrest), np.array(vx)
+    return coord, vxref, vxrest, vx
+
+coord, vxref, vxrest, vx = load_potential('vx-final.z')
+
+plt.plot(coord, vxref, color='orangered', label='$v_{x,ref}$')
+plt.plot(coord, vxrest, color='dodgerblue', label='$v_{x,rest}$')
+plt.plot(coord, vxref+vx, color='orange', label='$v_x$')
+
+plt.ylabel('Potential (Hartree)', fontsize=16)
+plt.xlabel('r (Bohr)', fontsize=16)
+plt.xlim(-5, 5)
+plt.legend(frameon=False, fontsize=14)
+plt.tight_layout()
+plt.show()
+```
+![](scexx_co.png)
+
+In the similar way, for spin-unrestricted calculations with USCEXX, one ends up with two files vxa-final.z and vxb-final.z with data for $\alpha$ and $\beta$ spin channels, respectively.
+```
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+
+def load_potential(filename):
+    """Use function from example with CO."""
+    pass
+
+coord, _, _, vxa = load_potential('vxa-final.z')
+coord, _, _, vxb = load_potential('vxb-final.z')
+
+plt.plot(coord, vxa, color='orangered', label=r'$v_{x,\alpha}$')
+plt.plot(coord, vxb, color='dodgerblue', label=r'$v_{x,\beta}$')
+
+plt.ylabel('Potential (Hartree)', fontsize=16)
+plt.xlabel('r (Bohr)', fontsize=16)
+plt.xlim(-5, 5)
+plt.legend(frameon=False, fontsize=14)
+plt.tight_layout()
+plt.show()
+```
+![](uscexx_bef.png)
+
 **Bibilography:**  
 [1] A. Heßelmann, A.W. Götz, F. Della Sala, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.2751159) 127, 054102 (2007)  
 [2] E. Trushin, A. Görling, [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0056431) 155, 054109 (2021)  
