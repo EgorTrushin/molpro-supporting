@@ -22,7 +22,6 @@ coord, _, _, vxb = load_potential('vxb-final.z')
 
 plt.plot(coord, vxa, color='orangered', label=r'$v_{x,\alpha}$')
 plt.plot(coord, vxb, color='dodgerblue', label=r'$v_{x,\beta}$')
-#plt.plot(coord, vxref+vx, color='orange', label='$v_x$')
 
 plt.ylabel('Potential (Hartree)', fontsize=16)
 plt.xlabel('r (Bohr)', fontsize=16)
