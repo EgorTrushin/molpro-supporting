@@ -136,7 +136,7 @@ plt.show()
 ```
 ![](scexx_co.png)
 
-In the similar way, for spin-unrestricted calculations with USCEXX, one ends up with two files vxa-final.z and vxb-final.z with data for $\alpha$ and $\beta$ spin channels, respectively.
+In the similar way, for spin-unrestricted calculations with USCEXX, one ends up with two files vxa-final.z and vxb-final.z with data for $\alpha$ and $\beta$ spin channels, respectively. For BeF one obtains:
 ```
 import sys
 import numpy as np
