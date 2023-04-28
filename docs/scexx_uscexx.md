@@ -125,7 +125,7 @@ coord, vxref, vxrest, vx = load_potential('vx-final.z')
 
 plt.plot(coord, vxref, color='orangered', label='$v_{x,ref}$')
 plt.plot(coord, vxrest, color='dodgerblue', label='$v_{x,rest}$')
-plt.plot(coord, vxref+vx, color='orange', label='$v_x$')
+plt.plot(coord, vx, color='orange', label='$v_x$')
 
 plt.ylabel('Potential (Hartree)', fontsize=16)
 plt.xlabel('r (Bohr)', fontsize=16)
