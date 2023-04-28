@@ -98,7 +98,7 @@ Pitfalls:
 - One might encounter convergence problem using DIIS for systems exhibiting small HOMO-LUMO gaps. In this case switching to linear mixing scheme often might resolve the problem.
  - One might sometimes encounter energy oscillations between two solutions with different numbers of OEP basis functions remaining after OEP basis set preprocessing.  A small change in **thr_fai_oep** may solve the problem.
 
-Since the local exchange potential is important in KS inversion, we provide an illustration of how to plot it, including separate contributions. Let us assume that we have performed calculations for CO with the following options:
+Since the local exchange potential is important in self-consistent exact-exchange calculations, we provide an illustration of how to plot it, including separate contributions. Let us assume that we have performed calculations for CO with the following options:
 ```
 acfd;scexx,thr_fai_oep=1.7d-2,plot_z=1
 ```
