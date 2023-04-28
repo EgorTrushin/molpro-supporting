@@ -1,0 +1,24 @@
+gdirect ! integral-direct mode
+
+basis={
+default,aug-cc-pwCVQZ ! orbital basis
+set,ri;default,aug-cc-pwCVQZ/mp2fit ! RI BASIS
+set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+}
+
+symmetry,nosym ! USCRPA does not use symmetry
+
+angstrom
+geometry={
+2
+
+Be    0.0000000    0.0000000   -0.6823625 
+F     0.0000000    0.0000000    0.6823625 
+}
+
+spin=1
+
+df-uhf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit ! HF calculation with 0 iterations
+{cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
+
+acfd;uscrpa,thr_fai_oep=1.7d-2 ! USCRPA calculation
