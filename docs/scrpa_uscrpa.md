@@ -146,6 +146,7 @@ plt.tight_layout()
 plt.show()
 ```
 ![](scrpa_co.png)
+
 In the similar way, for spin-unrestricted calculations with USCRPA, one ends up with four files vxa-final.z, vxb-final.z, vca-final.z, vcb-final.z with data for $\alpha$ and $\beta$ spin channels. For BeF one obtains:
 ```
 import sys
