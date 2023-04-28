@@ -1,0 +1,49 @@
+symmetry,nosym
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
+}
+
+basis={
+default,aug-cc-pwCVTZ
+set,ri
+default,aug-cc-pwCVQZ/mp2fit
+set,oep
+default,aug-cc-pVDZ/mp2fit
+}
+
+df-ks,pbe,maxit=0,df_basis=aug-cc-pwCVQZ/mp2fit ! KS PBE
+{cfit,basis_coul=aug-cc-pwCVQZ/mp2fit,basis_exch=aug-cc-pwCVQZ/mp2fit}
+
+acfd;scrpa,thr_fai_oep=5d-2
+e(1)=energy
+prog(1)='CO w dfit FA-vref'
+
+acfd;scrpa,thr_fai_oep=5d-2,dfit=0
+e(2)=energy
+prog(2)='CO w/o dfit FA-vref'
+
+acfd;scrpa,thr_fai_oep=5d-2,vref_fa=0
+e(3)=energy
+prog(3)='CO w dfit constant-vref'
+
+acfd;scrpa,thr_fai_oep=5d-2,dfit=0,vref_fa=0
+e(4)=energy
+prog(4)='CO w/o dfit constant-vref'
+
+eold = [-113.504846646032, -113.504846413310, -113.500285517873, -113.500285381134]
+
+de=e-eold(1:ii)
+
+text,Results for job co_acfd_scrpa.test
+if(max(abs(de)).lt.1.d-6) then
+  table,prog,e,eold,de
+  save,test.log
+  title,No errors in co_acfd_scrpa.test
+else
+  table,prog,e,eold,de
+  save,test.log
+  title,ERRORS DETECTED in co_acfd_scrpa.test, de=$de
+endif
