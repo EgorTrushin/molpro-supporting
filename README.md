@@ -54,7 +54,7 @@ sudo apt-get install libeigen3-dev
 ```
 **Install Molpro**
 ```
-PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2 --disable-xml2
+PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2
 make -j 16
 make quicktest
 ```
