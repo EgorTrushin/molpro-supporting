@@ -1,4 +1,4 @@
-## The RIRPA and RIRPA programs
+## The RIRPA and URIRPA programs
 The RIRPA and URIRPA programs allow non-self-consistent spin-restricted and spin-unrestricted resolution of identity (RI) random phase approximation (RPA) [1-3] and σ-functional [4-6] calculations. These methods should be used in conjunction with conventional Kohn-Sham (KS) density functional theory (DFT) calculations, i.e. data from a preceding KS DFT calculation should be provided. Conventional KS DFT means calculations with LDA, GGA and hybrid exchange-correlation functionals.
 
 **Bibilography:**  
