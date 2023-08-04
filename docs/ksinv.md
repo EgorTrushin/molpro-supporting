@@ -111,7 +111,7 @@ acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2,\
 plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
 ```
 At the end one has the files vref-final.z, vx-final.z, vc-final.z and vxc-final.z with reference, exchange, correlation and exchange-correlation potentials. The potentials can be plotted using Python and matplotlib as follows:
-```
+```python
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
