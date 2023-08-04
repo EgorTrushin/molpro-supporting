@@ -112,7 +112,7 @@ Since the local exchange and correlation potentials are important in self-consis
 acfd;scrpa,thr_fai_oep=1.7d-2,plot_z=1
 ```
 At the end one has the files vx-final.z and vc-final.z with data for exchange and correlation potentials. The potentials can be plotted using Python and matplotlib as follows:
-```
+```python
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
@@ -148,7 +148,7 @@ plt.show()
 ![](scrpa_co.png)
 
 In the similar way, for spin-unrestricted calculations with USCRPA, one ends up with four files vxa-final.z, vxb-final.z, vca-final.z, vcb-final.z with data for $\alpha$ and $\beta$ spin channels. For BeF one obtains:
-```
+```python
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
