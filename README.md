@@ -20,16 +20,34 @@ make install
 eigen3 does not need to be compiled, but needs to be downloaded and unpacked into a directory.
 
 **Install Molpro**
+clone ThC-AG molpro version from GitHub:
+
+```
+git clone https://github.com/ThCErlangen/molpro
+```
+
+Navigate to the created directory and configure the installation by:
+
 ```
 I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure --prefix=/home/trushin/Molpro/molpro-ksinv --bindir=/home/trushin/Molpro/molpro-ksinv --disable-gfortran-check
-make -j 28 symtrans_FLAGS=-O0
-make quicktest
 ```
-The following two files should be replaced to compile (see directory 'files' in repo):  
+
+now replace the files:
+
 src/util/molpro_main.cpp  
 src/mrci/kext.F90
 
-It is necessary to have /home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64 in LD_LIBRARY_PATH to use compiled molpro.exe. Add this, e.g., to .bashrc:
+by files of the same name from "https://github.com/EgorTrushin/molpro-supporting/files"
+
+then run, from:
+
+```
+make -j 28 symtrans_FLAGS=-O0
+make quicktest
+```
+
+It is necessary to have /home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64 in LD_LIBRARY_PATH to use compiled molpro.exe. Add this, e.g., to .bashrc or your slurm file:
+
 ```
 export LD_LIBRARY_PATH=/home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64:$LD_LIBRARY_PATH
 ```
