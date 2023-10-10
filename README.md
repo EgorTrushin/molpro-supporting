@@ -46,8 +46,7 @@ now replace the files:
 src/util/molpro_main.cpp  
 src/mrci/kext.F90
 
-by files of the same name from "https://github.com/EgorTrushin/molpro-supporting/files"
-
+by files of the same name from [*files*](./files) directory
 then run, from:
 
 ```
