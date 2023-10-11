@@ -22,4 +22,4 @@ spin=1
 df-uhf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit ! HF calculation with 0 iterations
 {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
 
-acfd;uscexx,oepsav=1,thr_fai_oep=1.7d-2 ! USCEXX calculation
+acfd;uscexx,spin_sym=1,thr_fai_oep=1.7d-2 ! USCEXX calculation

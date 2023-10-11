@@ -92,7 +92,7 @@ The following options are available for the SCEXX and USCEXX programs:
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)  
 
 The following parameters are only relevant for spin-unresticted calculations i.e. using the USCEXX code:
-- **oepsav** if set to $\neq$ 0, enable spin-averaging in spin-unrestricted calculations, forcing orbitals and eigenvalues in $\alpha$ and $\beta$ spin channels to be identical (default: ‘0’)
+- **spin-sym** if set to $\neq$ 0, enable spin-symmetrization in spin-unrestricted calculations, forcing orbitals and eigenvalues in $\alpha$ and $\beta$ spin channels to be identical (default: ‘0’)
 - **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels (default: ‘0’)
 
 Pitfalls:
