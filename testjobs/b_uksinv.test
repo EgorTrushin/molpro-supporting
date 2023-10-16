@@ -1,0 +1,57 @@
+basis={
+default,aug-cc-pwCVTZ
+set,oep;default,aug-cc-pVDZ/mp2fit
+}
+
+symmetry,nosym
+
+angstrom
+geometry={
+1
+
+B        0.000000    0.000000   0.00000
+}
+
+hf,maxit=30
+
+{ci;save,density=2140.2,spinden;core}
+
+e_ref_cisd=energy
+
+acfd;uksinv,refden=2140.2,orb=2100.2,e_ref=e_ref_cisd,thr_fai_oep=5d-2
+e(1)=energy
+prog(1)='Inversion of CISD'
+
+uhf,maxit=0
+
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,vref_fa_sameab=1
+e_ref_uscexx=energy
+
+acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2
+
+e(2)=energy
+prog(2)='Inversion of USCEXX'
+
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,vref_fa_sameab=1,vhoep=1,thr_sym=1d-10
+e_ref_uscexx=energy
+
+acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,vhoep=1,thr_sym=1d-10
+
+e(3)=energy
+prog(3)='Inversion of USCEXX w space-symmetrization'
+
+eold = [ -24.642029649760, -24.529554381389, -24.523295304041]
+
+
+de=e-eold(1:ii)
+
+text,Results for job b_uksinv.test
+if(max(abs(de)).lt.1.d-6) then
+  table,prog,e,eold,de
+  save,test.log
+  title,No errors in b_uksinv.test
+else
+  table,prog,e,eold,de
+  save,test.log
+  title,ERRORS DETECTED in b_uksinv.test, de=$de
+endif
