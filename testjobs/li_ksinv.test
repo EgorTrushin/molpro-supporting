@@ -1,0 +1,57 @@
+basis={
+default,aug-cc-pwCVTZ
+set,oep;default,aug-cc-pVDZ/mp2fit
+}
+
+symmetry,nosym
+
+angstrom
+geometry={
+1
+
+Li      0.000000    0.000000   0.00000
+}
+
+hf,maxit=30
+
+{ci;save,density=2140.2,spinden;core}
+
+e_ref_cisd=energy
+
+acfd;ksinv,refden=2140.2,orb=2100.2,e_ref=e_ref_cisd,thr_fai_oep=5d-2,noa=2,nob=1
+e(1)=energy
+prog(1)='Inversion of CISD'
+
+uhf,maxit=0
+
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,spin_sym=1
+e_ref_uscexx=energy
+
+acfd;ksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,noa=2,nob=1
+
+e(2)=energy
+prog(2)='Inversion of USCEXX with spin-symmetrization'
+
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,spin_sym=1,vhoep=1,thr_sym=1d-10
+e_ref_uscexx=energy
+
+acfd;ksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,vhoep=1,thr_sym=1d-10,noa=2,nob=1
+
+e(3)=energy
+prog(3)='Inversion of USCEXX w space- and spin-symmetrization'
+
+eold = [-7.624176315284, -7.422445934986, -7.422446676795]
+
+
+de=e-eold(1:ii)
+
+text,Results for job li_ksinv.test
+if(max(abs(de)).lt.1.d-6) then
+  table,prog,e,eold,de
+  save,test.log
+  title,No errors in li_ksinv.test
+else
+  table,prog,e,eold,de
+  save,test.log
+  title,ERRORS DETECTED in li_ksinv.test, de=$de
+endif

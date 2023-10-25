@@ -18,5 +18,6 @@ $MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < co_acfd_rirpa.test
 $MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < co_acfd_scexx.test
 $MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < co_acfd_scrpa.test
 $MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < co_ksinv.test
+$MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < li_ksinv.test
 $MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < nh2_acfd_urirpa.test
 $MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < nh2_acfd_uscexx.test
