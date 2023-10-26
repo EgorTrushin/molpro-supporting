@@ -16,10 +16,10 @@ def load_potential(filename):
     pot = np.array(pot)
     return coord, pot
 
-coord, vref = load_potential('vref-final.z')
-coord, vx = load_potential('vx-final.z')
-coord, vc = load_potential('vc-final.z')
-coord, vxc = load_potential('vxc-final.z')
+coord, vref = load_potential('vref-total-final.z')
+coord, vx = load_potential('vx-total-final.z')
+coord, vc = load_potential('vc-total-final.z')
+coord, vxc = load_potential('vxc-total-final.z')
 
 plt.plot(coord, vref+vx, color='orangered', label='$v_x$')
 plt.plot(coord, vc, color='dodgerblue', label='$v_c$')

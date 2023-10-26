@@ -1,10 +1,10 @@
 
- Working directory              : /tmp/trushin/molpro.kcapVTaqJH/
- Global scratch directory       : /tmp/trushin/molpro.kcapVTaqJH/
+ Working directory              : /tmp/trushin/molpro.XfYAHQKLZA/
+ Global scratch directory       : /tmp/trushin/molpro.XfYAHQKLZA/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /tmp/trushin/molpro.kcapVTaqJH/
+ Main file repository           : /tmp/trushin/molpro.XfYAHQKLZA/
 
- id        : chemieegortrushi
+ id        : chemie
 
  Nodes         nprocs
  trushin-laptop    1
@@ -15,7 +15,7 @@
  default implementation of scratch files=df  
 
 
- Variables initialized (1031), CPU time= 0.00 sec
+ Variables initialized (1042), CPU time= 0.00 sec
  basis={
  default,aug-cc-pwCVQZ                                                           ! orbital basis
  set,oep;default,aug-cc-pVDZ/mp2fit                                              ! OEP basis
@@ -36,7 +36,7 @@
  
  acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2,\           ! KSINV calculation
  plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
- Commands initialized (842), CPU time= 0.00 sec, 704 directives.
+ Commands initialized (846), CPU time= 0.01 sec, 718 directives.
  Default parameters read. Elapsed time= 0.05 sec
 
  Checking input...
@@ -46,15 +46,15 @@
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked Tue Apr 25 21:57:51 2023
+                                    Version 2023.3 linked Thu Oct 26 19:03:38 2023
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 25-Apr-23          TIME: 22:31:16  
+  (16 PROC) 64 bit serial version                                                        DATE: 26-Oct-23          TIME: 23:33:44  
  **********************************************************************************************************************************
 
- SHA1:             c9539e2a6fe7c8460ba43ab18f35e13774d4ae12
+ SHA1:             060ce6a842e4a9d83ae7df5754a21387cd620913
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -153,8 +153,8 @@
 
  Memory used in sort:      16.56 MW
 
- SORT1 READ   366115963. AND WROTE    49490720. INTEGRALS IN    150 RECORDS. CPU TIME:     0.80 SEC, REAL TIME:     1.05 SEC
- SORT2 READ    49490720. AND WROTE   284924256. INTEGRALS IN   1497 RECORDS. CPU TIME:     1.42 SEC, REAL TIME:     1.60 SEC
+ SORT1 READ   366115963. AND WROTE    49490720. INTEGRALS IN    150 RECORDS. CPU TIME:     0.72 SEC, REAL TIME:     1.04 SEC
+ SORT2 READ    49490720. AND WROTE   284924256. INTEGRALS IN   1497 RECORDS. CPU TIME:     1.49 SEC, REAL TIME:     1.66 SEC
 
  FILE SIZES:   FILE 1:   424.2 MBYTE,  FILE 4:   629.2 MBYTE,   TOTAL:   1053.4 MBYTE
 
@@ -169,15 +169,15 @@
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    ERIS     OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *        27.98     27.90
- REAL TIME  *        11.50 SEC
+ CPU TIMES  *        29.25     29.16
+ REAL TIME  *        12.28 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
 
  Program * Restricted Hartree-Fock
 
- Orbital guess generated from atomic densities. Full valence occupancy:   10
+ Orbital guess generated from atomic densities.
 
  Initial occupancy:   7
 
@@ -186,31 +186,31 @@
  Level shifts:    0.00 (CLOSED)    0.00 (OPEN)    0.30 (GAP_MIN)
 
  ITER           ETOT              DE          GRAD        DDIFF     DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1     -112.76795675    -112.76795675     0.00D+00     0.32D-01     0     0      10.32     19.44    start
+   1     -112.76801695    -112.76801695     0.00D+00     0.32D-01     0     0       9.96     19.16    start
 
  Orbitals not optimized (maxit=1)
 
  Final occupancy:   7
 
- !RHF STATE 1.1 Energy               -112.767956746539
-  RHF One-electron energy            -197.912736910553
-  RHF Two-electron energy              62.694270951230
-  RHF Kinetic energy                  112.532393234686
+ !RHF STATE 1.1 Energy               -112.768016948337
+  RHF One-electron energy            -197.918862928991
+  RHF Two-electron energy              62.700336767870
+  RHF Kinetic energy                  112.536504214062
   RHF Nuclear energy                   22.450509212784
-  RHF Virial quotient                  -1.002093295140
+  RHF Virial quotient                  -1.002057223440
 
- !RHF STATE 1.1 Dipole moment           0.00000000     0.00000000    -0.24622217
- Dipole moment /Debye                   0.00000000     0.00000000    -0.62583434
+ !RHF STATE 1.1 Dipole moment           0.00000000     0.00000000    -0.24602652
+ Dipole moment /Debye                   0.00000000     0.00000000    -0.62533704
 
  Orbital energies:
 
            1.1          2.1          3.1          4.1          5.1          6.1          7.1          8.1          9.1
-    -20.585017   -11.498374    -1.526439    -0.783066    -0.639630    -0.639630    -0.589941     0.098928     0.098928
+    -20.584385   -11.497819    -1.525975    -0.782655    -0.639303    -0.639303    -0.589654     0.099226     0.099226
 
 
- HOMO      7.1    -0.589941 =     -16.0531eV
- LUMO      8.1     0.098928 =       2.6920eV
- LUMO-HOMO         0.688869 =      18.7451eV
+ HOMO      7.1    -0.589654 =     -16.0453eV
+ LUMO      8.1     0.099226 =       2.7001eV
+ LUMO-HOMO         0.688880 =      18.7454eV
 
  Orbitals saved in record  2100.2
 
@@ -226,8 +226,8 @@
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL    HF-SCF       INT
- CPU TIMES  *        47.42     19.44     27.90
- REAL TIME  *        15.28 SEC
+ CPU TIMES  *        48.43     19.18     29.16
+ REAL TIME  *        16.01 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
@@ -251,8 +251,8 @@
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL    MATROP    HF-SCF       INT
- CPU TIMES  *        48.08      0.65     19.44     27.90
- REAL TIME  *        15.61 SEC
+ CPU TIMES  *        49.05      0.61     19.18     29.16
+ REAL TIME  *        16.34 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
@@ -278,6 +278,7 @@
  thr_overlap_oep:     1.000E-99
  thr_fai_oep:     1.700E-02
  Fermi-Amaldi as reference potential: T
+ Construct the Hartree potential in the OEP basis: F
  Threshold for eigenvalue difference in calculation of Lambda:    1.000E-06
  Threshold for eigenproblem solver of OEP equation:    1.000E-99
  Solver for eigenproblems: GTSVD
@@ -300,50 +301,50 @@
  Occupation numbers read from record     2100.2  Type=RHF/RHF  
 
    ITER        ENERGY             |t|          TIME
-     0                                          2.18
-     1      -94.6629142924     0.863E+00        4.25
-     2      -96.5267629662     0.776E+00        6.35
-     3      -98.2315717547     0.697E+00        8.49
-     4      -99.7347789618     0.627E+00       10.73
-     5     -101.5155915700     0.545E+00       14.31
-     6     -103.6398227593     0.446E+00       17.72
-     7     -106.1420437876     0.330E+00       21.33
-     8     -108.9034465846     0.203E+00       23.84
-     9     -111.4172813817     0.867E-01       26.06
-    10     -112.8753759219     0.186E-01       28.23
-    11     -113.2213133855     0.412E-02       30.39
-    12     -113.2487775029     0.239E-03       32.53
-    13     -113.2514723594     0.154E-03       34.66
-    14     -113.2517643235     0.958E-05       36.78
-    15     -113.2518212775     0.623E-05       40.33
-    16     -113.2518237719     0.670E-06       44.49
-    17     -113.2518256108     0.271E-06       47.41
-    18     -113.2518254539     0.405E-07       50.20
-    19     -113.2518255345     0.125E-07       52.61
-    20     -113.2518255197     0.223E-08       55.70
-    21     -113.2518255239     0.592E-09       58.04
-    22     -113.2518255229     0.117E-09       60.36
-    23     -113.2518255231     0.285E-10       64.84
+     0                                          2.33
+     1      -94.6629143509     0.863E+00        4.46
+     2      -96.5267630172     0.776E+00        6.94
+     3      -98.2315717973     0.697E+00        9.18
+     4      -99.7347789988     0.627E+00       11.41
+     5     -101.5155915999     0.545E+00       13.76
+     6     -103.6398227800     0.446E+00       15.87
+     7     -106.1420437966     0.330E+00       18.38
+     8     -108.9034465804     0.203E+00       20.61
+     9     -111.4172813680     0.867E-01       22.87
+    10     -112.8753759098     0.186E-01       25.27
+    11     -113.2213133682     0.412E-02       27.37
+    12     -113.2487774961     0.239E-03       29.90
+    13     -113.2514723544     0.154E-03       32.14
+    14     -113.2517643188     0.958E-05       34.48
+    15     -113.2518212728     0.623E-05       36.76
+    16     -113.2518237672     0.670E-06       38.83
+    17     -113.2518256060     0.271E-06       41.29
+    18     -113.2518254492     0.405E-07       43.52
+    19     -113.2518255298     0.125E-07       45.91
+    20     -113.2518255150     0.223E-08       48.21
+    21     -113.2518255191     0.593E-09       50.27
+    22     -113.2518255182     0.117E-09       52.76
+    23     -113.2518255185     0.290E-10       55.55
 
- Diff E_x:       0.115223663697
- Diff E_H:       0.008326884340
- Diff E_kin:     0.396852871025
- Diff E_ext:    -0.033667656962
+ Diff E_x:       0.115223662896
+ Diff E_H:       0.008326887301
+ Diff E_kin:     0.396852870802
+ Diff E_ext:    -0.033667661650
 
  SCF converged in    23 iterations
 
  KSINV orbitals written to record    2101.2
  
- !KSINV Total energy                 -113.251825523143
-  KSINV One-electron energy          -198.237287460830
-  KSINV Two-electron energy            63.010175326009
+ !KSINV Total energy                 -113.251825518454
+  KSINV One-electron energy          -198.237287456609
+  KSINV Two-electron energy            63.010175323066
   KSINV Nuclear energy                 22.450509212784
-  KSINV Coulomb energy                 76.317979288012
-  KSINV Exchange energy               -13.307803962003
-  KSINV Correlation energy             -0.475222601106
+  KSINV Coulomb energy                 76.317979281692
+  KSINV Exchange energy               -13.307803958625
+  KSINV Correlation energy             -0.475222597696
  
- !KSINV Dipole moment                  -0.00000000     0.00000000     0.01790663
- Dipole moment /Debye                  -0.00000000     0.00000000     0.04551412
+ !KSINV Dipole moment                  -0.00000000    -0.00000000     0.01790672
+ Dipole moment /Debye                  -0.00000000    -0.00000000     0.04551433
 
  KSINV eigenvalues
    1-  10  -0.19035E+02 -0.10194E+02 -0.12317E+01 -0.66886E+00 -0.57931E+00 -0.57931E+00 -0.47436E+00 -0.20798E+00 -0.20798E+00 -0.11438E+00
@@ -365,14 +366,14 @@
                                          GEOM     BASIS   MCVARS     RHF     KSINV   
 
  PROGRAMS   *        TOTAL      ACFD    MATROP    HF-SCF       INT
- CPU TIMES  *       361.90    313.81      0.65     19.44     27.90
- REAL TIME  *        80.46 SEC
+ CPU TIMES  *       331.90    282.84      0.61     19.18     29.16
+ REAL TIME  *        71.91 SEC
  DISK USED  *      1005.02 MB
  **********************************************************************************************************************************
 
- ACFD/aug-cc-pWCVQZ energy=   -113.251825523143
+ ACFD/aug-cc-pWCVQZ energy=   -113.251825518454
 
             ACFD          HF-SCF
-   -113.25182552   -112.76795675
+   -113.25182552   -112.76801695
  **********************************************************************************************************************************
  Molpro calculation terminated
