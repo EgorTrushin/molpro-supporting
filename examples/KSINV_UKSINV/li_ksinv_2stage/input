@@ -1,0 +1,19 @@
+basis={
+default,aug-cc-pwCVQZ ! orbital basis
+set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+}
+
+symmetry,nosym ! KSINV does not use symmetry
+
+angstrom
+geometry={
+1
+
+Li        0.000000    0.000000    0.000000
+}
+
+hf,maxit=0 ! HF calculations
+
+{matrop;read,den,type=density,file=dm.dat;save,den,1325.1} ! read stored density matrix
+
+acfd;ksinv,refden=1325.1,e_ref=-7.475872692580,thr_fai_oep=1.7d-2,noa=2,nob=1 ! KSINV calculation
