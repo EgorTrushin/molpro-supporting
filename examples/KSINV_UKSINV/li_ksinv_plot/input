@@ -1,0 +1,21 @@
+basis={
+default,aug-cc-pwCVQZ ! orbital basis
+set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+}
+
+symmetry,nosym ! KSINV does not use symmetry
+
+angstrom
+geometry={
+1
+
+Li        0.000000    0.000000    0.000000
+}
+
+hf,maxit=30 ! HF calculations
+
+{ci;save,density=2140.2,spinden;core}
+e_ref_cisd=energy ! save energy to provide as a reference to KSINV
+
+acfd;ksinv,refden=2140.2,e_ref=e_ref_cisd,thr_fai_oep=1.7d-2,noa=2,nob=1,\ ! KSINV calculation
+plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
