@@ -105,7 +105,6 @@ acfd;scexx,thr_fai_oep=1.7d-2,plot_z=1
 ```
 At the end one has the files vx-final.z with reference, rest and full exchange potentials. The potentials can be plotted using Python and matplotlib as follows:
 ```python
-import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -139,7 +138,6 @@ plt.show()
 
 In the similar way, for spin-unrestricted calculations with USCEXX, one ends up with two files vxa-final.z and vxb-final.z with data for $\alpha$ and $\beta$ spin channels, respectively. For BeF one obtains:
 ```python
-import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
