@@ -76,7 +76,7 @@ sudo apt-get install liblapack-dev liblapack-doc liblapack-pic liblapack3 liblap
 ```
 **Install Molpro**
 ```
-PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure FOPT=-O2
+./configure FOPT=-O2
 make -j 16
 make quicktest
 ```
