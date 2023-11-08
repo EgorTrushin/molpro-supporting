@@ -10,7 +10,7 @@ echo Molpro Path: $MOLPRO
 echo Number of OMP threads: $NUM_OMP_THREADS
 echo Memory: $MEM m
 
-export OMP_THREAD_LIMIT=$NUM_OMP_THREADS
+export OMP_NUM_THREADS=$NUM_OMP_THREADS
 
 $MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < b_uksinv.test
 $MOLPRO -t $NUM_OMP_THREADS -m $MEM --no-xml-output < bef_acfd_uscrpa.test
