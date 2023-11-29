@@ -40,7 +40,23 @@ acfd;ksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,vhoep=1,
 e(3)=energy
 prog(3)='Inversion of USCEXX w space- and spin-symmetrization'
 
-eold = [-7.624176315284, -7.422445934986, -7.422446676795]
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,spin_sym=1,HOMO=1
+e_ref_uscexx=energy
+
+acfd;ksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,noa=2,nob=1,epsilon_major=-0.1927879475E+00,HOMO=1
+
+e(4)=energy
+prog(4)='Inversion of USCEXX with HOMO-condition and spin-symmetrization'
+
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,spin_sym=1,HOMO=1,vhoep=1,thr_sym=1d-10
+e_ref_uscexx=energy
+
+acfd;ksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,noa=2,nob=1,epsilon_major=-0.1930882635E+00,HOMO=1,vhoep=1,thr_sym=1d-10
+
+e(5)=energy
+prog(5)='Inversion of USCEXX with HOMO-condition,  spin-symmetrization and spacial-symmetrization'
+
+eold = [-7.624176315284, -7.422445934986, -7.422446676795, -7.428274128028,  -7.428255344895]
 
 
 de=e-eold(1:ii)
