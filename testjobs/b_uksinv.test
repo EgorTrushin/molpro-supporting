@@ -18,7 +18,7 @@ hf,maxit=30
 
 e_ref_cisd=energy
 
-acfd;uksinv,refden=2140.2,orb=2100.2,e_ref=e_ref_cisd,thr_fai_oep=5d-2
+acfd;uksinv,refden=2140.2,orb=2100.2,e_ref=e_ref_cisd,thr_fai_oep=5d-2,vhoeop=1,vref_fa_sameab=1
 e(1)=energy
 prog(1)='Inversion of CISD'
 
@@ -27,20 +27,46 @@ uhf,maxit=0
 acfd;uscexx,dfit=0,thr_fai_oep=5d-2,vref_fa_sameab=1
 e_ref_uscexx=energy
 
-acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2
+acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,vref_fa_sameab=1
 
 e(2)=energy
 prog(2)='Inversion of USCEXX'
 
-acfd;uscexx,dfit=0,thr_fai_oep=5d-2,vref_fa_sameab=1,vhoep=1,thr_sym=1d-10
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,vhoep=1,thr_sym=1d-10,vref_fa_sameab=1
 e_ref_uscexx=energy
 
-acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,vhoep=1,thr_sym=1d-10
+acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,thr_sym=1d-10,vhoep=1,vref_fa_sameab=1
 
 e(3)=energy
 prog(3)='Inversion of USCEXX w space-symmetrization'
 
-eold = [ -24.642029649760, -24.529554381389, -24.523295304041]
+
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2
+e_ref_uscexx=energy
+
+acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2
+
+e(4)=energy
+prog(4)='Inversion of USCEXX w split reference potentials'
+
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,HOMO=1
+e_ref_uscexx=energy
+
+acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,epsilon_major=-0.3178426824E+00,epsilon_minor=-0.4451695579E+00,HOMO=1
+
+e(5)=energy
+prog(5)='Inversion of USCEXX w split reference potentials and HOMO condition'
+
+acfd;uscexx,dfit=0,thr_fai_oep=5d-2,HOMO=1,thr_sym=1d-10,vhoep=1
+e_ref_uscexx=energy
+
+acfd;uksinv,refden=2201.2,orb=2201.2,e_ref=e_ref_uscexx,thr_fai_oep=5d-2,epsilon_major=-0.3425542682E+00,epsilon_minor=-0.4448769339E+00,HOMO=1,thr_sym=1d-10,vhoep=1
+
+e(6)=energy
+prog(6)='Inversion of USCEXX w split reference potentials and HOMO condition and spatial symmetrisation'
+
+
+eold = [ -24.642029649760, -24.529554381389, -24.523295304041, -24.529475112452, -24.529834802508, -24.525996839457]
 
 
 de=e-eold(1:ii)

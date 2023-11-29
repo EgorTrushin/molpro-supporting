@@ -2,8 +2,8 @@
 
 rm *.out *.xml *.log
 
-MOLPRO=/home/trushin/Molpro/molpro-fork/bin/molpro
-NUM_OMP_THREADS=16
+MOLPRO=~/molpro/bin/molpro
+NUM_OMP_THREADS=20
 MEM=2000
 
 echo Molpro Path: $MOLPRO

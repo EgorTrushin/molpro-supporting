@@ -31,7 +31,14 @@ acfd;ksinv,orb=2100.2,refden=2101.2,e_ref=e_ref_scexx,thr_fai_oep=1.7d-2
 e(2)=energy
 prog(2)='Inversion of SCEXX'
 
-eold = [-113.260789239326, -112.776634621702]
+acfd;scexx,dfit=0,thr_fai_oep=1.7d-2,HOMO=1
+e_ref_scexx=energy
+
+acfd;ksinv,orb=2100.2,refden=2101.2,e_ref=e_ref_scexx,thr_fai_oep=1.7d-2,epsilon_major=-0.5543692316E+00,HOMO=1
+e(3)=energy
+prog(3)='Inversion of SCEXX with HOMO-condition'
+
+eold = [-113.260789239326, -112.776634621702, -112.776900066674]
 
 de=e-eold(1:ii)
 
