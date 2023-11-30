@@ -32,7 +32,7 @@ eigen3 does not need to be compiled, but needs to be downloaded and unpacked int
 Clone Molpro from GitHub. e.g.:
 
 ```
-git clone [https://github.com/ThCErlangen/molpro](https://github.com/molpro/molpro.git)
+git clone https://github.com/molpro/molpro.git
 ```
 
 Navigate to the created directory and configure the installation by:
