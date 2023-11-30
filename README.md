@@ -28,11 +28,11 @@ make install
 **Install eigen3**  
 eigen3 does not need to be compiled, but needs to be downloaded and unpacked into a directory.
 
-**Install Molpro**
-clone ThC-AG molpro version from GitHub:
+**Install Molpro**  
+Clone Molpro from GitHub. e.g.:
 
 ```
-git clone https://github.com/ThCErlangen/molpro
+git clone [https://github.com/ThCErlangen/molpro](https://github.com/molpro/molpro.git)
 ```
 
 Navigate to the created directory and configure the installation by:
