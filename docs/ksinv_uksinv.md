@@ -1,4 +1,4 @@
-## KSINV program
+## KSINV and UKSINV programs
 The program KSINV solves the inverse Kohn-Sham (KS) problem, i.e., it finds the KS potential and the orbitals and eigenvalues corresponding to a given electron density. The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Full Configuration Interaction (FCI). The program is currently limited to non-spin polarized systems. The implementation was described and tested in Ref. [1] and follows the idea of Ref. [2] to use the KS response function to update the KS potential.
 
 Example input file for KS inversion of the reference density provided by the CCSD method for the CO molecule:
@@ -72,7 +72,7 @@ hf,maxit=0 ! HF calculation with 0 iterations, KSINV uses this for initializatio
 
 acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calculation
 ```
-The following options are available for the KSINV program:
+The following options are available for the KSINV and UKSINV programs:
 - **refden** record from which to read the reference density
 - **orb** record from which the occupation numbers are read (default: ‘2100.2’)
 - **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2')
@@ -104,6 +104,13 @@ The following options are available for the KSINV program:
 - **gridsize** determine the number of grid points for stored data (default: '2048')
 - **plotrange** determine the range for which plotting data will be evaluated as [-plotrange:plotrange] (default: '20d0')
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)
+- **noa**
+- **nob**  
+- **vhoep**  
+- **vref_fa_sameab**  
+- **homo**  
+- **epsilon_major**  
+- **epsilon_minor**  
 
 Since KS correlation and exchange potentials are important in KS inversion, we provide an illustration of how to plot these quantities. Let us assume that we have performed calculations for CO with the following options:
 ```
