@@ -1,6 +1,5 @@
 subroutine kext(icaa,ikaa,iq1,iq2,nt1,lent1,ipaa,ipee,nums,numt, &
      & ica,npkx,lenn,llcp,iadmax)
-  use common_zahl
   use common_tapes
   use common_cvec
   use common_cthr
