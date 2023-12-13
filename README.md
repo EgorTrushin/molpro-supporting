@@ -38,7 +38,7 @@ git clone https://github.com/molpro/molpro.git
 Navigate to the created directory and configure the installation by:
 
 ```
-I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure --prefix=/home/trushin/Molpro/molpro --bindir=/home/trushin/Molpro/molpro --disable-gfortran-check
+I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure --disable-gfortran-check
 ```
 
 now replace the files:
