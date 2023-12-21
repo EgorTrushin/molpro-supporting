@@ -107,15 +107,16 @@ The following options are available for the KSINV and UKSINV programs:
 - **gridsize** determine the number of grid points for stored data (default: '2048')
 - **plotrange** determine the range for which plotting data will be evaluated as [-plotrange:plotrange] (default: '20d0')
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)
-- **noa** number of electron in $\alpha$ spin channel, required for calculations of open-shell systems with KSINV.  
-- **nob** number of electron in $\beta$ spin channel, required for calculations of open-shell systems with KSINV. 
-- **vhoep** if set to 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)  
-- **space_sym** if set to 0, enable the space-symmetrization. When active sets vhoep=1 thr_sym=1d-10. (default: '0d0')  
-- **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels in UKSINV calculations (default: ‘0’)  
-- **homo** if set to $\neq$ 0, enable the use of the HOMO condition. Note that epsilon_major/epsilon_minor must be specified to get meaningful results. (default '0')  
+- **noa** number of electron in $\alpha$ spin channel, required for calculations of open-shell systems with KSINV.
+- **nob** number of electron in $\beta$ spin channel, required for calculations of open-shell systems with KSINV.
+- **vhoep** if set to 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)
+- **space_sym** if set to 0, enable the space-symmetrization. When active sets vhoep=1 thr_sym=1d-10. (default: '0d0')
+- **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels in UKSINV calculations (default: ‘0’)
+- **homo** if set to $\neq$ 0, enable the use of the HOMO condition. Note that epsilon_major/epsilon_minor must be specified to get meaningful results. (default '0')
 - **epsilon_major** when homo=1, specifies the value of HOMO in $\alpha$ spin channel.
 - **epsilon_minor** when homo=1, specifies the value of HOMO in $\beta$ spin channel.
-- 
+- **density_test** if set to $\neq$ 0, enable density difference test. $|\rho_{ref}(r) - \rho_{KS}(r)|$ is evaluated on real space grid and integrated. (default '0')
+- **thr_den_intgr** threshold for density difference integration test. (default '1d-6')
 
 Since KS correlation and exchange potentials are important in KS inversion, we provide an illustration of how to plot these quantities. Let us assume that we have performed calculations for CO with the following options:
 ```
