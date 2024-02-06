@@ -23,19 +23,19 @@ df-uks,pbe,maxit=0,df_basis=aug-cc-pwCVQZ/mp2fit ! KS PBE
 
 acfd;uscrpa,thr_fai_oep=5d-2
 e(1)=energy
-prog(1)='NH2 with dfit FA-vref'
+prog(1)='BeF with dfit FA-vref'
 
 acfd;uscrpa,thr_fai_oep=5d-2,dfit=0
 e(2)=energy
-prog(2)='NH2 w/o dfit FA-vref'
+prog(2)='BeF w/o dfit FA-vref'
 
-acfd;uscrpa,oepsav=1,thr_fai_oep=5d-2
+acfd;uscrpa,spin_sym=1,thr_fai_oep=5d-2
 e(3)=energy
-prog(3)='NH2 with dfit FA-vref spin-averaging'
+prog(3)='BeF with dfit FA-vref spin-symmetrization'
 
-acfd;uscrpa,oepsav=1,thr_fai_oep=5d-2,dfit=0
+acfd;uscrpa,spin_sym=1,thr_fai_oep=5d-2,dfit=0
 e(4)=energy
-prog(4)='NH2 with dfit FA-vref spin-averaging'
+prog(4)='BeF with dfit FA-vref spin-symmetrizazion'
 
 eold = [-114.775352010110, -114.775350979360, -114.772493277506, -114.772492259272]
 
