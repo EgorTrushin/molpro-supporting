@@ -113,10 +113,10 @@ The following options are available for the KSINV and UKSINV programs:
 - **space_sym** if set to 0, enable the space-symmetrization. When active sets vhoep=1 thr_sym=1d-10. (default: '0d0')
 - **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels in UKSINV calculations (default: ‘0’)
 - **homo** if set to $\neq$ 0, enable the use of the HOMO condition. Note that epsilon_major/epsilon_minor must be specified to get meaningful results. (default '0')
-- **epsilon_major** when homo=1, specifies the value of HOMO in $\alpha$ spin channel.
-- **epsilon_minor** when homo=1, specifies the value of HOMO in $\beta$ spin channel.
+- **epsilon_major** when homo=1, specifies the energy of HOMO orbital in $\alpha$ spin channel.
+- **epsilon_minor** when homo=1, specifies the energy of HOMO orbital in $\beta$ spin channel.
 - **density_test** if set to $\neq$ 0, enable density difference test. $|\rho_{ref}(r) - \rho_{KS}(r)|$ is evaluated on real space grid and integrated. (default '0')
-- **thr_den_intgr** threshold for density difference integration test. (default '1d-6')
+- **thr_den_intgr** threshold for density difference integration test (default '1d-6')
 
 Since KS correlation and exchange potentials are important in KS inversion, we provide an illustration of how to plot these quantities. Let us assume that we have performed calculations for CO with the following options:
 ```
