@@ -17,18 +17,27 @@
 ## Compiling Molpro on various Linux systems
 
 ### Molpro on OpenSUSE with Intel oneAPI (tcsv020)
-**Install Global Arrays:**
+
+<details>
+<summary><b>Install Global Arrays</b></summary>
+  
 ```
 I_MPI_CXX=icpc MPICC=mpiicc MPIF77=mpiifort ./configure --prefix=/home/trushin/libs/ga-5.8.2
 make
 make check
 make install
 ```
+</details>
 
-**Install eigen3**  
+<details>
+<summary><b>Install eigen3</b></summary>
+
 eigen3 does not need to be compiled, but needs to be downloaded and unpacked into a directory.
+</details>
 
-**Install Molpro**  
+<details>
+<summary><b>Install Molpro</b></summary>
+
 Clone Molpro from GitHub. e.g.:
 
 ```
@@ -59,6 +68,7 @@ It is necessary to have /home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64 
 ```
 export LD_LIBRARY_PATH=/home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64:$LD_LIBRARY_PATH
 ```
+</details>
 
 ### Molpro on Ubuntu with gcc/gfortran
 gcc, mpich, make, cmake, git, etc. are required.
