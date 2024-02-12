@@ -130,8 +130,12 @@ For gfotran just to configure with FCFLAGS=-Wall:
 
 <a id="item_slurm"></a>
 ## Molpro with SLURM launcher
+
+<details><summary><b>SLURM launcher</b></summary>
+
 One can replace LAUNCHER in bin/molpro (bin/molpro.sh)
 ```
 LAUNCHER="/usr/bin/srun %x”
 ```
 This helped to run properly hybrid MPI+OpenMP calculations on multiple nodes using cluster machines.
+</details>
