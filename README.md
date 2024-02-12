@@ -1,5 +1,6 @@
 **Table of content:**
 - [The contents of the directories in the repository](#item_dirs)
+- [Markdown documentation for programs/codes](#item_docs)
 - [Compiling Molpro on various Linux systems](#item_compile)
 - [Automatic formatting for Fortran code with fprettify](#item_fprettify)
 - [Compile Molpro with warnings](#item_warnings)
@@ -7,10 +8,17 @@
 
 <a id="item_dirs"></a>
 ## The contents of the directories in the repository
-- **docs** Markdown documentation for our programs/codes
+- **docs** Markdown documentation for programs/codes
 - **examples** example input files for calculations using our programs/codes
 - **files** various auxiliary files
 - **testjobs** testjobs for our programs/codes
+
+<a id="item_docs"></a>
+## Markdown documentation for programs/codes
+- [RIRPA/URIRPA program](https://www.molpro.net/manual/doku.php?id=kohn-sham_random-phase_approximation#rirpa_program)
+- [SCEXX/USCEXX program](/docs/scexx_uscexx.md)
+- [KSINV/UKSINV program](/docs/ksinv_uksinv.md)
+- [SCRPA/USCRPA program](/docs/scrpa_uscrpa.md)
 
 <a id="item_compile"></a>
 ## Compiling Molpro on various Linux systems
