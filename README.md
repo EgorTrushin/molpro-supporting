@@ -10,7 +10,6 @@
 - **docs** Markdown documentation for our programs/codes
 - **examples** example input files for calculations using our programs/codes
 - **files** various auxiliary files
-- **pyscripts** python scripts useful for working with Molpro and Cluster
 - **testjobs** testjobs for our programs/codes
 
 <a id="item_compile"></a>
