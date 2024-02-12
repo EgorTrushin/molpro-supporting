@@ -70,31 +70,43 @@ export LD_LIBRARY_PATH=/home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64:$
 ### Molpro on Ubuntu with gcc/gfortran
 gcc, mpich, make, cmake, git, etc. are required.
 
-**Install Global Arrays:**
+<details><summary><b>Install Global Arrays</b></summary>
+
 ```
 ./configure  
 make
 make check
 make install
 ```
-**Install BLAS, lapack, lapacke, einen3:**
+</details>
+
+<details><summary><b>Install BLAS, lapack, lapacke, einen3</b></summary>
+
 ```
 sudo apt-get install liblapack-dev liblapack-doc liblapack-pic liblapack3 liblapack-test liblapacke liblapacke-dev libeigen3-dev
 ```
-**Install Molpro**
+</details>
+
+<details><summary><b>Install Molpro</b></summary>
+
 ```
 ./configure FOPT=-O2
 make -j 16
 make quicktest
 ```
 Copy a Molpro token to /home/trushin/.molpro/ before making quicktest.
+</details>
 
 <a id="item_fprettify"></a>
-## Automatic formatting for Fortran code with fprettify
+## Automatic formatting for Fortran code
+
+<details><summary><b>fprettify</b></summary>
+
 [fprettify](https://github.com/pseewald/fprettify) is a great tool. My choice for formatting:
 ```
 fprettify -i 2 -l 80 -w 1 -s
 ```
+</details>
 
 <a id="item_warnings"></a>
 ## Compile Molpro with warnings
