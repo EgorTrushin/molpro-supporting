@@ -1,10 +1,10 @@
 
- Working directory              : /tmp/trushin/molpro.NkueOHCjkT/
- Global scratch directory       : /tmp/trushin/molpro.NkueOHCjkT/
+ Working directory              : /tmp/trushin/molpro.PmYhbjWU05/
+ Global scratch directory       : /tmp/trushin/molpro.PmYhbjWU05/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /tmp/trushin/molpro.NkueOHCjkT/
+ Main file repository           : /tmp/trushin/molpro.PmYhbjWU05/
 
- id        : chemieegortrushi
+ id        : chemie
 
  Nodes         nprocs
  trushin-laptop    1
@@ -15,12 +15,13 @@
  default implementation of scratch files=df  
 
 
- Variables initialized (1040), CPU time= 0.00 sec
+ Variables initialized (1042), CPU time= 0.00 sec
  gdirect                                                                         ! integral-direct mode
  
  basis={
  default,aug-cc-pwCVQZ                                                           ! orbital basis
  set,oep;default,aug-cc-pVDZ/mp2fit                                              ! OEP basis
+ set,dfit;default,aug-cc-pwCV5Z/mp2fit
  }
  
  symmetry,nosym                                                                  ! USCEXX does not use symmetry
@@ -35,11 +36,11 @@
  charge=0
  spin=1
  
- df-uhf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit                                    ! HF calculation with 0 iterations
- {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
+ df-uhf,maxit=0,df_basis=dfit                                                    ! HF calculation with 0 iterations
+ {cfit,basis_coul=dfit,basis_exch=dfit}
  
- acfd;uscexx,spin_sym=1,thr_fai_oep=1.7d-2                                       ! USCEXX calculation
- Commands initialized (846), CPU time= 0.01 sec, 717 directives.
+ acfd;uscexx,thr_fai_oep=1.7d-2,spin_sym=1
+ Commands initialized (847), CPU time= 0.01 sec, 718 directives.
  Default parameters read. Elapsed time= 0.05 sec
 
  Checking input...
@@ -49,15 +50,15 @@
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.3 linked Wed Oct 11 23:08:00 2023
+                                    Version 2024.2 linked Mon Feb 19 20:15:02 2024
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 11-Oct-23          TIME: 23:16:28  
+  (16 PROC) 64 bit serial version                                                        DATE: 01-Mar-24          TIME: 01:49:30  
  **********************************************************************************************************************************
 
- SHA1:             a34e0c34f4a448516a35370da0578225b4bcabe0
+ SHA1:             a6259be3911a4aa80cd6f67916bf2f25c27a7970
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -132,6 +133,9 @@
  Basis set:    OEP
  Basis size:   144
  Sphericals:   T
+ Basis set:    DFIT
+ Basis size:   656
+ Sphericals:   T
 
  **********************************************************************************************************************************
 
@@ -158,7 +162,7 @@
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         0.63      0.55
+ CPU TIMES  *         0.65      0.56
  REAL TIME  *         1.08 SEC
  DISK USED  *        30.71 MB
  **********************************************************************************************************************************
@@ -166,12 +170,11 @@
 
  Program * Unrestricted Hartree-Fock
 
- Basis set AWCV5Z/MP2FIT generated.      Number of basis functions:   656 
  Coulomb and exchange fitting
  Thresholds for fitting:       THRAO_COUL= 1.0D-15    THRAO_EXCH= 1.0D-13    THRMO= 1.0D-12    THRPROD= 1.0D-12    THRASM= 1.0D-12
                                THR2HLF=    1.0D-12
 
- Basis set AWCV5Z-MP2FIT loaded. Number of basis functions: 656
+ Basis set DFIT loaded. Number of basis functions: 656
 
  Orbital guess generated from atomic densities.
  Using density fitting in orbital guess
@@ -180,14 +183,14 @@
  Initial alpha occupancy:   7
  Initial beta  occupancy:   6
 
- Elapsed time for starting guess:      2.44 sec
+ Elapsed time for starting guess:      2.42 sec
 
  NELEC=   13   SYM=1   MS2=1   THRE=1.0D-08   THRD=3.2D-06   THRG=3.2D-06  HFMA2=F  DIIS_START=2   DIIS_MAX=10   DIIS_INCORE=F
 
  Initial level shifts:    0.20 (ALPHA)    0.20 (BETA)
 
  ITER         ETOT            DE          GRAD         DDIFF    DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1   -114.10197307  -114.10197307     0.00D+00     0.00D+00     0     0       3.71      6.15    start
+   1   -114.10197307  -114.10197307     0.00D+00     0.00D+00     0     0       3.54      5.96    start
 
  Orbitals not optimized (maxit=1)
 
@@ -247,13 +250,16 @@
                                          GEOM     BASIS   MCVARS     UHF  
 
  PROGRAMS   *        TOTAL    DF-UHF       INT
- CPU TIMES  *         7.84      7.21      0.55
- REAL TIME  *         2.52 SEC
+ CPU TIMES  *         7.79      7.14      0.56
+ REAL TIME  *         2.50 SEC
  DISK USED  *        44.96 MB
  **********************************************************************************************************************************
 
  Basis set:    OEP
  Basis size:   144
+ Sphericals:   T
+ Basis set:    DFIT
+ Basis size:   656
  Sphericals:   T
 
  PROGRAM * USCEXX      (unrestricted self-consistent exact-exchange)
@@ -278,6 +284,7 @@
  Threshold for eigenproblem solver of OEP equation:    1.000E-99
  Solver for eigenproblems: GTSVD
  Spin-symmetrization: T
+ Space-symmetrization: F
  Constucting Hartree potential in OEP basis: F
  Fermi-Amaldi as reference potential: T
  HOMO condition: F
@@ -293,16 +300,16 @@
  Occupation numbers read from record     2200.2  Type=UHF/UHF  
 
    ITER        ENERGY            EDIFF       DDIFF       DIIS         TIME
-     0     -114.1019730659                                            2.23
-     1     -113.9511244900     0.151E+00   0.102E-01      1           5.10
-     2     -114.1591210527    -0.208E+00   0.739E-02      2           8.11
-     3     -114.1653752350    -0.625E-02   0.153E-02      3          11.18
-     4     -114.1654372837    -0.620E-04   0.670E-03      4          14.22
-     5     -114.1654169626     0.203E-04   0.157E-03      5          17.01
-     6     -114.1654293672    -0.124E-04   0.474E-04      6          20.00
-     7     -114.1654293192     0.480E-07   0.279E-05      5          23.00
-     8     -114.1654292862     0.330E-07   0.459E-06      5          26.00
-     9     -114.1654292791     0.706E-08   0.801E-07      5          28.98
+     0     -114.1019730659                                            2.03
+     1     -113.9511244900     0.151E+00   0.102E-01      1           4.77
+     2     -114.1591210527    -0.208E+00   0.739E-02      2           7.71
+     3     -114.1653752350    -0.625E-02   0.153E-02      3          10.57
+     4     -114.1654372837    -0.620E-04   0.670E-03      4          13.41
+     5     -114.1654169626     0.203E-04   0.157E-03      5          16.40
+     6     -114.1654293672    -0.124E-04   0.474E-04      6          19.19
+     7     -114.1654293192     0.480E-07   0.279E-05      5          22.19
+     8     -114.1654292862     0.330E-07   0.459E-06      5          25.30
+     9     -114.1654292791     0.706E-08   0.801E-07      5          28.36
 
  SCF converged in     9 iterations
 
@@ -351,8 +358,8 @@
                                          JMAT   
 
  PROGRAMS   *        TOTAL      ACFD    DF-UHF       INT
- CPU TIMES  *       147.57    139.70      7.21      0.55
- REAL TIME  *        31.53 SEC
+ CPU TIMES  *       146.99    139.16      7.14      0.56
+ REAL TIME  *        30.91 SEC
  DISK USED  *        62.00 MB
  **********************************************************************************************************************************
 

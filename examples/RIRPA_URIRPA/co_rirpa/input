@@ -3,7 +3,8 @@ gdirect ! integral-direct mode
 
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
-set,ri; default,aug-cc-pwCVQZ/mp2fit ! RI basis
+set,ri;default,aug-cc-pwCVQZ/mp2fit ! RI basis
+set,dfit;default,aug-cc-pwCV5Z/mp2fit
 }
 
 symmetry,nosym ! RIRPA does not use symmetry
@@ -16,7 +17,7 @@ C 0.000000 0.000000 -0.646514
 O 0.000000 0.000000 0.484886
 }
 
-df-ks,pbe,df_basis=aug-cc-pwCV5Z/mp2fit,maxit=200 ! DFT calculation
-{cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
+df-ks,pbe,df_basis=dfit
+{cfit,basis_coul=dfit,basis_exch=dfit}
 
 acfd;rirpa ! RPA/σ-functional calculation; one can use alternatively: ksrpa;rirpa

@@ -3,6 +3,7 @@ gdirect ! integral-direct mode
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
 set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+set,dfit;default,aug-cc-pwCV5Z/mp2fit
 }
 
 symmetry,nosym ! SCEXX does not use symmetry
@@ -15,7 +16,7 @@ C        0.000000    0.000000   -0.646514
 O        0.000000    0.000000    0.484886
 }
 
-df-hf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit ! HF calculation with 0 iteration
-{cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
+df-hf,maxit=0,df_basis=dfit ! HF calculation with 0 iteration
+{cfit,basis_coul=dfit,basis_exch=dfit}
 
 acfd;scexx,thr_fai_oep=1.7d-2,plot_z=1 ! SCEXX calculation

@@ -1,10 +1,10 @@
 
- Working directory              : /tmp/trushin/molpro.yeFINogVBd/
- Global scratch directory       : /tmp/trushin/molpro.yeFINogVBd/
+ Working directory              : /tmp/trushin/molpro.Z9kd5ksSGS/
+ Global scratch directory       : /tmp/trushin/molpro.Z9kd5ksSGS/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /tmp/trushin/molpro.yeFINogVBd/
+ Main file repository           : /tmp/trushin/molpro.Z9kd5ksSGS/
 
- id        : chemieegortrushi
+ id        : chemie
 
  Nodes         nprocs
  trushin-laptop    1
@@ -15,12 +15,13 @@
  default implementation of scratch files=df  
 
 
- Variables initialized (1031), CPU time= 0.00 sec
+ Variables initialized (1042), CPU time= 0.00 sec
  gdirect                                                                         ! integral-direct mode
  
  basis={
  default,aug-cc-pwCVQZ                                                           ! orbital basis
  set,oep;default,aug-cc-pVDZ/mp2fit                                              ! OEP basis
+ set,dfit;default,aug-cc-pwCV5Z/mp2fit
  }
  
  symmetry,nosym                                                                  ! SCEXX does not use symmetry
@@ -32,11 +33,11 @@
  O        0.000000    0.000000    0.484886
  }
  
- df-hf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit                                     ! HF calculation with 0 iteration
- {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
+ df-hf,maxit=0,df_basis=dfit                                                     ! HF calculation with 0 iteration
+ {cfit,basis_coul=dfit,basis_exch=dfit}
  
  acfd;scexx,thr_fai_oep=1.7d-2,plot_z=1                                          ! SCEXX calculation
- Commands initialized (842), CPU time= 0.01 sec, 704 directives.
+ Commands initialized (847), CPU time= 0.00 sec, 718 directives.
  Default parameters read. Elapsed time= 0.05 sec
 
  Checking input...
@@ -46,15 +47,15 @@
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked Thu Apr 27 21:48:33 2023
+                                    Version 2024.2 linked Mon Feb 19 20:15:02 2024
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 27-Apr-23          TIME: 22:10:39  
+  (16 PROC) 64 bit serial version                                                        DATE: 01-Mar-24          TIME: 01:52:35  
  **********************************************************************************************************************************
 
- SHA1:             1c9dcec862da0b4970ac549f594fe4407f422f23
+ SHA1:             a6259be3911a4aa80cd6f67916bf2f25c27a7970
  **********************************************************************************************************************************
 
  Memory per process:      2000 MW
@@ -127,6 +128,9 @@
  Basis set:    OEP
  Basis size:   144
  Sphericals:   T
+ Basis set:    DFIT
+ Basis size:   656
+ Sphericals:   T
 
  **********************************************************************************************************************************
 
@@ -153,22 +157,21 @@
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         0.73      0.66
- REAL TIME  *         0.94 SEC
+ CPU TIMES  *         0.64      0.55
+ REAL TIME  *         1.07 SEC
  DISK USED  *        30.71 MB
  **********************************************************************************************************************************
 
 
  Program * Restricted Hartree-Fock
 
- Basis set AWCV5Z/MP2FIT generated.      Number of basis functions:   656 
  Coulomb and exchange fitting
  Thresholds for fitting:       THRAO_COUL= 1.0D-15    THRAO_EXCH= 1.0D-13    THRMO= 1.0D-12    THRPROD= 1.0D-12    THRASM= 1.0D-12
                                THR2HLF=    1.0D-12
 
- Basis set AWCV5Z-MP2FIT loaded. Number of basis functions: 656
+ Basis set DFIT loaded. Number of basis functions: 656
 
- Orbital guess generated from atomic densities. Full valence occupancy:   10
+ Orbital guess generated from atomic densities.
  Using density fitting in orbital guess
 
 
@@ -179,31 +182,31 @@
  Level shifts:    0.00 (CLOSED)    0.00 (OPEN)    0.30 (GAP_MIN)
 
  ITER           ETOT              DE          GRAD        DDIFF     DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1     -112.76795678    -112.76795678     0.00D+00     0.32D-01     0     0       2.77      5.49    start
+   1     -112.76801698    -112.76801698     0.00D+00     0.32D-01     0     0       2.81      5.44    start
 
  Orbitals not optimized (maxit=1)
 
  Final occupancy:   7
 
- !RHF STATE 1.1 Energy               -112.767956781487
-  RHF One-electron energy            -197.912736539762
-  RHF Two-electron energy              62.694270545490
-  RHF Kinetic energy                  112.532393846324
+ !RHF STATE 1.1 Energy               -112.768016981921
+  RHF One-electron energy            -197.918862581602
+  RHF Two-electron energy              62.700336386897
+  RHF Kinetic energy                  112.536504837400
   RHF Nuclear energy                   22.450509212784
-  RHF Virial quotient                  -1.002093290004
+  RHF Virial quotient                  -1.002057218188
 
- !RHF STATE 1.1 Dipole moment           0.00000000     0.00000000    -0.24622231
- Dipole moment /Debye                   0.00000000     0.00000000    -0.62583470
+ !RHF STATE 1.1 Dipole moment           0.00000000    -0.00000000    -0.24602663
+ Dipole moment /Debye                   0.00000000    -0.00000000    -0.62533732
 
  Orbital energies:
 
            1.1          2.1          3.1          4.1          5.1          6.1          7.1          8.1          9.1
-    -20.585018   -11.498374    -1.526439    -0.783066    -0.639630    -0.639630    -0.589941     0.098928     0.098928
+    -20.584386   -11.497819    -1.525975    -0.782655    -0.639303    -0.639303    -0.589654     0.099226     0.099226
 
 
- HOMO      7.1    -0.589941 =     -16.0531eV
- LUMO      8.1     0.098928 =       2.6920eV
- LUMO-HOMO         0.688869 =      18.7451eV
+ HOMO      7.1    -0.589654 =     -16.0453eV
+ LUMO      8.1     0.099226 =       2.7001eV
+ LUMO-HOMO         0.688880 =      18.7454eV
 
  Orbitals saved in record  2100.2
 
@@ -219,13 +222,16 @@
                                          GEOM     BASIS   MCVARS     RHF  
 
  PROGRAMS   *        TOTAL     DF-HF       INT
- CPU TIMES  *         6.24      5.50      0.66
- REAL TIME  *         1.99 SEC
+ CPU TIMES  *         6.09      5.46      0.55
+ REAL TIME  *         2.17 SEC
  DISK USED  *        41.68 MB
  **********************************************************************************************************************************
 
  Basis set:    OEP
  Basis size:   144
+ Sphericals:   T
+ Basis set:    DFIT
+ Basis size:   656
  Sphericals:   T
 
  PROGRAM * SCEXX      (restricted self-consistent exact-exchange)
@@ -249,8 +255,10 @@
  Threshold for eigenvalue difference in calculation of Lambda:    1.000E-06
  Threshold for eigenproblem solver of OEP equation:    1.000E-99
  Solver for eigenproblems: GTSVD
+ Space-symmetrization: F
  Constucting Hartree potential in OEP basis: F
  Fermi-Amaldi as reference potential: T
+ HOMO condition: F
  Plot exchange potential along z-axis
  Plot every iteration:   F
 
@@ -260,30 +268,30 @@
  Occupation numbers read from record     2100.2  Type=RHF/RHF  
 
    ITER        ENERGY            EDIFF       DDIFF       DIIS         TIME
-     0     -112.7679567815                                            1.19
-     1     -112.7124912477     0.555E-01   0.879E-02      1           2.72
-     2     -112.7442370575    -0.317E-01   0.562E-02      2           4.25
-     3     -112.7822975965    -0.381E-01   0.253E-02      3           5.70
-     4     -112.7828528316    -0.555E-03   0.420E-03      4           7.21
-     5     -112.7828564417    -0.361E-05   0.911E-04      5           8.78
-     6     -112.7828582644    -0.182E-05   0.155E-04      6          10.36
-     7     -112.7828582955    -0.311E-07   0.222E-05      7          11.95
-     8     -112.7828583181    -0.226E-07   0.433E-06      5          13.52
-     9     -112.7828583171     0.993E-09   0.381E-07      5          15.02
+     0     -112.7680169819                                            1.14
+     1     -112.7123928275     0.556E-01   0.877E-02      1           2.61
+     2     -112.7442007460    -0.318E-01   0.563E-02      2           4.17
+     3     -112.7823040533    -0.381E-01   0.253E-02      3           5.71
+     4     -112.7828529485    -0.549E-03   0.418E-03      4           7.21
+     5     -112.7828564339    -0.349E-05   0.912E-04      5           8.69
+     6     -112.7828582637    -0.183E-05   0.155E-04      6          10.31
+     7     -112.7828582959    -0.321E-07   0.223E-05      7          11.92
+     8     -112.7828583181    -0.222E-07   0.430E-06      5          13.47
+     9     -112.7828583171     0.969E-09   0.382E-07      5          14.99
 
  SCF converged in     9 iterations
 
  SCEXX orbitals written to record    2101.2
  
- !SCEXX Total energy                 -112.782858317136
-  SCEXX One-electron energy          -198.101396711321
-  SCEXX Two-electron energy            62.868029181401
+ !SCEXX Total energy                 -112.782858317139
+  SCEXX One-electron energy          -198.101396799259
+  SCEXX Two-electron energy            62.868029269336
   SCEXX Nuclear energy                 22.450509212784
-  SCEXX Coulomb energy                 76.183222100190
-  SCEXX Exchange energy               -13.315192918789
+  SCEXX Coulomb energy                 76.183222200799
+  SCEXX Exchange energy               -13.315192931463
  
- !SCEXX Dipole moment                   0.00000000     0.00000000    -0.10706964
- Dipole moment /Debye                   0.00000000     0.00000000    -0.27214389
+ !SCEXX Dipole moment                  -0.00000000    -0.00000000    -0.10706968
+ Dipole moment /Debye                  -0.00000000    -0.00000000    -0.27214397
 
  SCEXX eigenvalues
    1-  10  -0.18989E+02 -0.10172E+02 -0.12561E+01 -0.68472E+00 -0.58813E+00 -0.58813E+00 -0.48059E+00 -0.19844E+00 -0.19844E+00 -0.11538E+00
@@ -307,14 +315,14 @@
               4       4        4.79      1120     1130     2901     3000   
 
  PROGRAMS   *        TOTAL      ACFD     DF-HF       INT
- CPU TIMES  *        84.62     78.35      5.50      0.66
- REAL TIME  *        17.41 SEC
+ CPU TIMES  *        81.60     75.48      5.46      0.55
+ REAL TIME  *        17.59 SEC
  DISK USED  *        47.45 MB
  **********************************************************************************************************************************
 
- ACFD/aug-cc-pWCVQZ energy=   -112.782858317136
+ ACFD/aug-cc-pWCVQZ energy=   -112.782858317139
 
             ACFD           DF-HF
-   -112.78285832   -112.76795678
+   -112.78285832   -112.76801698
  **********************************************************************************************************************************
  Molpro calculation terminated
