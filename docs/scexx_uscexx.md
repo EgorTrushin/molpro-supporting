@@ -13,6 +13,8 @@ The preprocessing step to remove linear combinations of auxiliary basis function
 
 These thresholds are expected to work also for orbital basis sets without augmentation cc-pwCVXZ (X=T,Q,5) and without core-polarization functions aug-cc-pVXZ (X=T,Q,5). As an auxiliary basis set (OEP), the aug-cc-pVXZ/mp2fit (X=T,Q,5) family of basis sets works best. In particular, according to Ref. [2], it is recommended to use aug-cc-pVDZ/mp2fit auxiliary basis sets for atoms up to neon and aug-cc-pVTZ/mp2fit auxiliary basis sets for heavier atoms.
 
+The code allows to perform calculations symmetrized in ordinary, spin or both ordinary and spin space according to Ref. [3], see parameters **space_sym** and **spin_sym** below.
+
 Below is an example input file for spin-restricted calculations for the CO molecule. Note that the input record from a preceding calculation is mandatory for initialization of orbitals and eigenvalues as starting point for EXX calculation, whereas it can come from HF or DFT calculations with maxit=0.
 ```
 gdirect ! integral-direct mode
@@ -20,6 +22,7 @@ gdirect ! integral-direct mode
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
 set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+set,dfit;default,aug-cc-pwCV5Z/mp2fit
 }
 
 symmetry,nosym ! SCEXX does not use symmetry
@@ -28,12 +31,12 @@ angstrom
 geometry={
 2
 
-C        0.000000    0.000000   -0.646514 
-O        0.000000    0.000000    0.484886 
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
 }
 
-df-hf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit ! HF calculation with 0 iteration
-{cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
+df-hf,maxit=0,df_basis=dfit ! HF calculation with 0 iteration
+{cfit,basis_coul=dfit,basis_exch=dfit}
 
 acfd;scexx,thr_fai_oep=1.7d-2 ! SCEXX calculation
 ```
@@ -44,6 +47,7 @@ gdirect ! integral-direct mode
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
 set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+set,dfit;default,aug-cc-pwCV5Z/mp2fit
 }
 
 symmetry,nosym ! USCEXX does not use symmetry
@@ -52,14 +56,16 @@ angstrom
 geometry={
 2
 
-Be    0.0000000    0.0000000   -0.6823625 
-F     0.0000000    0.0000000    0.6823625 
+Be    0.0000000    0.0000000   -0.6823625
+F     0.0000000    0.0000000    0.6823625
+
 }
 
+charge=0
 spin=1
 
-df-uhf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit ! HF calculation with 0 iterations
-{cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
+df-uhf,maxit=0,df_basis=dfit ! HF calculation with 0 iterations
+{cfit,basis_coul=dfit,basis_exch=dfit}
 
 acfd;uscexx,thr_fai_oep=1.7d-2 ! USCEXX calculation
 ```
@@ -79,7 +85,7 @@ The following options are available for the SCEXX and USCEXX programs:
 - **thr_overlap_oep** threshold for processing OEP basis according to Section IIB2 in Ref. [2] (default: ‘1d-99’)
 - **thr_fai_oep** threshold for processing OEP basis according to Section IIB5 in Ref. [2] (default: ‘1.7d-2’)  
 - **thr_oep** threshold for throwing out contributions corresponding to small eigenvalue differences appearing in the denominator when constructing the so-called lambda term $1/(\varepsilon_a - \varepsilon_i)$ of the static Kohn-Sham response function (default: ‘1d-6’)  
-- **solve** matrix inversion methods to solve the OEP equation. The different options are: GESV, TSVD, GTSVD. GESV corresponds to a direct solution without any regularization technique. TSVD and GTSVD correspond to two solutions with regularization according to Eqs. (55) and (56) of Ref. [3], respectively. (default: 'GTSVD')  
+- **solve** matrix inversion methods to solve the OEP equation. The different options are: GESV, TSVD, GTSVD. GESV corresponds to a direct solution without any regularization technique. TSVD and GTSVD correspond to two solutions with regularization according to Eqs. (55) and (56) of Ref. [4], respectively. (default: 'GTSVD')  
 - **thr_solve** threshold used during matrix inversion to solve the OEP equation with TSVD and GTSVD methods. Note that the default threshold of 1d-99 results in the absence of regularization (default: ‘1d-99’)  
 - **vref_fa** if set to $\neq$ 0, enable the use of the Fermi-Amaldi potential as reference potential. Otherwise, the reference potential is constructed according to Eq. (45) of Ref. [2] (default: '1')  
 - **vhoep** if set to $\neq$ 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)  
@@ -164,4 +170,5 @@ plt.show()
 **Bibilography:**  
 [1] A. Heßelmann, A.W. Götz, F. Della Sala, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.2751159) 127, 054102 (2007)  
 [2] E. Trushin, A. Görling, [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0056431) 155, 054109 (2021)  
-[3] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)
+[3] E. Trushin, A. Görling, [J. Chem. Phys.](https://doi.org/10.1063/5.0171546) 159, 244109 (2023)  
+[4] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)
