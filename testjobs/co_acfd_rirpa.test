@@ -24,7 +24,7 @@ acfd;rirpa,sigma=0 ! RPA@PBE
 e(2)=energy
 prog(2)='RPA@PBE'
 
-acfd;rirpa ! SIGMA_S2@PBE
+acfd;rirpa,sigma_param=pbe_s2 ! SIGMA_S2@PBE
 e(3)=energy
 prog(3)='SIGMA_S2@PBE'
 
