@@ -10,7 +10,6 @@
 #include <string.h>
 #include <chrono>
 #include <ctime>
-
 #ifdef __MINGW32__
 #include <winsock2.h>
 #endif
@@ -29,7 +28,6 @@ extern "C" void declare_version(const char* version);
 int main(int argc, char* argv[]) {
  bool debug=false;
  std::string sha1=MOLPRO_SHA1;
- int64_t np, me;
 
  /* With these options the user can modify which implementation of PPIDD
     is used. There is no check as to whether their choice is sensible,
@@ -44,8 +42,8 @@ int main(int argc, char* argv[]) {
  }
 
  PPIDD_Initialize(&argc,&argv,ppidd_impl);
- PPIDD_Size(&np);
- PPIDD_Rank(&me);
+ int np = PPIDD_Size();
+ int me = PPIDD_Rank();
  MPI_Comm mpicomm=MPI_Comm_f2c(PPIDD_Worker_comm());
  if (!getenv("LANG")) putenv(strdup("LANG=C")); /* bug2832 */
  debug = (debug && me == 0) ? true : false;
