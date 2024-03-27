@@ -126,28 +126,17 @@ plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
 At the end one has the files vref-final.z, vx-final.z, vc-final.z and vxc-final.z with reference, exchange, correlation and exchange-correlation potentials. The potentials can be plotted using Python and matplotlib as follows:
 ```python
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
-def load_potential(filename):
-    """Read data from file."""
-    coord = list()
-    pot = list()
-    for line in open(filename):
-        aux = line.split()
-        coord.append(float(aux[2]))
-        pot.append(float(aux[3]))
-    coord = np.array(coord)
-    pot = np.array(pot)
-    return coord, pot
+vref = pd.read_csv('vref-total-final-z.csv')
+vx = pd.read_csv('vx-total-final-z.csv')
+vc = pd.read_csv('vc-total-final-z.csv')
+vxc = pd.read_csv('vxc-total-final-z.csv')
 
-coord, vref = load_potential('vref-final.z')
-coord, vx = load_potential('vx-final.z')
-coord, vc = load_potential('vc-final.z')
-coord, vxc = load_potential('vxc-final.z')
-
-plt.plot(coord, vref+vx, color='orangered', label='$v_x$')
-plt.plot(coord, vc, color='dodgerblue', label='$v_c$')
-plt.plot(coord, vref+vxc, color='lawngreen', label='$v_{xc}$')
+plt.plot(vx.z, vref.value+vx.value, color='orangered', label='$v_x$')
+plt.plot(vc.z, vc.value, color='orange', label='$v_c$')
+plt.plot(vxc.z, vref.value+vxc.value, color='dodgerblue', label='$v_{xc}$')
 
 plt.ylabel('Potential (Hartree)', fontsize=16)
 plt.xlabel('r (Bohr)', fontsize=16)
