@@ -157,7 +157,7 @@ For CCSD(T):
 For FCI:
 ```
 {FCI;core;dm,1325.1}
-{matrop;load,den,den,9887.1;write,den,dm.dat,status=rewind,prec=sci}
+{matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
 ```
 **Bibilography:**  
 [1] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
