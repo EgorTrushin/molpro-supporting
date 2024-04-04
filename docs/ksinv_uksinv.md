@@ -1,5 +1,30 @@
 ## KSINV and UKSINV programs
-The program KSINV solves the inverse Kohn-Sham (KS) problem, i.e., it finds the KS potential and the orbitals and eigenvalues corresponding to a given electron density. The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Full Configuration Interaction (FCI). The program is currently limited to non-spin polarized systems. The implementation was described and tested in Ref. [1] and follows the idea of Ref. [2] to use the KS response function to update the KS potential.
+The programs `KSINV` and `UKSINV` solve the inverse Kohn-Sham (KS) problem in the spin-restricted and spin-unrestricted cases, respectively.
+In the spin-restricted case, the KS inversion determines the KS potential for a given target density.
+In the spin-unrestricted case, the KS potentials for the $\alpha$ and $\beta$ spin are determined for given target electron densities for $\alpha$ and $\beta$ electrons.
+
+The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Configuration Interaction (CI). The implementation for closed-shell systems was described and tested in Ref. [1] and follows the idea of Ref. [2] to use the KS response function to update the KS potential. The extension to open-shell systems was described in Ref. [X].
+
+---
+
+**Important:** Read carefully the information below about the selection of basis sets and the `thr_fai_oep` parameter:  
+Kohn-Sham inversion calculations requires to specify two basis sets, namely orbital and OEP basis sets. The orbital basis set is the primary basis set for e.g. the representation of orbitals and the calculation of energy contributions. The OEP basis set is the auxiliary basis set for representing e.g. the exchange-correlation potential. 
+Gaussian basis set KS inversion methods for a long time suffered from numerical instabilities resulting from problems in balancing the orbital basis sets with the auxiliary basis sets.
+Present implementation of KS inversion in Molpro use a preprocessing of the auxiliary basis set that enables such balancing in an automatic fashion for standard Gaussian basis sets.
+The preprocessing step removes linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals. It involves the threshold `thr_fai_oep`, which determines how many linear combinations of auxiliary basis functions are removed and varies with respect to the size of the orbital basis set used. This scheme was tested using Dunning correlation consistent basis sets aug-cc-pwCVXZ (X = T, Q, 5) and recommended thresholds are
+| Orbital basis set | **thr_fai_oep** |
+| :----: | :----: |
+| aug-cc-pwCVTZ  |  5e-2   |
+| aug-cc-pwCVQZ  | 1.7e-2  |
+| aug-cc-pwCV5Z  |  5e-3   |
+
+These thresholds are also expected to work for orbital basis sets without augmentation cc-pwCVXZ (X = T, Q, 5) and without core-polarization functions aug-cc-pVXZ (X = T, Q, 5).
+ 
+As an auxiliary basis set (OEP), the aug-cc-pVXZ/mp2fit (X=T,Q,5) family of basis sets is recommended. In particular, it is recommended to use the aug-cc-pVDZ/mp2fit auxiliary basis sets for atoms up to neon and the aug-cc-pVTZ/mp2fit auxiliary basis sets for heavier atoms.
+ 
+Def2 basis sets of Ahlrichs family of similar quality also might work, but were not tested extensively in practice.
+
+---
 
 Example input file for KS inversion of the reference density provided by the CCSD method for the CO molecule:
 ```
