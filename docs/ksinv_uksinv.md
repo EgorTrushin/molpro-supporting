@@ -1,9 +1,8 @@
 ## KSINV and UKSINV programs
 The programs `KSINV` and `UKSINV` solve the inverse Kohn-Sham (KS) problem in the spin-restricted and spin-unrestricted cases, respectively.
 In the spin-restricted case, the KS inversion determines the KS potential for a given target density.
-In the spin-unrestricted case, the KS potentials for the $\alpha$ and $\beta$ spin are determined for given target electron densities for $\alpha$ and $\beta$ electrons.
-
-The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Configuration Interaction (CI). The implementation for closed-shell systems was described and tested in Ref. [1] and follows the idea of Ref. [2] to use the KS response function to update the KS potential. The extension to open-shell systems was described in Ref. [X].
+In the spin-unrestricted case, the KS potentials for the $\alpha$ and $\beta$ spin channels are determined for given target electron densities for $\alpha$ and $\beta$ electrons.  
+The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Configuration Interaction (CI). The implementation for closed-shell systems was described and tested in Ref. 1 and follows the idea of Ref. 2 to use the KS response function to update the KS potential. The extension to open-shell systems was described in Ref. X.
 
 ---
 
