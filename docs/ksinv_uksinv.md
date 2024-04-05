@@ -1,6 +1,6 @@
+## KSINV and UKSINV programs
 ![Status](https://img.shields.io/static/v1.svg?label=Status&message=Under%20Construction&color=orange)
 
-## KSINV and UKSINV programs
 The programs `KSINV` and `UKSINV` solve the inverse Kohn-Sham (KS) problem in the spin-restricted and spin-unrestricted cases, respectively.
 In the spin-restricted case, the KS inversion determines the KS potential for a given target density.
 In the spin-unrestricted case, the KS potentials for the $\alpha$ and $\beta$ spin channels are determined for given target electron densities for $\alpha$ and $\beta$ electrons.  
@@ -36,7 +36,7 @@ Example input file for KS inversion of the reference density provided by the CCS
 ```
 basis={
 default,aug-cc-pwCVQZ ! orbital basis
-set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+set,oep;default,aug-cc-pVDZ/mp2fit ! ONote that we have to explicitly specify the number of and electrons, see noa and nob parameters.EP basis
 }
 
 symmetry,nosym ! KSINV does not use symmetry
@@ -104,7 +104,54 @@ hf,maxit=0 ! HF calculation with 0 iterations, KSINV uses this for initializatio
 acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calculation
 ```
 
-As an example of the spin-unrestricted KS inversion for open-shell system, 
+Example input file for spin-unrestricted KS inversion for open-shell system, the Li atom, with the reference density provided by FCI:
+```
+basis={
+default,aug-cc-pwCVTZ
+set,oep
+default,aug-cc-pVDZ/mp2fit
+}
+
+symmetry,nosym
+angstrom
+geometry={
+1
+
+Li     0.0000000    0.0000000    0.00000000
+}
+
+
+hf 
+{fci;dm,3000.2;core}
+e_ref=energy
+
+acfd;uksinv,maxit=100,refden=3000.2,e_ref=e_ref,thr_fai_oep=5d-2
+```
+
+Example input file for spin-restricted KS inversion for open-shell system, the Li atom, with the reference density provided by FCI:
+```
+basis={
+default,aug-cc-pwCVTZ
+set,oep
+default,aug-cc-pVDZ/mp2fit
+}
+
+symmetry,nosym
+angstrom
+geometry={
+1
+
+Li     0.0000000    0.0000000    0.00000000
+}
+
+
+hf 
+{fci;dm,3000.2;core}
+e_ref=energy
+
+acfd;ksinv,maxit=100,refden=3000.2,e_ref=e_ref,vhoep=1,thr_fai_oep=5d-2,noa=2,nob=1
+```
+Note that we have to explicitly specify the number of $\alpha$ and $\beta$ electrons, see `noa` and `nob` parameters.
 
 The following options are available for the `KSINV` and `UKSINV` programs:
 - **refden** record from which to read the reference density
@@ -144,7 +191,7 @@ The following options are available for the `KSINV` and `UKSINV` programs:
 - **noa** number of electron in $\alpha$ spin channel, required for calculations of open-shell systems with `KSINV`.
 - **nob** number of electron in $\beta$ spin channel, required for calculations of open-shell systems with `KSINV`.
 - **vhoep** if set to 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)
-- **space_sym** if set to 0, enable the space-symmetrization. When active sets vhoep=1 thr_sym=1d-10. (default: '0d0')
+- **space_sym** if set to $\neq$ 0, enable the space-symmetrization. When active, sets vhoep=1 thr_sym=1d-10. (default: '0')
 - **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels in `UKSINV` calculations (default: ‘0’)
 - **homo** if set to $\neq$ 0, enable the use of the HOMO condition. Note that epsilon_major/epsilon_minor must be specified to get meaningful results. (default '0')
 - **epsilon_major** when homo=1, specifies the energy of HOMO orbital in $\alpha$ spin channel.
