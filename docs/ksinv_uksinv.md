@@ -2,7 +2,7 @@
 The programs `KSINV` and `UKSINV` solve the inverse Kohn-Sham (KS) problem in the spin-restricted and spin-unrestricted cases, respectively.
 In the spin-restricted case, the KS inversion determines the KS potential for a given target density.
 In the spin-unrestricted case, the KS potentials for the $\alpha$ and $\beta$ spin channels are determined for given target electron densities for $\alpha$ and $\beta$ electrons.  
-The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Configuration Interaction (CI). The implementation for closed-shell systems was described and tested in Ref. 1 and follows the idea of Ref. 2 to use the KS response function to update the KS potential. The extension to open-shell systems was described in Ref. X.
+The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Configuration Interaction (CI). The implementation of KS inversion follows the so-called response function approach proposed in Ref. 1. The actual implementation for closed-shell systems was described and tested in Ref. 2. The extension to open-shell systems was described in Ref. 3.
 
 ---
 
@@ -105,14 +105,14 @@ The following options are available for the KSINV and UKSINV programs:
 - **maxit** maximum number of iterations (default '30')
 - **minit** minimum number of iterations (default '3')
 - **mixing_a**  real parameter to control the update of the exchange correlation potential in the KS inversion procedure. The parameter corresponds to $a$ in Appendix A of Ref. [1] (default: '0.1')
-- **mix_switch_iter** integer parameter to control the update of the exchange correlation potential in the KS inversion procedure. The parameter corresponds to $i$ in Appendix A of Ref. [1] (default: '3')
+- **mix_switch_iter** integer parameter to control the update of the exchange correlation potential in the KS inversion procedure. The parameter corresponds to $i$ in Appendix A of Ref. [2] (default: '3')
 - **backfilter** if set to $\neq$ 0, Eq. (52) of Ref. [1] is applied at each iteration to remove contributions not contained in the space spanned by the current iteration's auxiliary basis set (default: '1')
 - **thr_sym** threshold for symmetrization of the OEP basis set to enforce that OEP basis exhibits full symmetry of molecule. Set the threshold to 1d-10 to enable symmetrization. (default: ‘0d0’)
 - **thr_fai_oep** threshold for processing OEP basis according to Section IIB5 in Ref. [3] (default: ‘1.7d-2’)
 - **thr_overlap_oep** threshold for processing OEP basis according to Section IIB2 in Ref. [3] (default: ‘1d-99’)
-- **vref_fa** if set to $\neq$ 0, enable the use of the Fermi-Amaldi potential as reference potential when applying the charge condition. Otherwise, the reference potential is constructed according to Eq. (45) of Ref. [3] (default: '1')
+- **vref_fa** if set to $\neq$ 0, enable the use of the Fermi-Amaldi potential as reference potential when applying the charge condition. Otherwise, the reference potential is constructed according to Eq. (45) of Ref. [4] (default: '1')
 - **thr_oep** threshold for throwing out contributions corresponding to small eigenvalue differences appearing in the denominator when constructing the so-called lambda term $1/(\varepsilon_a - \varepsilon_i)$ of the static Kohn-Sham response function (default: ‘1d-6’)
-- **solve** matrix inversion methods to solve the OEP equation. The different options are: GESV, TSVD, GTSVD. GESV corresponds to a direct solution without any regularization technique. TSVD and GTSVD correspond to two solutions with regularization according to Eqs. (55) and (56) of Ref. [4], respectively. (default: 'GTSVD')
+- **solve** matrix inversion methods to solve the OEP equation. The different options are: GESV, TSVD, GTSVD. GESV corresponds to a direct solution without any regularization technique. TSVD and GTSVD correspond to two solutions with regularization according to Eqs. (55) and (56) of Ref. [5], respectively. (default: 'GTSVD')
 - **thr_solve** threshold used during matrix inversion to solve the OEP equation with TSVD and GTSVD methods. Note that the default threshold of 1d-99 results in the absence of regularization (default: ‘1d-99’)
 - **plot_always** if set to $\neq$ 0, enable writing of data-files for plotting for every iteration. Otherwise, only final results are written. (default: '0')
 - **plot_vc** if set to $\neq$ 0, enable writing of file with correlation potential (default: '0')
@@ -184,7 +184,8 @@ For FCI:
 {matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
 ```
 **Bibilography:**  
-[1] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
-[2] A. Görling, [Phys. Rev. A](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.46.3753) 46, 3753 (1992)  
-[3] E. Trushin, A. Görling, [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0056431) 155, 054109 (2021)  
-[4] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)
+[1] A. Görling, [Phys. Rev. A](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.46.3753) 46, 3753 (1992)  
+[2] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
+[3] J. Erhard, E. Trushin, A. Görling Unpublished  
+[4] E. Trushin, A. Görling, [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0056431) 155, 054109 (2021)  
+[5] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)
