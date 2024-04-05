@@ -1,8 +1,14 @@
+![Status](https://img.shields.io/static/v1.svg?label=Status&message=Under%20Construction&color=orange)
+
 ## KSINV and UKSINV programs
 The programs `KSINV` and `UKSINV` solve the inverse Kohn-Sham (KS) problem in the spin-restricted and spin-unrestricted cases, respectively.
 In the spin-restricted case, the KS inversion determines the KS potential for a given target density.
 In the spin-unrestricted case, the KS potentials for the $\alpha$ and $\beta$ spin channels are determined for given target electron densities for $\alpha$ and $\beta$ electrons.  
 The program is designed to work with densities provided by many-body methods such as Coupled Cluster (CC) or Configuration Interaction (CI). The implementation of KS inversion follows the so-called response function approach proposed in Ref. 1. The actual implementation for closed-shell systems was described and tested in Ref. 2. The extension to open-shell systems was described in Ref. 3.
+
+---
+
+**NOTE:** We have tutorial which provides practical Hands-on examples about the use of `KSINV` and `UKSINV` programs and post-processing of results of calculations. This tutorial is a good supplement to this documentation. [link to Tutorial](https://github.com/EgorTrushin/tutorials/blob/main/KS_inversion.ipynb).
 
 ---
 
@@ -96,6 +102,9 @@ hf,maxit=0 ! HF calculation with 0 iterations, KSINV uses this for initializatio
 
 acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calculation
 ```
+
+As an example of the spin-unrestricted KS inversion for open-shell system, 
+
 The following options are available for the KSINV and UKSINV programs:
 - **refden** record from which to read the reference density
 - **orb** record from which the occupation numbers are read (default: ‘2100.2’)
@@ -147,7 +156,7 @@ Since KS correlation and exchange potentials are important in KS inversion, we p
 acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2,\
 plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
 ```
-At the end one has the files vref-final.z, vx-final.z, vc-final.z and vxc-final.z with reference, exchange, correlation and exchange-correlation potentials. The potentials can be plotted using Python and matplotlib as follows:
+At the end one has the files `vref-total-final-z.csv`, `vx-total-final-z.csv`, `vc-total-final-z.csv` and `vxc-total-final-z.csv` with reference, exchange, correlation and exchange-correlation potentials. The potentials can be plotted using Python and matplotlib as follows:
 ```python
 import numpy as np
 import pandas as pd
