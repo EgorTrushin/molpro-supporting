@@ -1,5 +1,5 @@
 ## KSINV and UKSINV programs
-![Status](https://img.shields.io/static/v1.svg?label=Status&message=Under%20Construction&color=orange)
+![Status](https://img.shields.io/static/v1.svg?label=Status&message=Preliminary%20Version&color=orange)
 
 The programs `KSINV` and `UKSINV` solve the inverse Kohn-Sham (KS) problem in the spin-restricted and spin-unrestricted cases, respectively.
 In the spin-restricted case, the KS inversion determines the KS potential for a given target density.
@@ -190,7 +190,7 @@ The following options are available for the `KSINV` and `UKSINV` programs:
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)
 - **noa** number of electron in $\alpha$ spin channel, required for calculations of open-shell systems with `KSINV`.
 - **nob** number of electron in $\beta$ spin channel, required for calculations of open-shell systems with `KSINV`.
-- **vhoep** if set to 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)
+- **vhoep** if set to $\neq$ 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)
 - **space_sym** if set to $\neq$ 0, enable the space-symmetrization. When active, sets vhoep=1 thr_sym=1d-10. (default: '0')
 - **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels in `UKSINV` calculations (default: ‘0’)
 - **homo** if set to $\neq$ 0, enable the use of the HOMO condition. Note that epsilon_major/epsilon_minor must be specified to get meaningful results. (default '0')
@@ -199,7 +199,7 @@ The following options are available for the `KSINV` and `UKSINV` programs:
 - **density_test** if set to $\neq$ 0, enable density difference test. $|\rho_{ref}(r) - \rho_{KS}(r)|$ is evaluated on real space grid and integrated. (default '0')
 - **thr_den_intgr** threshold for density difference integration test (default '1d-6')
 
-Since KS correlation and exchange potentials are important in KS inversion, we provide an illustration of how to plot these quantities. Let us assume that we have performed calculations for CO with the following options:
+Since KS exchange, correlation and exchange-correlation potentials are important outcomes of KS inversion, we provide an illustration of how to plot these potentials. Let us assume that we have performed calculations for CO with the following options:
 ```
 acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2,\
 plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
@@ -235,18 +235,56 @@ plt.show()
 ```
 ![](ksinv_co.png)
 
-CCSD(T) and FCI reference densities can be prepared in the same way as CCSD.
+We have tested several post-Hartree-Fock methods for preparing reference densities. Below are examples of how to perform calculations using these methods, which store the density matrix in a record and in a file: 
+
+For FCI in closed-shell case:
+```
+{FCI;core;dm,1325.1}
+{matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
+```
+
+For CCSD:
+```
+{CCSD;core;dm,1325.1}
+{matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
+```
 
 For CCSD(T):
 ```
 {CCSD(T);core;dm,1325.1}
 {matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
 ```
-For FCI:
+
+Then one can read `dm.dat` from disc as `{matrop;read,den,type=density,file=dm.dat;save,den,1325.1}`.
+
+For FCI in open-shell case:
 ```
-{FCI;core;dm,1325.1}
-{matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
+{fci;dm,1325.1;core}
+{matrop;export,1325.1,dm.dat,status=rewind,prec=sci}
 ```
+
+For RS2:
+```
+{rs2;dm,1325.1;core}
+{matrop;export,1325.1,dm.dat,status=rewind,prec=sci}
+```
+
+For CISD
+```
+{ci;save,density=1325.1,spinden;core}
+{matrop;export,1325.1,dm.dat,status=rewind,prec=sci}
+```
+
+For AQCC:
+```
+{aqcc;save,density=1325.1,spinden;core}
+{matrop;export,1325.1,dm.dat,status=rewind,prec=sci}
+```
+
+Then one can read `dm.dat` from disc as: `{matrop;import,2140.2,file=dm.dat}`
+
+CCSD and CCSD(T) implementation in Molpro does not allow to store density matrix when applied to open-shell systems. Therefore, we must use CI code in this case, namely FCI, RS2, CISD, and AQCC. RS2 can store only total density, thus it can be used only in the spin-restricted inversion. For RS2, CISD, and AQCC, one can also use multi-reference variants which potentially are more accurate.
+
 **Bibilography:**  
 [1] A. Görling, [Phys. Rev. A](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.46.3753) 46, 3753 (1992)  
 [2] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
