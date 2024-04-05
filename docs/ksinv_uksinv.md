@@ -8,7 +8,7 @@ The program is designed to work with densities provided by many-body methods suc
 
 ---
 
-**NOTE:** We have tutorial which provides practical Hands-on examples about the use of `KSINV` and `UKSINV` programs and post-processing of results of calculations. This tutorial is a good supplement to this documentation. [link to Tutorial](https://github.com/EgorTrushin/tutorials/blob/main/KS_inversion.ipynb).
+**NOTE:** We have tutorial which provides practical Hands-on examples about the use of `KSINV` and `UKSINV` programs and post-processing of results of calculations. This tutorial is a good supplement to this documentation. [Link to Tutorial](https://github.com/EgorTrushin/tutorials/blob/main/KS_inversion.ipynb)
 
 ---
 
@@ -17,6 +17,7 @@ Kohn-Sham inversion calculations requires to specify two basis sets, namely orbi
 Gaussian basis set KS inversion methods for a long time suffered from numerical instabilities resulting from problems in balancing the orbital basis sets with the auxiliary basis sets.
 Present implementation of KS inversion in Molpro use a preprocessing of the auxiliary basis set that enables such balancing in an automatic fashion for standard Gaussian basis sets.
 The preprocessing step removes linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals. It involves the threshold `thr_fai_oep`, which determines how many linear combinations of auxiliary basis functions are removed and varies with respect to the size of the orbital basis set used. This scheme was tested using Dunning correlation consistent basis sets aug-cc-pwCVXZ (X = T, Q, 5) and recommended thresholds are
+
 | Orbital basis set | **thr_fai_oep** |
 | :----: | :----: |
 | aug-cc-pwCVTZ  |  5e-2   |
@@ -105,7 +106,7 @@ acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2 ! KSINV calc
 
 As an example of the spin-unrestricted KS inversion for open-shell system, 
 
-The following options are available for the KSINV and UKSINV programs:
+The following options are available for the `KSINV` and `UKSINV` programs:
 - **refden** record from which to read the reference density
 - **orb** record from which the occupation numbers are read (default: ‘2100.2’)
 - **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2')
@@ -140,11 +141,11 @@ The following options are available for the KSINV and UKSINV programs:
 - **gridsize** determine the number of grid points for stored data (default: '2048')
 - **plotrange** determine the range for which plotting data will be evaluated as [-plotrange:plotrange] (default: '20d0')
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)
-- **noa** number of electron in $\alpha$ spin channel, required for calculations of open-shell systems with KSINV.
-- **nob** number of electron in $\beta$ spin channel, required for calculations of open-shell systems with KSINV.
+- **noa** number of electron in $\alpha$ spin channel, required for calculations of open-shell systems with `KSINV`.
+- **nob** number of electron in $\beta$ spin channel, required for calculations of open-shell systems with `KSINV`.
 - **vhoep** if set to 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)
 - **space_sym** if set to 0, enable the space-symmetrization. When active sets vhoep=1 thr_sym=1d-10. (default: '0d0')
-- **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels in UKSINV calculations (default: ‘0’)
+- **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels in `UKSINV` calculations (default: ‘0’)
 - **homo** if set to $\neq$ 0, enable the use of the HOMO condition. Note that epsilon_major/epsilon_minor must be specified to get meaningful results. (default '0')
 - **epsilon_major** when homo=1, specifies the energy of HOMO orbital in $\alpha$ spin channel.
 - **epsilon_minor** when homo=1, specifies the energy of HOMO orbital in $\beta$ spin channel.
@@ -156,7 +157,14 @@ Since KS correlation and exchange potentials are important in KS inversion, we p
 acfd;ksinv,refden=1325.1,e_ref=-113.285493180105,thr_fai_oep=1.7d-2,\
 plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
 ```
-At the end one has the files `vref-total-final-z.csv`, `vx-total-final-z.csv`, `vc-total-final-z.csv` and `vxc-total-final-z.csv` with reference, exchange, correlation and exchange-correlation potentials. The potentials can be plotted using Python and matplotlib as follows:
+At the end the files `vref-total-final-z.csv`, `vx-total-final-z.csv`, `vc-total-final-z.csv` and `vxc-total-final-z.csv` are written which contain required data for plotting potentials. 
+The exchange-correlation potential consist of a reference exchange potential $v_x^{ref}$ and a remainder $v_{\bar{x}c}$:
+$$v_{xc}=v_x^{ref}+v_{\bar{x}c}$$
+We also have access to the individual part of the reminder $v_{\bar{x}c}$, namely a reminder of the exchange potential $v_{\bar{x}}$ and the correlation potential $v_c$.
+The correlation potential $v_c$ can be plotted as it is. The exchange potential is the sum of the reference exchange potential $v_x^{ref}$ and the corresponding reminder $v_{\bar{x}}$:
+$$v_x=v_x^{ref}+v_{\bar{x}}$$
+
+
 ```python
 import numpy as np
 import pandas as pd
