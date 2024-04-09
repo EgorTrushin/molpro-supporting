@@ -3,23 +3,40 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def load_potential(filename):
-    """Read data from file."""
-    coord, vxref, vxrest, vx = list(), list(), list(), list()
-    for line in open(filename):
+def load_potential(potfile):
+    """Read data from potential-file.
+
+    Args:
+      potfile: Path to file with potential data.
+
+    Returns:
+      x: x coordinate.
+      y: y coordinate.
+      z: z coordinate.
+      coord: coordinate on path.
+      vref: reference potential.
+      vrest: rest potential.
+      v: full potential.
+    """
+    x, y, z, coord = list(), list(), list(), list()
+    vref, vrest, v = list(), list(), list()
+    for line in open(potfile):
         aux = line.split()
+        x.append(float(aux[1]))
+        y.append(float(aux[2]))
+        z.append(float(aux[3]))
         coord.append(float(aux[4]))
-        vxref.append(float(aux[6]))
-        vxrest.append(float(aux[7]))
-        vx.append(float(aux[8]))
-    coord = np.array(coord)
-    vxref, vxrest, vx = np.array(vxref), np.array(vxrest), np.array(vx)
-    return coord, vxref, vxrest, vx
+        vref.append(float(aux[6]))
+        vrest.append(float(aux[7]))
+        v.append(float(aux[8]))
+    x, y, z, coord = np.array(x), np.array(y), np.array(z), np.array(coord)
+    vref, vrest, v = np.array(vref), np.array(vrest), np.array(v)
+    return x, y, z, coord, vref, vrest, v
 
-coord, vxref, vxrest, vx = load_potential('vx-final.z')
+_, _, _, coord, vxref, vxrest, vx = load_potential('vx-final.z')
 
-plt.plot(coord, vxref, color='orangered', label='$v_{x,ref}$')
-plt.plot(coord, vxrest, color='dodgerblue', label='$v_{x,rest}$')
+plt.plot(coord, vxref, color='orangered', label='$v_{x}^{ref}$')
+plt.plot(coord, vxrest, color='dodgerblue', label='$v_{x}^{rest}$')
 plt.plot(coord, vx, color='orange', label='$v_x$')
 
 plt.ylabel('Potential (Hartree)', fontsize=16)
