@@ -121,7 +121,7 @@ Since the local exchange potential is important in self-consistent exact-exchang
 ```
 acfd;scexx,thr_fai_oep=1.7d-2,plot_z=1
 ```
-At the end one has the files `vx-final.z` with reference $v_x^{ref}$, rest $v_x^{rest}$ and full $v_x$ exchange potentials. The potentials can be plotted using Python and matplotlib as follows:
+At the end there is the file `vx-final.z` with reference $v_x^{ref}$, rest $v_x^{rest}$ and full $v_x$ exchange potentials. The potentials can be plotted using Python and matplotlib as follows:
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
