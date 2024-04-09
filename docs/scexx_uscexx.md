@@ -1,9 +1,19 @@
 ## SCEXX and USCEXX programs
-The SCEXX and USCEXX programs allow spin-restricted and spin-unrestricted self-consistent exact-exchange calculations.
+![Status](https://img.shields.io/static/v1.svg?label=Status&message=Preliminary%20Version&color=orange)
 
-To obtain numerically stable exchange potentials, one must either use regularization techniques to carefully handle the small eigenvalues of the response matrix or to use auxiliary basis sets that are balanced to the orbital basis set. The latter can be done by manually constructing specific orbital and auxiliary basis sets that are sufficiently balanced. This has been possible for a number of atoms and molecules with quite large orbital basis sets [1], but does not qualify as a general applicable routine approach. The SCEXX and USCEXX programs therefore contain a new preprocessing scheme for auxiliary basis sets that effectively removes linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals and enable the construction of numerically stable exchange potentials with standard basis sets [2].
+The `SCEXX` and `USCEXX` programs allow self-consistent exact-exchange calculations for closed-shell and open-shell systems.
 
-The preprocessing step to remove linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals is implemented according to Sec II5 of Ref. [2]. It involves the threshold **thr_fai_oep**, which determines how many linear combinations of auxiliary basis functions are removed and varies with respect to the size of the orbital basis set used. In Ref. [2], this scheme was tested using Dunning correlation consistent basis sets and recommended thresholds are
+---
+
+**NOTE:** We have tutorial which provides practical Hands-on examples about the use of `SCEXX` and `USCEXX` programs and post-processing of results of calculations. This tutorial is a good supplement to this documentation. [Link to Tutorial](https://github.com/EgorTrushin/tutorials/blob/main/EXX_OEP.ipynb)
+
+---
+
+**Important:** Read carefully the information below about the selection of basis sets and the `thr_fai_oep` parameter:  
+
+To obtain numerically stable exchange potentials, one must either use regularization techniques to carefully handle the small eigenvalues of the response matrix or to use auxiliary basis sets that are balanced to the orbital basis set. The latter can be done by manually constructing specific orbital and auxiliary basis sets that are sufficiently balanced. This has been possible for a number of atoms and molecules with quite large orbital basis sets [1], but does not qualify as a general applicable routine approach. The `SCEXX` and `USCEXX` programs therefore contain a new preprocessing scheme for auxiliary basis sets that effectively removes linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals and enable the construction of numerically stable exchange potentials with standard basis sets [2].
+
+The preprocessing step to remove linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals is implemented according to Sec II5 of Ref. [2]. It involves the threshold `thr_fai_oep`, which determines how many linear combinations of auxiliary basis functions are removed and varies with respect to the size of the orbital basis set used. In Ref. [2], this scheme was tested using Dunning correlation consistent basis sets and recommended thresholds are
 
 | aug-cc-pwCVXZ (X=T,Q,5) orbital basis sets | **thr_fai_oep** |
 | :----: | :----:  |
@@ -13,7 +23,9 @@ The preprocessing step to remove linear combinations of auxiliary basis function
 
 These thresholds are expected to work also for orbital basis sets without augmentation cc-pwCVXZ (X=T,Q,5) and without core-polarization functions aug-cc-pVXZ (X=T,Q,5). As an auxiliary basis set (OEP), the aug-cc-pVXZ/mp2fit (X=T,Q,5) family of basis sets works best. In particular, according to Ref. [2], it is recommended to use aug-cc-pVDZ/mp2fit auxiliary basis sets for atoms up to neon and aug-cc-pVTZ/mp2fit auxiliary basis sets for heavier atoms.
 
-The code allows to perform calculations symmetrized in ordinary, spin or both ordinary and spin space according to Ref. [3], see parameters **space_sym** and **spin_sym** below.
+---
+
+The code allows to perform calculations symmetrized in ordinary, spin or both ordinary and spin space according to Ref. [3], see parameters `space_sym` and `spin_sym` below.
 
 Below is an example input file for spin-restricted calculations for the CO molecule. Note that the input record from a preceding calculation is mandatory for initialization of orbitals and eigenvalues as starting point for EXX calculation, whereas it can come from HF or DFT calculations with maxit=0.
 ```
@@ -104,13 +116,13 @@ The following parameters are only relevant for spin-unresticted calculations i.e
 
 Pitfalls:
 - One might encounter convergence problem using DIIS for systems exhibiting small HOMO-LUMO gaps. In this case switching to linear mixing scheme often might resolve the problem.
- - One might sometimes encounter energy oscillations between two solutions with different numbers of OEP basis functions remaining after OEP basis set preprocessing.  A small change in **thr_fai_oep** may solve the problem.
+- One might sometimes encounter energy oscillations between two solutions with different numbers of OEP basis functions remaining after OEP basis set preprocessing.  A small change in `thr_fai_oep` may solve the problem.
 
 Since the local exchange potential is important in self-consistent exact-exchange calculations, we provide an illustration of how to plot it, including separate contributions. Let us assume that we have performed calculations for CO with the following options:
 ```
 acfd;scexx,thr_fai_oep=1.7d-2,plot_z=1
 ```
-At the end one has the files vx-final.z with reference, rest and full exchange potentials. The potentials can be plotted using Python and matplotlib as follows:
+At the end one has the files `vx-final.z` with reference, rest and full exchange potentials. The potentials can be plotted using Python and matplotlib as follows:
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -143,7 +155,7 @@ plt.show()
 ```
 ![](scexx_co.png)
 
-In the similar way, for spin-unrestricted calculations with USCEXX, one ends up with two files vxa-final.z and vxb-final.z with data for $\alpha$ and $\beta$ spin channels, respectively. For BeF one obtains:
+In the similar way, for spin-unrestricted calculations with `USCEXX`, one ends up with two files `vxa-final.z` and `vxb-final.z` with data for $\alpha$ and $\beta$ spin channels, respectively. For BeF one obtains:
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
