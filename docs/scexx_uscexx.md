@@ -16,9 +16,9 @@ The preprocessing step to remove linear combinations of auxiliary basis function
 
 | aug-cc-pwCVXZ (X=T,Q,5) orbital basis sets | **thr_fai_oep** |
 | :----: | :----:  |
-| T      |  5d-2   |
-| Q      | 1.7d-2  |
-| 5      |  5d-3   |
+| T      |  5e-2   |
+| Q      | 1.7e-2  |
+| 5      |  5e-3   |
 
 These thresholds are expected to work also for orbital basis sets without augmentation cc-pwCVXZ (X=T,Q,5) and without core-polarization functions aug-cc-pVXZ (X=T,Q,5). As an auxiliary basis set (OEP), the aug-cc-pVXZ/mp2fit (X=T,Q,5) family of basis sets works best. In particular, according to Ref. [2], it is recommended to use aug-cc-pVDZ/mp2fit auxiliary basis sets for atoms up to neon and aug-cc-pVTZ/mp2fit auxiliary basis sets for heavier atoms.
 
