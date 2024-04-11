@@ -80,7 +80,7 @@ df-uhf,maxit=0,df_basis=dfit ! HF calculation with 0 iterations
 
 acfd;uscexx,thr_fai_oep=1.7d-2 ! USCEXX calculation
 ```
-The following options are available for the SCEXX and USCEXX programs:
+The following options are available for the `SCEXX` and `USCEXX` programs:
 
 - **orb** record from which the orbital coefficients and eigenvalues are read (default: ‘2100.2’ and ‘2200.2’ for SCEXX and USCEXX, respectively)  
 - **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2' and '2201.2' for SCEXX and USCEXX, respectively)  
@@ -109,7 +109,7 @@ The following options are available for the SCEXX and USCEXX programs:
 - **test_pot** if set to $\neq$ 0, enable a numerical test to determine if the potential is the derivative of the energy expression (default ’0’)  
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)  
 
-The following parameters are only relevant for spin-unresticted calculations i.e. using the USCEXX code:
+The following parameters are only relevant for the `USCEXX` program:
 - **spin_sym** if set to $\neq$ 0, enable spin-symmetrization in spin-unrestricted calculations, forcing orbitals and eigenvalues in $\alpha$ and $\beta$ spin channels to be identical (default: ‘0’)
 - **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels (default: ‘0’)
 
