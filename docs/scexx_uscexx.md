@@ -82,8 +82,8 @@ acfd;uscexx,thr_fai_oep=1.7d-2 ! USCEXX calculation
 ```
 The following options are available for the `SCEXX` and `USCEXX` programs:
 
-- **orb** record from which the orbital coefficients and eigenvalues are read (default: ‘2100.2’ and ‘2200.2’ for SCEXX and USCEXX, respectively)  
-- **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2' and '2201.2' for SCEXX and USCEXX, respectively)  
+- **orb** record from which the orbital coefficients and eigenvalues are read (default: ‘2100.2’ and ‘2200.2’ for `SCEXX` and `USCEXX`, respectively)  
+- **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2' and '2201.2' for `SCEXX` and `USCEXX`, respectively)  
 - **dfit** if set to $\neq$ 0, enable density fitting for two-electron integrals (default: ’1’)  
 - **maxit** maximum number of iterations (default '30')  
 - **minit** minimum number of iterations (default '3')  
