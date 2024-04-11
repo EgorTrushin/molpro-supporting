@@ -1,7 +1,7 @@
 ## SCRPA and USCRPA programs
-The SCRPA and USCRPA programs allow spin-restricted and spin-unrestricted self-consistent random phase approximation (RPA) calculations.
+The `SCRPA` and `USCRPA` programs allow spin-restricted and spin-unrestricted self-consistent random phase approximation (RPA) calculations.
 
-To obtain numerically stable potentials using optimized effective potential method (OPM), one must either use regularization techniques to carefully handle the small eigenvalues of the response matrix or to use auxiliary basis sets that are balanced to the orbital basis set. The latter can be done by manually constructing specific orbital and auxiliary basis sets that are sufficiently balanced. This has been possible for a number of atoms and molecules with quite large orbital basis sets [1], but does not qualify as a general applicable routine approach. The SCRPA and USCRPA programs therefore contain a new preprocessing scheme for auxiliary basis sets that effectively removes linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals and enable the construction of numerically stable exchange potentials with standard basis sets [2].
+To obtain numerically stable potentials using optimized effective potential method (OPM), one must either use regularization techniques to carefully handle the small eigenvalues of the response matrix or to use auxiliary basis sets that are balanced to the orbital basis set. The latter can be done by manually constructing specific orbital and auxiliary basis sets that are sufficiently balanced. This has been possible for a number of atoms and molecules with quite large orbital basis sets [1], but does not qualify as a general applicable routine approach. The `SCRPA` and `USCRPA` programs therefore contain a new preprocessing scheme for auxiliary basis sets that effectively removes linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals and enable the construction of numerically stable exchange potentials with standard basis sets [2].
 
 The preprocessing step to remove linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals is implemented according to Sec II5 of Ref. [2]. It involves the threshold **thr_fai_oep**, which determines how many linear combinations of auxiliary basis functions are removed and varies with respect to the size of the orbital basis set used. In Ref. [2], this scheme was tested using Dunning correlation consistent basis sets and recommended thresholds are
 
@@ -65,10 +65,10 @@ df-uhf,maxit=0,df_basis=aug-cc-pwCV5Z/mp2fit ! HF calculation with 0 iterations
 
 acfd;uscrpa,thr_fai_oep=1.7d-2 ! USCRPA calculation
 ```
-The following options are available for the SCRPA and USCRPA programs:
+The following options are available for the `SCRPA` and `USCRPA` programs:
 
-- **orb** record from which the orbital coefficients and eigenvalues are read (default: ‘2100.2’ and ‘2200.2’ for SCRPA and USCRPA, respectively)  
-- **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2' and '2201.2' for SCRPA and USCRPA, respectively)  
+- **orb** record from which the orbital coefficients and eigenvalues are read (default: ‘2100.2’ and ‘2200.2’ for `SCRPA` and `USCRPA`, respectively)  
+- **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2' and '2201.2' for `SCRPA` and `USCRPA`, respectively)  
 - **dfit** if set to $\neq$ 0, enable density fitting for two-electron integrals (default: ’1’)  
 - **maxit** maximum number of iterations (default '30')  
 - **minit** minimum number of iterations (default '3')  
@@ -89,7 +89,7 @@ The following options are available for the SCRPA and USCRPA programs:
 - **nquadint** number of logarithmically spaced intervals for frequency integration (default ‘1’)
 - **nquad** number of points per interval for frequency integration (default '20')
 - **w0** caling factor for rational the function mapping the Gauss–Legendre quadrature for the interval [−1, 1] to the interval [0, ∞], see Eqs. 37-38 in Ref. [4] for details (default: ‘2.5’)
-- **vc_scal** scaling factor for the Coulomb kernel, which can be used to mimic the effect of the inclusion of the exact-exchange kernel. In the special case of non-spin-polarized two-electron systems, the RPA calculation with a Coulomb kernel scaled by 1/2 is equivalent to including of the exact-exchange kernel. Implemented only in SCRPA (default: ‘1d0’)
+- **vc_scal** scaling factor for the Coulomb kernel, which can be used to mimic the effect of the inclusion of the exact-exchange kernel. In the special case of non-spin-polarized two-electron systems, the RPA calculation with a Coulomb kernel scaled by 1/2 is equivalent to including of the exact-exchange kernel. Implemented only in `SCRPA` (default: ‘1d0’)
 - **vref_fa** if set to $\neq$ 0, enable the use of the Fermi-Amaldi potential as reference potential. Otherwise, the reference potential is constructed according to Eq. (45) of Ref. [2] (default: '1')  
 - **vhoep** if set to $\neq$ 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)  
 - **plot_always** if set to $\neq$ 0, enable writing of data-files for plotting for every iteration. Otherwise, only final results are written. (default: '0')  
@@ -99,7 +99,7 @@ The following options are available for the SCRPA and USCRPA programs:
 - **test_pot** if set to $\neq$ 0, enable a numerical test to determine if the potential is the derivative of the energy expression (default ’0’)  
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)  
 
-The following parameters are only relevant for spin-unresticted calculations i.e. using the USCRPA code:
+The following parameters are only relevant for the `USCRPA` code:
 - **oepsav** if set to $\neq$ 0, enable spin-averaging in spin-unrestricted calculations, forcing orbitals and eigenvalues in $\alpha$ and $\beta$ spin channels to be identical (default: ‘0’)
 - **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels (default: ‘0’)
 
@@ -146,7 +146,7 @@ plt.show()
 ```
 ![](scrpa_co.png)
 
-In the similar way, for spin-unrestricted calculations with USCRPA, one ends up with four files vxa-final.z, vxb-final.z, vca-final.z, vcb-final.z with data for $\alpha$ and $\beta$ spin channels. For BeF one obtains:
+In the similar way, for spin-unrestricted calculations with `USCRPA`, one ends up with four files vxa-final.z, vxb-final.z, vca-final.z, vcb-final.z with data for $\alpha$ and $\beta$ spin channels. For BeF one obtains:
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
