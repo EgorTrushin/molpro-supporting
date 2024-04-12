@@ -1,10 +1,8 @@
 symmetry,nosym
 geometry={
-2
+1
 
-Be    0.0000000    0.0000000   -0.6823625
-F     0.0000000    0.0000000    0.6823625
-
+Li  0.0 0.0 0.0
 }
 
 spin=1
@@ -23,31 +21,31 @@ df-uks,pbe,maxit=0,df_basis=aug-cc-pwCVQZ/mp2fit ! KS PBE
 
 acfd;uscrpa,thr_fai_oep=5d-2
 e(1)=energy
-prog(1)='BeF with dfit FA-vref'
+prog(1)='Li with dfit'
 
 acfd;uscrpa,thr_fai_oep=5d-2,dfit=0
 e(2)=energy
-prog(2)='BeF w/o dfit FA-vref'
+prog(2)='Li w/o dfit'
 
 acfd;uscrpa,spin_sym=1,thr_fai_oep=5d-2
 e(3)=energy
-prog(3)='BeF with dfit FA-vref spin-symmetrization'
+prog(3)='Li with dfit spin-symmetrization'
 
 acfd;uscrpa,spin_sym=1,thr_fai_oep=5d-2,dfit=0
 e(4)=energy
-prog(4)='BeF with dfit FA-vref spin-symmetrizazion'
+prog(4)='Li w/o dfit spin-symmetrizazion'
 
-eold = [-114.775352010110, -114.775350979360, -114.772493277506, -114.772492259272]
+eold = [-7.526036305434, -7.526036270242, -7.525358571975, -7.525358566883]
 
 de=e-eold(1:ii)
 
-text,Results for job nh2_acfd_uscrpa.test
+text,Results for job li_acfd_uscrpa.test
 if(max(abs(de)).lt.1.d-6) then
   table,prog,e,eold,de
   save,test.log
-  title,No errors in nh2_acfd_uscrpa.test
+  title,No errors in li_acfd_uscrpa.test
 else
   table,prog,e,eold,de
   save,test.log
-  title,ERRORS DETECTED in nh2_acfd_uscrpa.test, de=$de
+  title,ERRORS DETECTED in li_acfd_uscrpa.test, de=$de
 endif
