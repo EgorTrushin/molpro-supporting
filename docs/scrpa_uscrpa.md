@@ -3,6 +3,12 @@
 
 The `SCRPA` and `USCRPA` programs allow spin-restricted and spin-unrestricted self-consistent random phase approximation (RPA) calculations.
 
+---
+
+**NOTE:** We have tutorial which provides practical Hands-on examples about the use of `SCRPA` and `USCRPA` programs and post-processing of results of calculations. This tutorial is a good supplement to this documentation. [Link to Tutorial](https://github.com/EgorTrushin/tutorials/blob/main/RPA_OEP.ipynb)
+
+---
+
 To obtain numerically stable potentials using optimized effective potential method (OPM), one must either use regularization techniques to carefully handle the small eigenvalues of the response matrix or to use auxiliary basis sets that are balanced to the orbital basis set. The latter can be done by manually constructing specific orbital and auxiliary basis sets that are sufficiently balanced. This has been possible for a number of atoms and molecules with quite large orbital basis sets [1], but does not qualify as a general applicable routine approach. The `SCRPA` and `USCRPA` programs therefore contain a new preprocessing scheme for auxiliary basis sets that effectively removes linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals and enable the construction of numerically stable exchange potentials with standard basis sets [2].
 
 The preprocessing step to remove linear combinations of auxiliary basis functions that couple poorly to products of occupied times unoccupied Kohn-Sham orbitals is implemented according to Sec II5 of Ref. [2]. It involves the threshold **thr_fai_oep**, which determines how many linear combinations of auxiliary basis functions are removed and varies with respect to the size of the orbital basis set used. In Ref. [2], this scheme was tested using Dunning correlation consistent basis sets and recommended thresholds are
