@@ -122,7 +122,7 @@ fprettify -i 2 -l 80 -w 1 -s
 
 For Intel Fortran, if you want, e.g., to see warnings for unused variables configure with FCFLAGS="-warn unused". For instance
 ```
-I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 FCFLAGS="-warn unused" PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure --prefix=/home/trushin/Molpro/molpro --bindir=/home/trushin/Molpro/molpro --disable-gfortran-check
+I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 FCFLAGS="-warn unused" CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin  ./configure --disable-gfortran-check
 ```
 For other possible flags see [corresponding documentation](https://www.intel.com/content/www/us/en/docs/fortran-compiler/developer-guide-reference/2023-0/warn.html)
 </details>
