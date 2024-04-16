@@ -91,7 +91,8 @@ The following options are available for the `SCRPA` and `USCRPA` programs:
 - **w0** caling factor for rational the function mapping the Gauss–Legendre quadrature for the interval [−1, 1] to the interval [0, ∞], see Eqs. 37-38 in Ref. [4] for details (default: ‘2.5’)
 - **vc_scal** scaling factor for the Coulomb kernel, which can be used to mimic the effect of the inclusion of the exact-exchange kernel. In the special case of non-spin-polarized two-electron systems, the RPA calculation with a Coulomb kernel scaled by 1/2 is equivalent to including of the exact-exchange kernel. Implemented only in `SCRPA` (default: ‘1d0’)
 - **vref_fa** if set to $\neq$ 0, enable the use of the Fermi-Amaldi potential as reference potential. Otherwise, the reference potential is constructed according to Eq. (45) of Ref. [2] (default: '1')  
-- **vhoep** if set to $\neq$ 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)  
+- **vhoep** if set to $\neq$ 0, enable the calculation of the Hartree potential from the representation in the OEP basis instead of the construction from the density matrix as in the Hartree-Fock calculation (default: ‘0’)
+- **space_sym** if set to $\neq$ 0, enable the space-symmetrization. When active sets vhoep=1 thr_sym=1d-10. (default: '0d0')  
 - **plot_always** if set to $\neq$ 0, enable writing of data-files for plotting for every iteration. Otherwise, only final results are written. (default: '0')  
 - **plot_x** if set to $\neq$ 0, enable writing of file with plotting data for exchange and correlation potentials along x-axis (default: '0')
 - **plot_y** if set to $\neq$ 0, enable writing of file with plotting data for exchange and correlation potentials along y-axis (default: '0')
@@ -100,7 +101,7 @@ The following options are available for the `SCRPA` and `USCRPA` programs:
 - **verb** determines the level of verbosity in the output file, integer values of 0, 1, 2, and 3 provide different levels of verbosity (default ’0’)  
 
 The following parameters are only relevant for the `USCRPA` code:
-- **oepsav** if set to $\neq$ 0, enable spin-averaging in spin-unrestricted calculations, forcing orbitals and eigenvalues in $\alpha$ and $\beta$ spin channels to be identical (default: ‘0’)
+- **spin_sym** if set to $\neq$ 0, enable spin-symmetrization in spin-unrestricted calculations, forcing orbitals and eigenvalues in $\alpha$ and $\beta$ spin channels to be identical (default: ‘0’)
 - **vref_fa_sameab** if set to $\neq$ 0, force the Fermi-Amaldi reference potential to be the same for $\alpha$ and $\beta$ spin channels (default: ‘0’)
 
 Pitfalls:
