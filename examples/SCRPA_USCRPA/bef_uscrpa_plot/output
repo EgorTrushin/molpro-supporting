@@ -7,7 +7,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 [0] MPI startup(): File "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi_mlx.dat" not found
 [0] MPI startup(): Load tuning file: "/opt/intel/oneapi/intelpython/latest/etc/tuning_skx_shm-ofi.dat"
 [0] MPI startup(): Rank    Pid      Node name  Pin cpu
-[0] MPI startup(): 0       31286    node030    {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+[0] MPI startup(): 0       20507    node031    {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
 [0] MPI startup(): I_MPI_ROOT=/opt/intel/oneapi/intelpython/latest
 [0] MPI startup(): I_MPI_HYDRA_TOPOLIB=hwloc
 [0] MPI startup(): I_MPI_PIN_DOMAIN=16
@@ -15,15 +15,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 [0] MPI startup(): I_MPI_DEBUG=5
 [0] MPI startup(): I_MPI_PMI_LIBRARY=/usr/lib64/libpmi.so.0
 
- Working directory              : /scratch/trushin/150485/molpro.sNZEpRtAHH/
- Global scratch directory       : /scratch/trushin/150485/molpro.sNZEpRtAHH/
+ Working directory              : /scratch/trushin/288798/molpro.e9sbZB2xot/
+ Global scratch directory       : /scratch/trushin/288798/molpro.e9sbZB2xot/
  Wavefunction directory         : /home/trushin/wfu/
- Main file repository           : /scratch/trushin/150485/molpro.sNZEpRtAHH/
+ Main file repository           : /scratch/trushin/288798/molpro.e9sbZB2xot/
 
- id        : chemieegortrushi
+ id        : chemie
 
  Nodes     nprocs
- node030      1
+ node031      1
  GA implementation: MPI file
  GA implementation (serial work in mppx): MPI file
 
@@ -31,7 +31,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  default implementation of scratch files=df  
 
 
- Variables initialized (1031), CPU time= 0.01 sec
+ Variables initialized (1041), CPU time= 0.01 sec
  gdirect                                                                         ! integral-direct mode
  
  basis={
@@ -55,8 +55,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  {cfit,basis_coul=aug-cc-pwCV5Z/mp2fit,basis_exch=aug-cc-pwCV5Z/mp2fit}
  
  acfd;uscrpa,thr_fai_oep=1.7d-2,plot_z=1                                         ! USCRPA calculation
- Commands initialized (842), CPU time= 0.02 sec, 706 directives.
- Default parameters read. Elapsed time= 0.23 sec
+ Commands initialized (847), CPU time= 0.02 sec, 720 directives.
+ Default parameters read. Elapsed time= 0.19 sec
 
  Checking input...
  Passed
@@ -65,15 +65,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
                                          ***  PROGRAM SYSTEM MOLPRO  ***
                                        Copyright, TTI GmbH Stuttgart, 2015
-                                    Version 2023.1 linked                         
+                                    Version 2024.2 linked                         
 
 
  **********************************************************************************************************************************
  LABEL *                                                                                                                                                                 
-  (16 PROC) 64 bit serial version                                                        DATE: 28-Apr-23          TIME: 17:55:11  
+  (16 PROC) 64 bit serial version                                                        DATE: 16-Apr-24          TIME: 17:07:51  
  **********************************************************************************************************************************
 
- SHA1:             bba5f47baebb657fe48d2c4520920873d1c80ea3
+ SHA1:             45dd2c2b2668084b07b5510a4a93e9a19abbc6a5
  **********************************************************************************************************************************
 
  Memory per process:     20000 MW
@@ -91,7 +91,7 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
  Geometry recognized as XYZ
 
- SETTING SPIN           =         1.00000000                                  
+ SPIN            =       1.00000000                                  
 
 
  Recomputing integrals since basis changed
@@ -176,8 +176,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                            T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
 
  PROGRAMS   *        TOTAL       INT
- CPU TIMES  *         4.83      4.59
- REAL TIME  *        10.18 SEC
+ CPU TIMES  *         5.18      4.95
+ REAL TIME  *        10.25 SEC
  DISK USED  *        30.71 MB
  **********************************************************************************************************************************
 
@@ -191,52 +191,52 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
 
  Basis set AWCV5Z-MP2FIT loaded. Number of basis functions: 656
  
- Orbital guess generated from atomic densities. Full valence occupancy:    7
+ Orbital guess generated from atomic densities.
  Using density fitting in orbital guess
  
 
  Initial alpha occupancy:   7
  Initial beta  occupancy:   6
 
- Elapsed time for starting guess:     12.39 sec
+ Elapsed time for starting guess:     12.79 sec
 
  NELEC=   13   SYM=1   MS2=1   THRE=1.0D-08   THRD=3.2D-06   THRG=3.2D-06  HFMA2=F  DIIS_START=2   DIIS_MAX=10   DIIS_INCORE=F
 
  Initial level shifts:    0.20 (ALPHA)    0.20 (BETA)
 
  ITER         ETOT            DE          GRAD         DDIFF    DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
-   1   -114.10217467  -114.10217467     0.00D+00     0.00D+00     0     0      11.80     24.19    start
+   1   -114.10197307  -114.10197307     0.00D+00     0.00D+00     0     0      11.94     24.73    start
 
  Orbitals not optimized (maxit=1)
 
  Final alpha occupancy:   7
  Final beta  occupancy:   6
  
- !UHF STATE 1.1 Energy               -114.102174666515
-  UHF One-electron energy            -188.389485622253
-  UHF Two-electron energy              60.328176630136
-  UHF Kinetic energy                  115.599378648696
+ !UHF STATE 1.1 Energy               -114.101973065885
+  UHF One-electron energy            -188.400585943425
+  UHF Two-electron energy              60.339478551937
+  UHF Kinetic energy                  115.607023490846
   UHF Nuclear energy                   13.959134325603
-  UHF Virial quotient                  -0.987048338843
+  UHF Virial quotient                  -0.986981323630
  
- !UHF STATE 1.1 Dipole moment          -0.00000000    -0.00000000    -1.32243269
- Dipole moment /Debye                  -0.00000000    -0.00000000    -3.36128862
+ !UHF STATE 1.1 Dipole moment          -0.00000000    -0.00000000    -1.32203830
+ Dipole moment /Debye                  -0.00000000    -0.00000000    -3.36028618
 
  EXPECTATION VALUE OF S**2:             0.75000000
 
  Orbital energies for positive spin:
 
            1.1          2.1          3.1          4.1          5.1          6.1          7.1          8.1          9.1
-    -26.477829    -4.754729    -1.738951    -0.776299    -0.711165    -0.711165    -0.210034     0.018284     0.018284
+    -26.478483    -4.754700    -1.738569    -0.775817    -0.710739    -0.710739    -0.210340     0.018135     0.018135
 
  Orbital energies for negative spin:
 
            1.1          2.1          3.1          4.1          5.1          6.1          7.1          8.1
-    -26.477829    -4.754729    -1.738951    -0.776299    -0.711165    -0.711165    -0.210034     0.018284
+    -26.478483    -4.754700    -1.738569    -0.775817    -0.710739    -0.710739    -0.210340     0.018135
 
 
- HOMO      7.1    -0.210034 =      -5.7153eV
- LUMO     -7.1    -0.210034 =      -5.7153eV
+ HOMO      7.1    -0.210340 =      -5.7237eV
+ LUMO     -7.1    -0.210340 =      -5.7237eV
  LUMO-HOMO         0.000000 =       0.0000eV
 
  Orbitals saved in record  2200.2
@@ -265,8 +265,8 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                          GEOM     BASIS   MCVARS     UHF  
 
  PROGRAMS   *        TOTAL    DF-UHF       INT
- CPU TIMES  *        29.44     24.59      4.59
- REAL TIME  *        11.81 SEC
+ CPU TIMES  *        30.26     25.06      4.95
+ REAL TIME  *        11.93 SEC
  DISK USED  *        44.96 MB
  **********************************************************************************************************************************
 
@@ -298,6 +298,15 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Threshold for eigenvalue difference in calculation of Lambda:    1.000E-06
  Threshold for eigenproblem solver of OEP equation:    1.000E-99
  Solver for eigenproblems: GTSVD
+ Spin-symmetrization: F
+ Space-symmetrization: F
+ Constucting Hartree potential in OEP basis: F
+ Fermi-Amaldi as reference potential: T
+ HOMO condition: T
+ The same reference potential for alpha and beta: F
+ Perform test for frequency integration: F
+ Plot exchange and correlation potentials along z-axis
+ Plot every iteration:   F
  Threshold for eigenvalue difference in construction of X0:     1.000E-06
  Threshold for processing RI basis thr_overlap_ri:     1.000E-14
  Threshold for processing RI basis thr_fai_ri:     1.000E-14
@@ -305,13 +314,6 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Number of logarithmic integration intervals:    1
  Number of quadrature points per interval:  20
  Scaling factor:  2.500E+00
- Perform test for frequency integration: F
- Average spins in OEP equations: F
- Constucting Hartree potential in OEP basis: F
- Fermi-Amaldi as reference potential: T
- The same reference potential for alpha and beta: F
- Plot potentials along z-axis
- Plot every iteration:   F
 
  Molecular orbitals read from record     2200.2  Type=UHF/ALPHA  
  Orbital energies read from record       2200.2  Type=UHF/ALPHA  
@@ -323,49 +325,49 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
  Occupation numbers read from record     2200.2  Type=UHF/UHF  
 
    ITER        ENERGY            EDIFF       DDIFF       DIIS         TIME
-     0     -114.6683324588                                           13.42
-     1     -114.5581610338     0.110E+00   0.120E-01      1          26.75
-     2     -114.8408776053    -0.283E+00   0.826E-02      2          40.02
-     3     -114.8444446683    -0.357E-02   0.123E-02      3          53.29
-     4     -114.8445431560    -0.985E-04   0.317E-03      4          66.56
-     5     -114.8445557794    -0.126E-04   0.102E-03      5          79.72
-     6     -114.8445563293    -0.550E-06   0.129E-04      6          92.85
-     7     -114.8445564950    -0.166E-06   0.420E-05      5         106.09
-     8     -114.8445564622     0.328E-07   0.551E-06      5         119.32
-     9     -114.8445564619     0.295E-09   0.258E-06      6         132.54
+     0     -114.6680478680                                           14.12
+     1     -114.5663421525     0.102E+00   0.123E-01      1          28.22
+     2     -114.8411654563    -0.275E+00   0.827E-02      2          42.30
+     3     -114.8440348351    -0.287E-02   0.135E-02      3          56.25
+     4     -114.8443688222    -0.334E-03   0.407E-03      4          70.06
+     5     -114.8445266616    -0.158E-03   0.641E-03      5          83.77
+     6     -114.8445333902    -0.673E-05   0.277E-04      6          97.45
+     7     -114.8445339171    -0.527E-06   0.161E-04      5         111.17
+     8     -114.8445340105    -0.934E-07   0.577E-05      6         124.90
+     9     -114.8445340172    -0.671E-08   0.447E-06      4         138.61
 
  SCF converged in     9 iterations
 
  USCRPA orbitals written to record    2201.2
  
- !USCRPA Total energy                -114.844556461889
-  USCRPA One-electron energy         -186.804803828578
-  USCRPA Two-electron energy           58.686298681497
+ !USCRPA Total energy                -114.844534017187
+  USCRPA One-electron energy         -186.805550408872
+  USCRPA Two-electron energy           58.687181932060
   USCRPA Nuclear energy                13.959134325603
-  USCRPA Coulomb energy                71.544620078559
-  USCRPA Exchange energy               -9.859504063731
-  USCRPA Correlation energy            -0.685185640411
+  USCRPA Coulomb energy                71.545248463649
+  USCRPA Exchange energy              -12.858066531589
+  USCRPA Correlation energy            -0.685299865979
  
- !USCRPA Dipole moment                 -0.00000000    -0.00000000    -0.50095946
- Dipole moment /Debye                  -0.00000000    -0.00000000    -1.27331194
+ !USCRPA Dipole moment                  0.00000000     0.00000000    -0.51150635
+ Dipole moment /Debye                   0.00000000     0.00000000    -1.30011946
 
- EXPECTATION VALUE OF S**2:             0.75129665
+ EXPECTATION VALUE OF S**2:             0.75122779
  
  USCRPA eigenvalues (alpha)
-   1-  10  -0.24412E+02 -0.40611E+01 -0.12116E+01 -0.54972E+00 -0.50639E+00 -0.50639E+00 -0.31531E+00 -0.16763E+00 -0.16763E+00 -0.10776E+00
-  11-  17  -0.85379E-01 -0.68415E-01 -0.68415E-01 -0.47123E-01 -0.11648E-01 -0.11648E-01 -0.11394E-01
+   1-  10  -0.24443E+02 -0.40902E+01 -0.12409E+01 -0.57930E+00 -0.53573E+00 -0.53573E+00 -0.34203E+00 -0.19337E+00 -0.19337E+00 -0.12545E+00
+  11-  17  -0.92110E-01 -0.72259E-01 -0.72259E-01 -0.55395E-01 -0.28548E-01 -0.28548E-01 -0.26380E-01
  
- HOMO (alpha): -0.31531E+00
- LUMO (alpha): -0.16763E+00
- LUMO-HOMO (alpha):  0.14768E+00
+ HOMO (alpha): -0.34203E+00
+ LUMO (alpha): -0.19337E+00
+ LUMO-HOMO (alpha):  0.14866E+00
  
  USCRPA eigenvalues (beta)
-   1-  10  -0.24456E+02 -0.41070E+01 -0.12497E+01 -0.58628E+00 -0.54489E+00 -0.54489E+00 -0.23683E+00 -0.13946E+00 -0.13946E+00 -0.11226E+00
-  11-  17  -0.72327E-01 -0.66130E-01 -0.66130E-01 -0.45252E-01 -0.13904E-01 -0.13562E-01 -0.13562E-01
+   1-  10  -0.24491E+02 -0.41414E+01 -0.12814E+01 -0.61839E+00 -0.57677E+00 -0.57677E+00 -0.26282E+00 -0.16254E+00 -0.16254E+00 -0.12909E+00
+  11-  17  -0.73659E-01 -0.71884E-01 -0.71884E-01 -0.52099E-01 -0.27268E-01 -0.27268E-01 -0.27240E-01
  
- HOMO (beta): -0.54489E+00
- LUMO (beta): -0.23683E+00
- LUMO-HOMO (beta):  0.30806E+00
+ HOMO (beta): -0.57677E+00
+ LUMO (beta): -0.26282E+00
+ LUMO-HOMO (beta):  0.31395E+00
 
 
  **********************************************************************************************************************************
@@ -382,14 +384,14 @@ MPI startup(): Warning: I_MPI_PMI_LIBRARY will be ignored since the hydra proces
                                          JMAT   
 
  PROGRAMS   *        TOTAL      ACFD    DF-UHF       INT
- CPU TIMES  *      1895.53   1865.93     24.59      4.59
- REAL TIME  *       146.34 SEC
+ CPU TIMES  *      2012.34   1981.93     25.06      4.95
+ REAL TIME  *       152.50 SEC
  DISK USED  *       209.27 MB
  **********************************************************************************************************************************
 
- ACFD/aug-cc-pWCVQZ energy=   -114.844556461889
+ ACFD/aug-cc-pWCVQZ energy=   -114.844534017187
 
             ACFD          DF-UHF
-   -114.84455646   -114.10217467
+   -114.84453402   -114.10197307
  **********************************************************************************************************************************
  Molpro calculation terminated

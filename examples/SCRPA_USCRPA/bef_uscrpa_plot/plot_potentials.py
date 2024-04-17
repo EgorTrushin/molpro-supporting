@@ -3,33 +3,47 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def load_potential(filename):
-    """Read data from file."""
-    coord, vref, vrest, v = list(), list(), list(), list()
-    for line in open(filename):
+def load_potential(potfile):
+    """Read data from potential-file.
+
+    Args:
+      potfile: Path to file with potential data.
+
+    Returns:
+      x: x coordinate.
+      y: y coordinate.
+      z: z coordinate.
+      coord: coordinate on path.
+      vref: reference potential.
+      vrest: rest potential.
+      v: full potential.
+    """
+    x, y, z, coord = list(), list(), list(), list()
+    vref, vrest, v = list(), list(), list()
+    for line in open(potfile):
         aux = line.split()
+        x.append(float(aux[1]))
+        y.append(float(aux[2]))
+        z.append(float(aux[3]))
         coord.append(float(aux[4]))
         vref.append(float(aux[6]))
         vrest.append(float(aux[7]))
         v.append(float(aux[8]))
-    coord = np.array(coord)
+    x, y, z, coord = np.array(x), np.array(y), np.array(z), np.array(coord)
     vref, vrest, v = np.array(vref), np.array(vrest), np.array(v)
-    return coord, vref, vrest, v
+    return x, y, z, coord, vref, vrest, v
 
-coord, _, _, vxa = load_potential('vxa-final.z')
-coord, _, vca, _ = load_potential('vca-final.z')
+_, _, _, coord, _, _, vxa = load_potential('vxa-final.z')
+_, _, _, coord, _, _, vca = load_potential('vca-final.z')
 
-coord, _, _, vxb = load_potential('vxb-final.z')
-coord, _, vcb, _ = load_potential('vcb-final.z')
-
+_, _, _, coord, _, _, vxb = load_potential('vxb-final.z')
+_, _, _, coord, _, _, vcb = load_potential('vcb-final.z')
 
 plt.plot(coord, vxa+vca, color='dodgerblue', label=r'$v_{xc,\alpha}$')
 plt.plot(coord, vxb+vcb, color='orangered', label=r'$v_{xc,\beta}$')
-#plt.plot(coord, vx+vc, color='orange', label='$v_{xc}$')
 
 plt.ylabel('Potential (Hartree)', fontsize=16)
 plt.xlabel('r (Bohr)', fontsize=16)
-#plt.ylim(-2, 0.25)
 plt.xlim(-5, 5)
 plt.legend(frameon=False, fontsize=14)
 plt.tight_layout()
