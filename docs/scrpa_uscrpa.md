@@ -173,7 +173,7 @@ plt.show()
 ```
 ![](scrpa_co.png)
 
-In the similar way, for spin-unrestricted calculations with `USCRPA`, one ends up with four files vxa-final.z, vxb-final.z, vca-final.z, vcb-final.z with data for $\alpha$ and $\beta$ spin channels. For BeF one obtains:
+In the similar way, for spin-unrestricted calculations with `USCRPA`, one ends up with four files `vxa-final.z`, `vxb-final.z`, `vca-final.z`, `vcb-final.z` with data for $\alpha$ and $\beta$ spin channels. For BeF, one can plot, e.g., exchange-correlation potentials for $\alpha$ and $\beta$ spins:
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
