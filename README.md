@@ -54,12 +54,11 @@ Navigate to the created directory and configure the installation by:
 I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure --disable-gfortran-check
 ```
 
-now replace the files:
+now replace the file:
 
 src/util/molpro_main.cpp  
-src/mrci/kext.F90
 
-by files of the same name from [*files*](./files) directory
+by the file of the same name from [*files*](./files) directory
 then run, from:
 
 ```
