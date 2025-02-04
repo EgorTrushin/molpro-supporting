@@ -60,7 +60,7 @@ Navigate to the created directory and configure the installation by:
 
 For **ifx**:
 ```
-FC=ifx CC=mpiicx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin ./configure --disable-gfortran-check
+FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin ./configure --disable-gfortran-check
 ```
 For **ifort**:
 ```
