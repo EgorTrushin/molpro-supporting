@@ -27,6 +27,14 @@
 
 <details><summary><b>Install Global Arrays</b></summary>
   
+For **ifx**:
+```
+I_MPI_CXX=icpx MPICC=mpiicx MPIF77=mpiifx ./configure --prefix=/home/trushin/libs/ga-5.8.2_ifx
+make
+make check
+make install
+```
+For **ifort**:
 ```
 I_MPI_CXX=icpc MPICC=mpiicc MPIF77=mpiifort ./configure --prefix=/home/trushin/libs/ga-5.8.2
 make
@@ -50,6 +58,11 @@ git clone https://github.com/molpro/molpro.git
 
 Navigate to the created directory and configure the installation by:
 
+For **ifx**:
+```
+FC=ifx CC=mpiicx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin ./configure --disable-gfortran-check
+```
+For **ifort**:
 ```
 I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure --disable-gfortran-check
 ```
