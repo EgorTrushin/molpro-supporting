@@ -1,7 +1,7 @@
 ## SCRPA and USCRPA programs
 ![Status](https://img.shields.io/static/v1.svg?label=Status&message=Preliminary%20Version&color=orange)
 
-The `SCRPA` and `USCRPA` programs allow spin-restricted and spin-unrestricted self-consistent random phase approximation (RPA) calculations.
+The `SCRPA` and `USCRPA` programs allow spin-restricted and spin-unrestricted self-consistent random phase approximation (RPA) calculations [3, 4].
 
 ---
 
@@ -117,7 +117,7 @@ Pitfalls:
 - One might encounter convergence problem using DIIS for systems exhibiting small HOMO-LUMO gaps. In this case switching to linear mixing scheme often might resolve the problem.
  - One might sometimes encounter energy oscillations between two solutions with different numbers of OEP basis functions remaining after OEP basis set preprocessing.  A small change in **thr_fai_oep** may solve the problem.
 
-Since the local exchange and correlation potentials are important in self-consistent RPA calculations, we provide an illustration of how to plot these potentialsLet us assume that we have performed calculations for CO with the following options:
+Since the local exchange and correlation potentials are important in self-consistent RPA calculations, we provide an illustration of how to plot these potentials. Let us assume that we have performed calculations for CO with the following options:
 ```
 acfd;scrpa,thr_fai_oep=1.7d-2,plot_z=1
 ```
@@ -203,4 +203,5 @@ plt.show()
 **Bibilography:**  
 [1] A. Heßelmann, A.W. Götz, F. Della Sala, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.2751159) 127, 054102 (2007)  
 [2] E. Trushin, A. Görling, [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0056431) 155, 054109 (2021)  
-[3] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)
+[3] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)  
+[4] E. Trushin, S. Fauser, A. Mölkner, J. Erhard, A. Görling [Phys. Rev. Lett.](https://doi.org/10.1103/PhysRevLett.134.016402) 134, 016402 (2025)
