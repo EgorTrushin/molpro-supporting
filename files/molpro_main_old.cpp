@@ -41,11 +41,7 @@ int main(int argc, char* argv[]) {
   if (strcmp(argv[i],"--enable-gperftools") == 0) enable_gperftools = true;
  }
 
-#ifdef _I8_
- PPIDD_Initialize(&argc,&argv,ppidd_impl,64);
-#else
- PPIDD_Initialize(&argc,&argv,ppidd_impl,32);
-#endif
+ PPIDD_Initialize(&argc,&argv,ppidd_impl);
  int np = PPIDD_Size();
  int me = PPIDD_Rank();
  MPI_Comm mpicomm=MPI_Comm_f2c(PPIDD_Worker_comm());
