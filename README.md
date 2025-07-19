@@ -58,18 +58,14 @@ git clone https://github.com/molpro/molpro.git
 
 Navigate to the created directory and configure the installation by:
 
-For **ifx**:
 ```
-FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin ./configure --disable-gfortran-check
-```
-For **ifort**:
-```
-I_MPI_CXX=icpc CC=icc FC=ifort FOPT=-O2 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2/bin ./configure --disable-gfortran-check
+FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 LDFLAGS=-lstdc++fs PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin ./configure --disable-gfortran-check --disable-aims --disable-slater --without-hdf5
 ```
 
-now replace the file:
+now replace the files:
 
 src/util/molpro_main.cpp  
+src/util/remove_all.cpp  
 
 by the file of the same name from [*files*](./files) directory
 then run, from:
