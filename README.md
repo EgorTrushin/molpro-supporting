@@ -27,16 +27,8 @@
 
 <details><summary><b>Install Global Arrays</b></summary>
   
-For **ifx**:
 ```
 I_MPI_CXX=icpx MPICC=mpiicx MPIF77=mpiifx ./configure --prefix=/home/trushin/libs/ga-5.8.2_ifx
-make
-make check
-make install
-```
-For **ifort**:
-```
-I_MPI_CXX=icpc MPICC=mpiicc MPIF77=mpiifort ./configure --prefix=/home/trushin/libs/ga-5.8.2
 make
 make check
 make install
@@ -105,7 +97,7 @@ sudo apt-get install liblapack-dev liblapack-doc liblapack-pic liblapack3 liblap
 <details><summary><b>Install Molpro</b></summary>
 
 ```
-./configure FOPT=-O2
+./configure FOPT=-O2 --disable-aims --disable-slater --without-hdf5
 make -j 16
 make quicktest
 ```
