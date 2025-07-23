@@ -288,6 +288,7 @@ CCSD and CCSD(T) implementation in Molpro does not allow to store density matrix
 **Bibilography:**  
 [1] A. Görling, [Phys. Rev. A](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.46.3753) 46, 3753 (1992)  
 [2] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
-[3] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/5.0239422) 162 (2025) 034116
+[3] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/5.0239422) 162, 034116 (2025)  
 [4] E. Trushin, A. Görling, [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0056431) 155, 054109 (2021)  
-[5] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)
+[5] P. Bleiziffer, A. Heßelmann, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/1.4818984) 139, 084113 (2013)  
+[6] S. Fauser,  E. Trushin, A. Görling [J. Chem. Phys.](https://doi.org/10.1063/5.0263582) 162, 164108 (2025)
