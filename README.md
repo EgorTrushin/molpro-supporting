@@ -1,6 +1,7 @@
 **Table of content:**
 - [The contents of the directories in the repository](#item_dirs)
 - [Markdown documentation for programs/codes](#item_docs)
+- [Tutorials](#item_tutorials)
 - [Compiling Molpro on various Linux systems](#item_compile)
 - [Automatic formatting for Fortran code with fprettify](#item_fprettify)
 - [Compile Molpro with warnings](#item_warnings)
@@ -19,6 +20,11 @@
 - [SCEXX/USCEXX program](/docs/scexx_uscexx.md)
 - [KSINV/UKSINV program](/docs/ksinv_uksinv.md)
 - [SCRPA/USCRPA program](/docs/scrpa_uscrpa.md)
+
+<a id="item_tutorials"></a>
+## Tutorials
+- [SCEXX/USCEXX program](https://github.com/EgorTrushin/Molpro_Tutorials/blob/main/EXX_OEP.ipynb)
+- [SCRPA/USCRPA program](https://github.com/EgorTrushin/Molpro_Tutorials/blob/main/RPA_OEP.ipynb)
 
 <a id="item_compile"></a>
 ## Compiling Molpro on various Linux systems
