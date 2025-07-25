@@ -1,0 +1,435 @@
+
+ Working directory              : /tmp/trushin/molpro.HTlNSv3hO7/
+ Global scratch directory       : /tmp/trushin/molpro.HTlNSv3hO7/
+ Wavefunction directory         : /home/trushin/wfu/
+ Main file repository           : /tmp/trushin/molpro.HTlNSv3hO7/
+
+ id        : chemie
+
+ Nodes         nprocs
+ trushin-laptop    1
+ GA implementation: MPI file
+ GA implementation (serial work in mppx): MPI file
+
+ Using customized tuning parameters: mindgm=1; mindgv=20; mindgc=4; mindgr=1; noblas=0; minvec=7
+ default implementation of scratch files=df  
+
+
+ Variables initialized (1064), CPU time= 0.00 sec
+ gdirect
+ 
+ basis={
+ default,aug-cc-pwCVQZ                                                           ! orbital basis
+ set,oep;default,aug-cc-pVDZ/mp2fit                                              ! OEP basis
+ set,dfit;default,aug-cc-pwCV5Z/mp2fit
+ }
+ 
+ symmetry,nosym                                                                  ! KSINV does not use symmetry
+ 
+ angstrom
+ geometry={
+ 1
+ Li        0.000000    0.000000    0.000000
+ }
+ 
+ {matrop;read,den,type=density,file=dm.dat;save,den,1325.1}                      ! read stored density matrix
+ 
+ df-hf,maxit=0,df_basis=dfit                                                     ! HF calculation with 0 iterations
+ {cfit,basis_coul=dfit,basis_exch=dfit}
+ 
+ acfd;ksinv,refden=1325.1,e_ref=-7.475872692580,thr_fai_oep=1.7d-2,noa=2,nob=1,dfit=1,\ ! KSINV calculation
+ plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
+ Commands initialized (839), CPU time= 0.01 sec, 728 directives.
+ Default parameters read. Elapsed time= 0.05 sec
+
+ Checking input...
+ Passed
+1
+
+
+                                         ***  PROGRAM SYSTEM MOLPRO  ***
+                                       Copyright, TTI GmbH Stuttgart, 2015
+                                  Version 2025.3 linked Fri Jul 25 19:30:30 2025
+
+
+ **********************************************************************************************************************************
+ LABEL *                                                                                                                                                                 
+                                                                                         DATE: 25-Jul-25          TIME: 23:04:39  
+ **********************************************************************************************************************************
+
+ SHA1:             75e8eeae7fb56d6b934318e4f3baafa252b7f4c8
+ **********************************************************************************************************************************
+
+ Memory per process:      2000 MW
+ Total memory per node:   2000 MW
+
+ GA preallocation disabled
+ GA check disabled
+
+ Variable memory set to 2000.0 MW
+
+ SETTING BASIS          =    AUG-CC-PWCVQZ
+
+ ZSYMEL=NOSYM
+
+
+ Geometry recognized as XYZ
+
+
+
+ Recomputing integrals since basis changed
+
+
+ Using spherical harmonics
+
+ Library entry LI     S aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry LI     P aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry LI     D aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry LI     F aug-cc-pwCVQZ        selected for orbital group  1
+ Library entry LI     G aug-cc-pwCVQZ        selected for orbital group  1
+
+
+ PROGRAM * SEWARD (Integral evaluation for generally contracted gaussian basis sets)     Author: Roland Lindh, 1990
+
+ Geometry written to block  1 of record 700
+
+ Orientation using atomic masses  
+ Molecule type: Atom
+ Rotational constants:       0.0000000      0.0000000      0.0000000 GHz  (calculated with average atomic masses)
+
+ Point group  C1  
+
+
+
+ ATOMIC COORDINATES
+
+ NR  ATOM    CHARGE       X              Y              Z
+
+   1  LI      3.00    0.000000000    0.000000000    0.000000000
+
+ NUCLEAR CHARGE:                    3
+ NUMBER OF PRIMITIVE AOS:         152
+ NUMBER OF SYMMETRY AOS:          122
+ NUMBER OF CONTRACTIONS:          109   (  109A   )
+ NUMBER OF INNER CORE ORBITALS:     0   (    0A   )
+ NUMBER OF OUTER CORE ORBITALS:     1   (    1A   )
+ NUMBER OF VALENCE ORBITALS:        4   (    4A   )
+
+
+ NUCLEAR REPULSION ENERGY .00000000
+
+
+ Basis set: OEP
+ Default basis aug-cc-pVDZ/MP2FIT selected for LI
+ Library entry LI     S aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     P aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     D aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     F aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Basis size: 72
+ Basis set: DFIT
+ Default basis aug-cc-pwCV5Z/MP2FIT selected for LI
+ Library entry LI     S aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     P aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     D aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     F aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     G aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     H aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     I aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Basis size: 328
+
+ **********************************************************************************************************************************
+
+ EXTRA SYMMETRY OF AOS IN SYMMETRY 1:   1 1 1 1 1 1 1 1 1 2   3 4 2 3 4 2 3 4 2 3   4 2 3 4 2 3 4 2 3 4   2 3 4 5 6 7 8 9 5 6
+                                        7 8 9 5 6 7 8 9 5 6   7 8 9 5 6 7 8 9 5 6   7 8 910111213141516  10111213141516101112
+                                       13141516101112131415  16171819202122232425  171819202122232425
+
+ Eigenvalues of metric
+
+         1 0.885E-04 0.470E-03 0.470E-03 0.470E-03 0.189E-02 0.993E-02 0.410E-01 0.410E-01
+
+
+ OPERATOR DM      FOR CENTER  0  COORDINATES:    0.000000    0.000000    0.000000
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      18       29.46       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1700   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER   
+
+ PROGRAMS   *        TOTAL       INT
+ CPU TIMES  *         1.70      1.61
+ REAL TIME  *         1.71 SEC
+ DISK USED  *        29.80 MB
+ **********************************************************************************************************************************
+
+
+ PROGRAM * MATROP
+
+
+ READING MATRIX DEN (DENSITY) FROM FILE dm.dat. SYMMETRY=1
+
+ Charge density  DEN saved in record 1325.1 (set 1)
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      19       29.60       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1700     1325   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER    MATROP    
+
+ PROGRAMS   *        TOTAL    MATROP       INT
+ CPU TIMES  *         1.77      0.07      1.61
+ REAL TIME  *         1.78 SEC
+ DISK USED  *        29.95 MB
+ **********************************************************************************************************************************
+
+ Basis set: OEP
+ Default basis aug-cc-pVDZ/MP2FIT selected for LI
+ Library entry LI     S aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     P aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     D aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     F aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Basis size: 72
+ Basis set: DFIT
+ Default basis aug-cc-pwCV5Z/MP2FIT selected for LI
+ Library entry LI     S aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     P aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     D aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     F aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     G aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     H aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     I aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Basis size: 328
+
+ Program * Restricted Hartree-Fock
+
+
+ Coulomb and exchange fitting
+ Thresholds for fitting:       THRAO_COUL= 1.0D-15    THRAO_EXCH= 1.0D-13    THRMO= 1.0D-12    THRPROD= 1.0D-12    THRASM= 1.0D-12
+                               THR2HLF=    1.0D-12
+
+ Basis set DFIT loaded. Number of basis functions: 328
+
+ Generating basis MINAO
+  Atom=LI       basis=MINAO
+ Number of basis functions:       2
+
+ Orbital guess generated from atomic densities.
+ Using density fitting in orbital guess
+
+
+ Initial alpha occupancy:   2
+ Initial beta  occupancy:   1
+
+ NELEC=    3   SYM=1   MS2= 1   THRE=1.0D-08   THRD=3.2D-06   THRG=3.2D-06  HFMA2=F  DIIS_START=2   DIIS_MAX=10   DIIS_INCORE=F
+
+ Level shifts:    0.00 (CLOSED)    0.00 (OPEN)    0.30 (GAP_MIN)
+
+ ITER           ETOT              DE          GRAD        DDIFF     DIIS  NEXP   TIME(IT)  TIME(TOT)  DIAG
+   1       -7.43039110      -7.43039110     0.00D+00     0.28D-01     0     0       0.04      0.08    start
+
+ Orbitals not optimized (maxit=1)
+
+ Final alpha occupancy:   2
+ Final beta  occupancy:   1
+
+ !RHF STATE 1.1 Energy                 -7.430391104507
+  RHF One-electron energy              -9.655470557085
+  RHF Two-electron energy               2.225079452578
+  RHF Kinetic energy                    7.387614302603
+  RHF Nuclear energy                    0.000000000000
+  RHF Virial quotient                  -1.005790340447
+
+ !RHF STATE 1.1 Dipole moment           0.00000000    -0.00000000     0.00000000
+ Dipole moment /Debye                   0.00000000    -0.00000000     0.00000000
+
+ Orbital energies:
+
+           1.1          2.1          3.1          4.1
+     -2.505650    -0.194012     0.010866     0.010866
+
+
+ HOMO      2.1    -0.194012 =      -5.2793eV
+ LUMO      3.1     0.010866 =       0.2957eV
+ LUMO-HOMO         0.204879 =       5.5750eV
+
+ Orbitals saved in record  2100.2
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      19       29.60       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1700     1325   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER    MATROP    
+
+              2       4        0.76       700     1000      520     2100   
+                                         GEOM     BASIS   MCVARS     RHF  
+
+ PROGRAMS   *        TOTAL     DF-HF    MATROP       INT
+ CPU TIMES  *         1.88      0.10      0.07      1.61
+ REAL TIME  *         1.88 SEC
+ DISK USED  *        30.86 MB
+ **********************************************************************************************************************************
+
+ Basis set: OEP
+ Default basis aug-cc-pVDZ/MP2FIT selected for LI
+ Library entry LI     S aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     P aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     D aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Library entry LI     F aug-cc-pVDZ-MP2F     selected for OEP group  1
+ Basis size: 72
+ Basis set: DFIT
+ Default basis aug-cc-pwCV5Z/MP2FIT selected for LI
+ Library entry LI     S aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     P aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     D aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     F aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     G aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     H aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Library entry LI     I aug-cc-pwCV5Z-MP     selected for DFIT group  1
+ Basis size: 328
+
+ PROGRAM * KSINV     (Kohn-Sham Inversion)
+ Authors: J. Erhard, E. Trushin
+
+ Read Reference Density from 1325.1
+ Read Orbital Records from 2100.2
+ Write Orbital Records to 2101.2
+ Reference energy:       -7.475872692580
+ Use density fitting: T
+ Threshold for inversion convergence:     1.000E-10
+ Maximum number of iterations:  30
+ Minimum number of iterations:   3
+ mixing_a:    1.000E-01
+ mix_switch_iter:   3
+ Use backfiltering: T
+ Use one reference potential for both spin channels: F
+ Thresholds for processing of OEP basis set:
+ thr_symmetry:   0.000E+00
+ thr_overlap_oep:     1.000E-99
+ thr_fai_oep:     1.700E-02
+ Fermi-Amaldi as reference potential: T
+ Space-symmetrization: F
+ Construct the Hartree potential in the OEP basis: F
+ HOMO condition: F
+ Threshold for eigenvalue difference in calculation of Lambda:    1.000E-06
+ Threshold for eigenproblem solver of OEP equation:    1.000E-99
+ Solver for eigenproblems: GTSVD
+ Plotting parameters:
+ l_plot_always: F
+ l_plot_vc: T
+ l_plot_vx: T
+ l_plot_vxc: T
+ l_plot_vref: T
+ l_plot_rho_ks: F
+ l_plot_rho_ref: F
+ l_plot_rho_diff: F
+ l_plot_x_line: F
+ l_plot_y_line: F
+ l_plot_z_line: T
+ l_plot_xy_plane: F
+ l_plot_yz_plane: F
+ l_plot_xz_plane: F
+ i_gridsize:  2048
+ r0_plot_range:     20.0000
+ Number of alpha electrons:   2
+ Number of beta  electrons:   1
+
+ Density matrix read from record         1325.1  Type=MATROP/CHARGE  
+ Occupation numbers read from record     2100.2  Type=RHF/RHF (state 1.1)
+
+   ITER        ENERGY             |t|          TIME
+     0                                          0.11
+     1       -6.9754857666     0.105E+00        0.23
+     2       -7.0255502336     0.948E-01        0.35
+     3       -7.0702922390     0.856E-01        0.47
+     4       -7.1103370414     0.772E-01        0.59
+     5       -7.1575533892     0.671E-01        0.71
+     6       -7.2136739167     0.550E-01        0.83
+     7       -7.2801621707     0.403E-01        0.95
+     8       -7.3550898206     0.237E-01        1.07
+     9       -7.4254282077     0.851E-02        1.19
+    10       -7.4658633245     0.143E-02        1.31
+    11       -7.4748997237     0.503E-03        1.43
+    12       -7.4763374495     0.359E-04        1.55
+    13       -7.4764161220     0.607E-04        1.67
+    14       -7.4762843345     0.158E-05        1.79
+    15       -7.4762633426     0.683E-05        1.91
+    16       -7.4762765432     0.816E-06        2.03
+    17       -7.4762801838     0.710E-06        2.16
+    18       -7.4762790043     0.160E-06        2.28
+    19       -7.4762784763     0.668E-07        2.40
+    20       -7.4762785628     0.246E-07        2.52
+    21       -7.4762786316     0.540E-08        2.64
+    22       -7.4762786280     0.333E-08        2.76
+    23       -7.4762786198     0.312E-09        2.88
+    24       -7.4762786194     0.411E-09        3.00
+    25       -7.4762786203     0.257E-11        3.16
+
+ SCF converged in    25 iterations
+
+ KSINV orbitals written to record    2101.2
+ 
+ !KSINV Total energy                   -7.476278620330
+  KSINV One-electron energy            -9.716420429826
+  KSINV Two-electron energy             2.285015832131
+  KSINV Nuclear energy                  0.000000000000
+  KSINV Coulomb energy                  4.062824855613
+  KSINV Exchange energy                -1.777809023481
+  KSINV Correlation energy             -0.044874022635
+  KSINV Kinetic corr. energy            0.039767041148
+  KSINV Potential corr. energy         -0.084641063783
+ 
+ !KSINV Dipole moment                   0.00000000    -0.00000000    -0.00000000
+ Dipole moment /Debye                   0.00000000    -0.00000000    -0.00000000
+
+ Error measures:
+  KSINV KS Hartree energy               4.062824855613
+  KSINV Reference Hartree energy        4.064066245230
+  KSINV Hartree energy error            0.001241389618
+  KSINV KS external energy            -17.149601415867
+  KSINV Reference external energy     -17.149195488117
+  KSINV External energy error           0.000405927750
+  KSINV KS kinetic energy               7.433180986041
+  KSINV Lieb functional                 7.431932023317
+  KSINV Lieb error                     -0.001248962725
+
+ KSINV eigenvalues
+   1-  10  -0.21225E+01 -0.18488E+00 -0.12066E+00 -0.12066E+00 -0.12066E+00 -0.73160E-01 -0.55980E-01 -0.55980E-01 -0.55980E-01 -0.44005E-01
+  11-  11  -0.44005E-01
+
+                  Alpha:        Beta:
+ HOMO:      -0.18488E+00 -0.21225E+01
+ LUMO:      -0.12066E+00 -0.18488E+00
+ LUMO-HOMO:  0.64217E-01  0.19376E+01
+
+
+ **********************************************************************************************************************************
+ DATASETS  * FILE   NREC   LENGTH (MB)   RECORD NAMES
+              1      19       29.60       500      610      700      900      950      970     1000      129      960     1100   
+                                          VAR    BASINP    GEOM    SYMINP    ZMAT    AOBASIS   BASIS     P2S    ABASIS      S 
+                                         1400     1410     1200     1210     1080     1600     1650     1700     1325   
+                                           T        V       H0       H01     AOSYM     SMH    MOLCAS    OPER    MATROP    
+
+              2       5        1.08       700     1000      520     2100     2101   
+                                         GEOM     BASIS   MCVARS     RHF     KSINV   
+
+              4       1        0.88      4000   
+                                         JMAT   
+
+ PROGRAMS   *        TOTAL      ACFD     DF-HF    MATROP       INT
+ CPU TIMES  *         5.16      3.29      0.10      0.07      1.61
+ REAL TIME  *         5.16 SEC
+ DISK USED  *        37.14 MB
+ **********************************************************************************************************************************
+
+ ACFD/aug-cc-pWCVQZ energy=     -7.476278620330
+
+            ACFD           DF-HF
+     -7.47627862     -7.43039110
+ **********************************************************************************************************************************
+ Molpro calculation terminated

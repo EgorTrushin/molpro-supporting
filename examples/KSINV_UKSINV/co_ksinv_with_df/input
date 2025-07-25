@@ -1,0 +1,34 @@
+! First part without density fitting and gdirect
+basis={
+default,aug-cc-pwCVTZ ! orbital basis
+set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+set,dfit;default,aug-cc-pwCV5Z/mp2fit
+}
+
+symmetry,nosym ! KSINV does not use symmetry
+
+angstrom
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
+}
+
+hf,maxit=30 ! HF calculations
+
+{CCSD;core;dm,1325.1} ! reference CCSD calculation
+e_ref_ccsd=energy ! save energy to provide as a reference to KSINV
+
+! Save relaxed density to the first record - required by KSINV
+{matrop;load,den,den,1325.1;save,den,1325.1}
+
+
+! Second parth with density fitting and gdirect
+gdirect
+
+df-hf,maxit=0,df_basis=dfit ! HF calculation with 0 iterations
+{cfit,basis_coul=dfit,basis_exch=dfit}
+
+acfd;ksinv,refden=1325.1,orb=2101.2,e_ref=e_ref_ccsd,thr_fai_oep=5d-2,dfit=1,\
+plot_vx=1,plot_vc=1,plot_vxc=1,plot_vref=1,plot_z=1
