@@ -293,6 +293,56 @@ When energy contributions are of interest, it is essential to evaluate the error
 
 You can read about these error measures in Ref. 6. Strategies for reducing these error measures are discussed in Ref. 6 and in the tutorial. The `density_test` option can also be used to evaluate integrated density error.
 
+Density fitting can be used in KS inversion as follows: Let's first perform the calculation to store the density matrix.
+```
+basis={
+default,aug-cc-pwCVTZ ! orbital basis
+}
+
+symmetry,nosym ! KSINV does not use symmetry
+
+angstrom
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
+}
+
+hf,maxit=30 ! HF calculations
+
+{CCSD;core;dm,1325.1} ! reference CCSD calculation
+{matrop;load,den,den,1325.1;write,den,dm.dat,status=rewind,prec=sci}
+```
+Then, we can perform the KS inversion with `gdirect` option and density fitting.
+```
+gdirect
+
+basis={
+default,aug-cc-pwCVTZ ! orbital basis
+set,oep;default,aug-cc-pVDZ/mp2fit ! OEP basis
+set,dfit;default,aug-cc-pwCV5Z/mp2fit ! density fitting basis
+}
+
+symmetry,nosym ! KSINV does not use symmetry
+
+angstrom
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
+}
+
+{matrop;read,den,type=density,file=dm.dat;save,den,1325.1} ! read stored density matrix
+
+df-hf,maxit=0,df_basis=dfit ! HF calculation with 0 iterations
+{cfit,basis_coul=dfit,basis_exch=dfit}
+
+acfd;ksinv,refden=1325.1,e_ref=-113.251028274562,thr_fai_oep=5d-2,dfit=1
+```
+It is necessary to read and store the density matrix in a record first and only after this to run Hartree-Fock and KS inversion calculations.
+
 **Bibilography:**  
 [1] A. Görling, [Phys. Rev. A](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.46.3753) 46, 3753 (1992)  
 [2] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
