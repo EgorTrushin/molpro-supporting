@@ -57,7 +57,7 @@ git clone https://github.com/molpro/molpro.git
 Navigate to the created directory and configure the installation by:
 
 ```
-FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 LDFLAGS=-lstdc++fs PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin ./configure --disable-gfortran-check --disable-aims --disable-slater --without-hdf5
+FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 LDFLAGS=-lstdc++fs PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin ./configure --disable-gfortran-check --disable-aims --disable-slater
 ```
 
 now replace the files:
@@ -93,9 +93,10 @@ make install
 ```
 </details>
 
-<details><summary><b>Install BLAS, lapack, lapacke, einen3</b></summary>
+<details><summary><b>Install BLAS, lapack, lapacke, einen3, HDF5</b></summary>
 
 ```
+sudo apt-get install libhdf5-mpi-dev
 sudo apt-get install liblapack-dev liblapack-doc liblapack-pic liblapack3 liblapack-test liblapacke liblapacke-dev libeigen3-dev
 ```
 </details>
@@ -103,7 +104,7 @@ sudo apt-get install liblapack-dev liblapack-doc liblapack-pic liblapack3 liblap
 <details><summary><b>Install Molpro</b></summary>
 
 ```
-./configure FOPT=-O2 --disable-aims --disable-slater --without-hdf5
+./configure FOPT=-O2 --disable-aims --disable-slater
 make -j 16
 make quicktest
 ```
