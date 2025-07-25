@@ -286,6 +286,13 @@ Then one can read `dm.dat` from disc as: `{matrop;import,2140.2,file=dm.dat}`
 
 CCSD and CCSD(T) implementation in Molpro does not allow to store density matrix when applied to open-shell systems. Therefore, we must use CI code in this case, namely FCI, RS2, CISD, and AQCC. RS2 can store only total density, thus it can be used only in the spin-restricted inversion. For RS2, CISD, and AQCC, one can also use multi-reference variants which potentially are more accurate.
 
+When energy contributions are of interest, it is essential to evaluate the error measures of the KS inversion because large errors render energy contributions meaningless. These measures are printed in the section of the output file labeled "Error Measures" and include:
+- Hartree energy error
+- External energy error
+- Lieb error
+
+You can read about these error measures in Ref. 6. Strategies for reducing these error measures are discussed in Ref. 6 and in the tutorial. The `density_test` option can also be used to evaluate integrated density error.
+
 **Bibilography:**  
 [1] A. Görling, [Phys. Rev. A](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.46.3753) 46, 3753 (1992)  
 [2] J. Erhard, E. Trushin, A. Görling [J. Chem. Phys.](https://aip.scitation.org/doi/full/10.1063/5.0087356) 156, 204124 (2022)  
