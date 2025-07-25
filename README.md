@@ -41,6 +41,18 @@ make install
 ```
 </details>
 
+<details><summary><b>Install HDF5</b></summary>
+
+```
+wget https://github.com/HDFGroup/hdf5/releases/download/hdf5_1.14.6/hdf5-1.14.6.tar.gz
+```
+```
+./configure --enable-parallel --prefix=/home/trushin/libs/hdf5 CC=mpiicx CXX=mpiicpx
+make -j 16
+make install
+```
+</details>
+
 <details><summary><b>Install eigen3</b></summary>
 
 eigen3 does not need to be compiled, but needs to be downloaded and unpacked into a directory.
@@ -57,7 +69,7 @@ git clone https://github.com/molpro/molpro.git
 Navigate to the created directory and configure the installation by:
 
 ```
-FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 LDFLAGS=-lstdc++fs PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin ./configure --disable-gfortran-check --disable-aims --disable-slater
+FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS="-I/home/trushin/libs/eigen-3.4.0/include/eigen3 -I/home/trushin/libs/hdf5/include" LDFLAGS="-lstdc++fs -L/home/trushin/libs/hdf5/lib64" PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin:/home/trushin/libs/hdf5/bin ./configure --disable-gfortran-check --disable-aims --disable-slater
 ```
 
 now replace the files:
@@ -78,6 +90,12 @@ It is necessary to have /home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64 
 ```
 export LD_LIBRARY_PATH=/home/Tools/progs/intel/oneapi/mkl/2021.1.1/lib/intel64:$LD_LIBRARY_PATH
 ```
+
+Also
+```
+export LD_LIBRARY_PATH=/home/trushin/libs/hdf5/lib64:$LD_LIBRARY_PATH
+```
+
 </details>
 
 ### Molpro on Ubuntu with gcc/gfortran
