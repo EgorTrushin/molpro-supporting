@@ -158,6 +158,7 @@ The following options are available for the `KSINV` and `UKSINV` programs:
 - **orb** record from which the occupation numbers are read (default: ‘2100.2’)
 - **save** record in which the resulting orbital coefficients, eigenvalues, etc. are written (default: '2101.2')
 - **e_ref** total energy of calculations from which reference density is provided
+- **dfit** if set to $\neq$ 0, enable density fitting for two-electron integrals (default: ’0’)  
 - **thr_inversion** convergence threshold for self-consistent procedure (default '1d-10')
 - **maxit** maximum number of iterations (default '30')
 - **minit** minimum number of iterations (default '3')
