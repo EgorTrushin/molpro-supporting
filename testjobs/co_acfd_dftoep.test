@@ -1,0 +1,47 @@
+symmetry,nosym
+geometry={
+2
+
+C        0.000000    0.000000   -0.646514
+O        0.000000    0.000000    0.484886
+}
+
+basis={
+default,aug-cc-pwCVTZ
+set,oep;default,aug-cc-pVDZ/mp2fit
+set,dfit;default,aug-cc-pwCV5Z/mp2fit
+}
+
+df-hf,maxit=0,df_basis=dfit ! HF calculation with 0 iteration
+{cfit,basis_coul=dfit,basis_exch=dfit}
+
+{acfd;dftoep,thr_fai_oep=5d-2;func,pbe0}
+e(1) = energy
+prog(1)='CO'
+
+{acfd;dftoep,thr_fai_oep=5d-2,homo=1,homo_mode=1;func,pbe0}
+e(2)=energy
+prog(2)='CO homo_mode=1'
+
+{acfd;dftoep,thr_fai_oep=5d-2,homo=1,homo_mode=0;func,pbe0}
+e(3)=energy
+prog(3)='CO homo_mode=0'
+
+{acfd;dftoep,thr_fai_oep=5d-2,homo=1,homo_mode=2;func,pbe0}
+e(4)=energy
+prog(4)='CO homo_mode=2'
+
+eold = [-113.228116438316, -113.228033594246,  -113.228047190542, -113.227983552144]
+
+de=e-eold(1:ii)
+
+text,Results for job co_acfd_dftoep.test
+if(max(abs(de)).lt.1.d-6) then
+  table,prog,e,eold,de
+  save,test.log
+  title,No errors in co_acfd_dftoep.test
+else
+  table,prog,e,eold,de
+  save,test.log
+  title,ERRORS DETECTED in co_acfd_dftoep.test, de=$de
+endif

@@ -1,0 +1,46 @@
+symmetry,nosym
+geometry={
+1
+
+N    0.0000000    0.0000000    0.000000
+}
+
+spin=3
+
+basis={
+default,aug-cc-pwCVTZ
+set,oep;default,aug-cc-pVDZ/mp2fit
+set,dfit;default,aug-cc-pwCV5Z/mp2fit
+}
+
+df-uhf,maxit=0,df_basis=dfit ! HF calculation with 0 iteration
+{cfit,basis_coul=dfit,basis_exch=dfit}
+
+{df-uks,pbe0,maxit=30,df_basis=dfit}
+
+{acfd;udftoep,orb=2201.2,thr_fai_oep=5d-2;func,pbe0}
+e(1) = energy
+prog(1)='N'
+
+{acfd;udftoep,orb=2201.2,thr_fai_oep=5d-2,homo=1,homo_mode=0;func,pbe0}
+e(2)=energy
+prog(2)='N homo_mode=0'
+
+{acfd;udftoep,orb=2201.2,thr_fai_oep=5d-2,spin_sym=1;func,pbe0}
+e(3)=energy
+prog(3)='N spinsym'
+
+eold = [-54.542684627589, -54.542266818222,  -54.540832060759]
+
+de=e-eold(1:ii)
+
+text,Results for job n_acfd_udftoep.test
+if(max(abs(de)).lt.1.d-6) then
+  table,prog,e,eold,de
+  save,test.log
+  title,No errors in n_acfd_udftoep.test
+else
+  table,prog,e,eold,de
+  save,test.log
+  title,ERRORS DETECTED in n_acfd_udftoep.test, de=$de
+endif
