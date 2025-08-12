@@ -17,9 +17,9 @@
 <a id="item_docs"></a>
 ## Markdown documentation for programs/codes
 - [RIRPA/URIRPA program](https://www.molpro.net/manual/doku.php?id=kohn-sham_random-phase_approximation#rirpa_program)
-- [SCEXX/USCEXX program](/docs/scexx_uscexx.md)
+- [SCEXX/USCEXX program](https://www.molpro.net/manual/doku.php?id=kohn-sham_random-phase_approximation#scexx_program)
+- [SCRPA/USCRPA program](https://www.molpro.net/manual/doku.php?id=kohn-sham_random-phase_approximation#scrpa_program)
 - [KSINV/UKSINV program](/docs/ksinv_uksinv.md)
-- [SCRPA/USCRPA program](/docs/scrpa_uscrpa.md)
 
 <a id="item_tutorials"></a>
 ## Tutorials
