@@ -1,6 +1,5 @@
 **Table of content:**
 - [The contents of the directories in the repository](#item_dirs)
-- [Markdown documentation for programs/codes](#item_docs)
 - [Tutorials](#item_tutorials)
 - [Compiling Molpro on various Linux systems](#item_compile)
 - [Automatic formatting for Fortran code with fprettify](#item_fprettify)
@@ -9,7 +8,6 @@
 
 <a id="item_dirs"></a>
 ## The contents of the directories in the repository
-- **docs** Markdown documentation for programs/codes
 - **examples** example input files for calculations using our programs/codes
 - **files** various auxiliary files
 - **testjobs** testjobs for our programs/codes
@@ -19,12 +17,13 @@
 - [RIRPA/URIRPA program](https://www.molpro.net/manual/doku.php?id=kohn-sham_random-phase_approximation#rirpa_program)
 - [SCEXX/USCEXX program](https://www.molpro.net/manual/doku.php?id=kohn-sham_random-phase_approximation#scexx_program)
 - [SCRPA/USCRPA program](https://www.molpro.net/manual/doku.php?id=kohn-sham_random-phase_approximation#scrpa_program)
-- [KSINV/UKSINV program](/docs/ksinv_uksinv.md)
+- [KSINV/UKSINV program](https://github.com/EgorTrushin/Molpro_Tutorials/blob/main/docs/ksinv_uksinv.md)
 
 <a id="item_tutorials"></a>
 ## Tutorials
 - [SCEXX/USCEXX program](https://github.com/EgorTrushin/Molpro_Tutorials/blob/main/EXX_OEP.ipynb)
 - [SCRPA/USCRPA program](https://github.com/EgorTrushin/Molpro_Tutorials/blob/main/RPA_OEP.ipynb)
+- [KSINV/UKSINV program](https://github.com/EgorTrushin/Molpro_Tutorials/blob/main/KS_inversion.ipynb)
 
 <a id="item_compile"></a>
 ## Compiling Molpro on various Linux systems
