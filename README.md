@@ -3,6 +3,7 @@
 - [Tutorials](#item_tutorials)
 - [Compiling Molpro on various Linux systems](#item_compile)
 - [Automatic formatting for Fortran code with fprettify](#item_fprettify)
+- [Compile Molpro with Fortran Standard Library](#item_stdlib)
 - [Compile Molpro with warnings](#item_warnings)
 - [Molpro with SLURM launcher](#item_slurm)
 
@@ -138,6 +139,26 @@ Copy a Molpro token to /home/trushin/.molpro/ before making quicktest.
 fprettify -i 2 -l 80 -w 1 -s
 ```
 </details>
+
+<a id="item_stdlib"></a>
+## Compile with [Fortran Standard Library](https://github.com/fortran-lang/stdlib)
+
+<details><summary><b>tcsv020 ifx</b></summary>
+
+```
+FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS="-I/home/trushin/libs/eigen-3.4.0/include/eigen3 -I/home/trushin/libs/hdf5/include" LDFLAGS="-lstdc++fs -L/home/trushin/libs/hdf5/lib64" PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin:/home/trushin/libs/hdf5/bin FCFLAGS="-L/home/trushin/libs/lib64 -lfortran_stdlib -I/home/trushin/libs/include -I/home/trushin/libs/include/fortran_stdlib/IntelLLVM-2025.0.4" ./configure --disable-gfortran-check --disable-aims --disable-slater
+```
+
+</details>
+
+<details><summary><b>ubuntu gfortram</b></summary>
+
+```
+FC=ifx CC=icx CXX=mpiicpx COPT=-O3 FOPT=-O1 CPPFLAGS=-I/home/trushin/libs/eigen-3.4.0/include/eigen3 PATH=$PATH:/home/trushin/libs/ga-5.8.2_ifx/bin FCFLAGS="-L/home/trushin/libs/lib64 -lfortran_stdlib -I/home/trushin/libs/include -I/home/trushin/libs/include/fortran_stdlib/IntelLLVM-2025.0.4" ./configure --disable-gfortran-check
+```
+
+</details>
+
 
 <a id="item_warnings"></a>
 ## Compile Molpro with warnings
