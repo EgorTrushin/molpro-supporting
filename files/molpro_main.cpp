@@ -35,8 +35,8 @@ int main(int argc, char* argv[]) {
  int ppidd_impl=PPIDD_IMPL_DEFAULT;
  bool enable_gperftools = false;
  for (int i=1; i < argc; ++i) {
-  if (strcmp(argv[i],"--ppidd-ga-mpi") == 0) ppidd_impl=PPIDD_IMPL_GA_MPI;
-  if (strcmp(argv[i],"--ppidd-mpi2") == 0) ppidd_impl=PPIDD_IMPL_MPI2;
+  if (strcmp(argv[i],"--ppidd-ga") == 0) ppidd_impl=PPIDD_IMPL_GA;
+  if (strcmp(argv[i],"--ppidd-mpi") == 0) ppidd_impl=PPIDD_IMPL_MPI;
   if (strcmp(argv[i],"--ppidd-no-mpi") == 0) ppidd_impl=PPIDD_IMPL_NO_MPI;
   if (strcmp(argv[i],"--enable-gperftools") == 0) enable_gperftools = true;
  }
@@ -132,8 +132,8 @@ int main(int argc, char* argv[]) {
    for (int i=1; i < argc; ++i) {
     if (debug) std::cout << "argv[" << i << "] = " << argv[i] << '\n';
     /* we've already parsed the PPIDD related options */
-    if (strcmp(argv[i],"--ppidd-ga-mpi") == 0) continue;
-    if (strcmp(argv[i],"--ppidd-mpi2") == 0) continue;
+    if (strcmp(argv[i],"--ppidd-ga") == 0) continue;
+    if (strcmp(argv[i],"--ppidd-mpi") == 0) continue;
     if (strcmp(argv[i],"--ppidd-no-mpi") == 0) continue;
     if (strcmp(argv[i],"--enable-gperftools") == 0) continue;
     if (argstr.length() != 0 ) argstr += " ";
